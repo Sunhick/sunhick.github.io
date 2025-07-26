@@ -260,3 +260,77 @@ a.btn-download i,
         font-size: 0.85rem;
     }
 }
+
+/* Profile Image Styling - Rectangle */
+.profile-image {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Profile Image - Force Rectangle Override */
+.profile-image .profile-photo,
+.hero-section .profile-photo,
+img.profile-photo {
+    width: 200px !important;
+    height: 250px !important;
+    object-fit: cover !important;
+    border-radius: 12px !important;
+    /* Soft rounded corners for a modern look */
+    border: 3px solid #ffffff !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.profile-image .profile-photo:hover,
+.hero-section .profile-photo:hover,
+img.profile-photo:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Dark theme profile image adjustments */
+body.dark-theme .profile-photo {
+    border-color: #e0e0e0;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .profile-photo:hover {
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Light theme profile image adjustments */
+body:not(.dark-theme) .profile-photo {
+    border-color: #2c3e50;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+body:not(.dark-theme) .profile-photo:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive profile image */
+@media (max-width: 768px) {
+    .profile-photo {
+        width: 150px;
+        height: 188px;
+        /* Maintain aspect ratio */
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-photo {
+        width: 120px;
+        height: 150px;
+        /* Maintain aspect ratio */
+    }
+}
+
+
+
+
+
+
+
+
+color: inherit !important;
+}
