@@ -1,0 +1,44 @@
+- title: "Personal Portfolio Website"
+  description: "A responsive Jekyll-based portfolio website showcasing projects and skills, optimized for GitHub Pages hosting."
+  image: "/assets/images/projects/portfolio-website.jpg"
+  url: "https://github.com/sunilmurthy/portfolio"
+  demo_url: "https://sunilmurthy.github.io"
+  technologies: ["Jekyll", "SCSS", "HTML5", "JavaScript", "GitHub Pages"]
+  featured: true
+  category: "Web Development"
+
+- title: "Task Management App"
+  description: "A full-stack task management application with user authentication, real-time updates, and responsive design."
+  image: "/assets/images/projects/task-app.jpg"
+  url: "https://github.com/sunilmurthy/task-manager"
+  demo_url: "https://task-manager-demo.herokuapp.com"
+  technologies: ["React", "Node.js", "MongoDB", "Express", "Socket.io"]
+  featured: true
+  category: "Full Stack"
+
+- title: "Weather Dashboard"
+  description: "A clean and intuitive weather dashboard that displays current conditions and forecasts using external APIs."
+  image: "/assets/images/projects/weather-dashboard.jpg"
+  url: "https://github.com/sunilmurthy/weather-dashboard"
+  demo_url: "https://sunilmurthy.github.io/weather-dashboard"
+  technologies: ["JavaScript", "CSS3", "Weather API", "Chart.js"]
+  featured: true
+  category: "Frontend"
+
+- title: "E-commerce API"
+  description: "RESTful API for an e-commerce platform with authentication, product management, and order processing."
+  image: "/assets/images/projects/ecommerce-api.jpg"
+  url: "https://github.com/sunilmurthy/ecommerce-api"
+  demo_url: ""
+  technologies: ["Python", "Django", "PostgreSQL", "Redis", "Docker"]
+  featured: false
+  category: "Backend"
+
+- title: "Mobile Expense Tracker"
+  description: "Cross-platform mobile app for tracking personal expenses with data visualization and budget management."
+  image: "/assets/images/projects/expense-tracker.jpg"
+  url: "https://github.com/sunilmurthy/expense-tracker"
+  demo_url: ""
+  technologies: ["React Native", "Firebase", "Redux", "Chart.js"]
+  featured: false
+  category: "Mobile"

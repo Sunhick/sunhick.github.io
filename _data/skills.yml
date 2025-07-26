@@ -1,0 +1,83 @@
+- category: "Frontend Development"
+  skills:
+    - name: "HTML5 & CSS3"
+      level: 95
+      icon: "fab fa-html5"
+    - name: "JavaScript (ES6+)"
+      level: 90
+      icon: "fab fa-js-square"
+    - name: "React.js"
+      level: 85
+      icon: "fab fa-react"
+    - name: "Vue.js"
+      level: 75
+      icon: "fab fa-vuejs"
+    - name: "SCSS/Sass"
+      level: 88
+      icon: "fab fa-sass"
+    - name: "Bootstrap"
+      level: 90
+      icon: "fab fa-bootstrap"
+
+- category: "Backend Development"
+  skills:
+    - name: "Node.js"
+      level: 85
+      icon: "fab fa-node-js"
+    - name: "Python"
+      level: 80
+      icon: "fab fa-python"
+    - name: "Django"
+      level: 75
+      icon: "fas fa-server"
+    - name: "Express.js"
+      level: 82
+      icon: "fas fa-code"
+    - name: "RESTful APIs"
+      level: 88
+      icon: "fas fa-exchange-alt"
+    - name: "GraphQL"
+      level: 70
+      icon: "fas fa-project-diagram"
+
+- category: "Database & Tools"
+  skills:
+    - name: "MongoDB"
+      level: 80
+      icon: "fas fa-database"
+    - name: "PostgreSQL"
+      level: 75
+      icon: "fas fa-database"
+    - name: "Git & GitHub"
+      level: 92
+      icon: "fab fa-git-alt"
+    - name: "Docker"
+      level: 70
+      icon: "fab fa-docker"
+    - name: "AWS"
+      level: 65
+      icon: "fab fa-aws"
+    - name: "Firebase"
+      level: 78
+      icon: "fas fa-fire"
+
+- category: "Mobile & Other"
+  skills:
+    - name: "React Native"
+      level: 75
+      icon: "fab fa-react"
+    - name: "Flutter"
+      level: 60
+      icon: "fas fa-mobile-alt"
+    - name: "Jekyll"
+      level: 85
+      icon: "fas fa-gem"
+    - name: "WordPress"
+      level: 70
+      icon: "fab fa-wordpress"
+    - name: "Figma"
+      level: 65
+      icon: "fab fa-figma"
+    - name: "Photoshop"
+      level: 60
+      icon: "fas fa-paint-brush"
