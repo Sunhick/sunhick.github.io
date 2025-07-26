@@ -6,13 +6,10 @@ permalink: /skills/
 
 ## Technical Skills
 
-Here's an overview of my technical skills and expertise across different areas of software development. My experience spans from low-level systems programming to high-level architectural design, with a focus on security, scalability, and formal verification.
-
-<div class="skills-section">
+<div class="skills-section skills-two-column">
   {% for category in site.data.skills %}
     <div class="skill-category fade-in">
       <h3>{{ category.category }}</h3>
-
       {% for skill in category.skills %}
         <div class="skill-item">
           <div class="skill-icon">
@@ -31,77 +28,79 @@ Here's an overview of my technical skills and expertise across different areas o
   {% endfor %}
 </div>
 
-## Core Expertise Areas
+<style>
+.skills-two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
 
-### 🔧 System Architecture & Design
-- **Cell-based Architecture**: Designing fault-tolerant distributed systems with isolation boundaries
-- **Microservices**: Building scalable service-oriented architectures
-- **Performance Engineering**: Optimizing system performance and resource utilization
-- **Scalability Planning**: Designing systems that handle growth and load
+.skills-two-column .skill-category {
+  margin-bottom: 1.5rem;
+}
 
-### 🔐 Security & Authentication
-- **Identity Management**: Implementing comprehensive authentication and authorization systems
-- **Cryptographic Systems**: Digital signatures, encryption, and secure communication protocols
-- **Security Architecture**: Threat modeling, vulnerability assessment, and security-first design
-- **Compliance**: Understanding regulatory requirements and security standards
+.skills-two-column .skill-category h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
 
-### ☁️ Cloud & Infrastructure
-- **AWS Ecosystem**: Extensive experience with EC2, S3, Lambda, RDS, and other AWS services
-- **Container Orchestration**: Docker containerization and Kubernetes deployment strategies
-- **Infrastructure as Code**: Terraform, CloudFormation, and automated infrastructure management
-- **DevOps Practices**: CI/CD pipelines, automated testing, and deployment strategies
+/* Responsive: single column on mobile */
+@media (max-width: 768px) {
+  .skills-two-column {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+</style>
 
-### 🔬 Formal Methods & Verification
-- **TLA+ Specifications**: Writing formal specifications for distributed systems
-- **System Verification**: Proving correctness properties and safety guarantees
-- **Model Checking**: Using formal methods to verify system behavior
-- **Distributed Systems Theory**: Understanding consensus, consistency, and fault tolerance
+## Core Expertise
 
-### 📱 Device & Client Management
-- **Device Monitoring**: Real-time tracking and management of client devices
-- **Policy Enforcement**: Implementing and managing security policies across devices
-- **Remote Management**: Building systems for remote device configuration and control
-- **Compliance Reporting**: Automated compliance checking and reporting systems
+**Systems & Architecture**: C/C++, system design, performance optimization, distributed systems
+**Enterprise Development**: Java, C#/.NET, Kotlin, Spring Boot, microservices
+**Modern Stack**: Python, TypeScript, Node.js, Django, RESTful APIs
+**Security**: Authentication systems, cryptography, digital signatures, RBAC
+**Cloud & DevOps**: AWS, Docker, Kubernetes, CI/CD, Infrastructure as Code
+**Specialized**: TLA+ formal verification, device management, Chromium development
 
-### 🌐 Browser & Web Technologies
-- **Chromium Contributions**: Contributing to browser engine development
-- **Web Standards**: Understanding and implementing web platform features
-- **Performance Optimization**: Browser performance tuning and optimization
-- **V8 Engine**: Working with JavaScript engine internals
+## Currently Learning
 
-## Programming Languages Proficiency
+- Advanced TLA+ and formal verification methods
+- Kubernetes service mesh and operators
+- Emerging security patterns and threat modeling
 
-**Systems Level**: C, C++ - For performance-critical applications and system programming
-**Enterprise**: Java, C#/.NET - For large-scale enterprise applications
-**Modern**: Python, TypeScript, Kotlin - For rapid development and modern applications
-**Specialized**: TLA+ - For formal system specification and verification
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Animate skill bars
+  const animateSkillBars = () => {
+    const skillBars = document.querySelectorAll('.skill-progress');
+    skillBars.forEach(bar => {
+      const level = bar.getAttribute('data-level');
+      setTimeout(() => {
+        bar.style.width = level + '%';
+      }, Math.random() * 1000);
+    });
+  };
 
-## Development Methodologies
+  // Intersection Observer for fade-in animation
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
 
-- **Formal Methods**: Mathematical approaches to system design and verification
-- **Test-Driven Development**: Writing tests first to ensure code reliability
-- **Agile/Scrum**: Iterative development with continuous feedback
-- **Code Review**: Collaborative code quality assurance
-- **Documentation**: Technical writing and system documentation
-- **Open Source**: Contributing to and maintaining open-source projects
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        if (entry.target.classList.contains('skill-category')) {
+          animateSkillBars();
+        }
+      }
+    });
+  }, observerOptions);
 
-## Tools & Technologies
-
-**Development**: Git, VS Code, IntelliJ IDEA, Visual Studio
-**Databases**: PostgreSQL, MongoDB, Redis
-**Monitoring**: Prometheus, Grafana, CloudWatch
-**Security**: OpenPGP, JWT, OAuth2, SAML
-**Build Tools**: Maven, Gradle, npm, pip
-**Testing**: JUnit, pytest, Jest, Selenium
-
-## Continuous Learning
-
-I'm currently expanding my expertise in:
-- **TLA+ and Formal Verification** - Deepening knowledge of formal methods
-- **Advanced Kubernetes** - Service mesh, operators, and advanced orchestration
-- **Security Research** - Staying current with emerging security threats and solutions
-- **Distributed Systems** - Advanced patterns and consensus algorithms
-
----
-
-*This skills overview reflects my current expertise and ongoing learning journey. I believe in continuous improvement and staying current with evolving technologies and best practices.*
+  document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+  });
+});
+</script>
