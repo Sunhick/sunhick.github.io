@@ -1,36 +1,58 @@
 # Sunil Murthy - Personal Portfolio Website
 
-A modern, responsive Jekyll-based portfolio website optimized for GitHub Pages hosting. This website showcases projects, skills, and professional information in a clean, professional design.
+A modern, responsive Jekyll-based portfolio website built with the Hyde theme and optimized for GitHub Pages hosting. This website showcases projects, skills, and professional information in a clean, professional design with a distinctive sidebar layout.
 
 ## 🚀 Features
 
+- **Hyde Theme**: Built on the popular Hyde Jekyll theme with sidebar navigation
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
 - **Jekyll-Powered**: Static site generation with easy content management
 - **Portfolio Showcase**: Dynamic project display with filtering capabilities
 - **Skills Visualization**: Interactive skill bars and expertise sections
-- **Contact Integration**: Professional contact page with form (ready for integration)
+- **Contact Integration**: Professional contact page with secure communication options
 - **SEO Optimized**: Proper meta tags, structured data, and search engine optimization
 - **GitHub Pages Ready**: Seamless deployment with GitHub Pages
+- **Dark Theme Support**: Professional dark theme with customizable colors
 
 ## 📁 Project Structure
 
 ```
 ├── _config.yml              # Jekyll configuration
 ├── _data/                   # Data files for content management
-│   ├── navigation.yml       # Site navigation menu
 │   ├── projects.yml         # Portfolio projects data
 │   └── skills.yml          # Skills and expertise data
-├── _pages/                  # Site pages
+├── _includes/               # Reusable template components
+│   ├── head.html           # HTML head section
+│   └── sidebar.html        # Hyde theme sidebar
+├── _layouts/                # Page layouts
+│   ├── default.html        # Base layout with sidebar
+│   ├── page.html           # Standard page layout
+│   └── post.html           # Blog post layout
+├── _pages/                  # Site pages (organized in subdirectory)
 │   ├── about.md            # About page
-│   ├── contact.md          # Contact page
+│   ├── contact.md          # Contact page with GPG integration
 │   ├── portfolio.md        # Portfolio showcase
+│   ├── resume.md           # Resume with PDF viewer
 │   └── skills.md           # Skills and expertise
-├── assets/                  # Static assets
-│   ├── css/main.scss       # Main stylesheet with customizations
-│   ├── js/main.js          # JavaScript functionality
-│   └── images/             # Images and media files
-├── .github/workflows/       # GitHub Actions for deployment
-└── index.html              # Home page with hero section
+├── public/                  # Static assets (Hyde theme convention)
+│   ├── css/                # Stylesheets
+│   │   ├── hyde.css        # Hyde theme styles
+│   │   ├── hyde-custom.css # Custom theme overrides
+│   │   ├── main.scss       # Main stylesheet with customizations
+│   │   ├── poole.css       # Base Poole styles
+│   │   └── syntax.css      # Code syntax highlighting
+│   ├── images/             # Images and media files
+│   │   ├── profile.jpg     # Profile photo
+│   │   └── projects/       # Project screenshots
+│   ├── js/                 # JavaScript files
+│   │   └── main.js         # Custom JavaScript functionality
+│   ├── resume/             # Resume files
+│   │   └── Sunil_Murthy_Resume.pdf
+│   ├── favicon.ico         # Site favicon
+│   └── apple-touch-icon-144-precomposed.png
+├── index.html              # Home page with hero section
+├── Gemfile                 # Ruby dependencies
+└── README.md               # This file
 ```
 
 ## 🛠️ Setup Instructions
@@ -87,21 +109,34 @@ A modern, responsive Jekyll-based portfolio website optimized for GitHub Pages h
 1. **Update _config.yml**
    ```yaml
    title: "Your Name"
+   tagline: "Your Professional Tagline"
    description: "Your professional description"
+   url: "https://yourusername.github.io"
+
    author:
      name: "Your Name"
      email: "your.email@example.com"
-     bio: "Your professional bio"
-     location: "Your Location"
+
+   # Social links (Hyde theme format)
+   social:
+     github: "yourusername"
+     linkedin: "yourprofile"
+     email: "your.email@example.com"
    ```
 
-2. **Update social links**
+2. **Update navigation**
    ```yaml
-   author:
-     links:
-       - label: "GitHub"
-         icon: "fab fa-fw fa-github"
-         url: "https://github.com/yourusername"
+   nav:
+     - name: "Home"
+       url: "/"
+     - name: "About"
+       url: "/about/"
+     - name: "Portfolio"
+       url: "/portfolio/"
+     - name: "Skills"
+       url: "/skills/"
+     - name: "Contact"
+       url: "/contact/"
    ```
 
 ### Content Management
@@ -123,31 +158,37 @@ A modern, responsive Jekyll-based portfolio website optimized for GitHub Pages h
        - name: "HTML/CSS"
          level: 90
          icon: "fab fa-html5"
-   ```
-
-3. **Navigation (_data/navigation.yml)**
-   ```yaml
-   main:
-     - title: "Home"
-       url: /
-     - title: "About"
-       url: /about/
+       - name: "JavaScript"
+         level: 85
+         icon: "fab fa-js-square"
    ```
 
 ### Styling Customization
 
-1. **Colors (assets/css/main.scss)**
+1. **Colors (public/css/main.scss)**
    ```scss
    :root {
      --primary-color: #2c3e50;
      --secondary-color: #3498db;
      --accent-color: #e74c3c;
+     --success-color: #27ae60;
+     --text-color: #2c3e50;
+     --light-gray: #ecf0f1;
+     --dark-gray: #34495e;
    }
    ```
 
-2. **Typography**
-   ```scss
-   $font-primary: 'Your Font', sans-serif;
+2. **Hyde Theme Customization (public/css/hyde-custom.css)**
+   ```css
+   /* Custom sidebar colors */
+   .sidebar {
+     background-color: #your-color;
+   }
+
+   /* Custom link colors */
+   .sidebar-nav-item {
+     color: #your-color;
+   }
    ```
 
 ### Adding Images
@@ -178,8 +219,22 @@ A modern, responsive Jekyll-based portfolio website optimized for GitHub Pages h
 ### Adding New Pages
 
 1. Create a new file in `_pages/`
-2. Add front matter with permalink
-3. Update navigation in `_data/navigation.yml`
+   ```markdown
+   ---
+   layout: page
+   title: "New Page"
+   permalink: /new-page/
+   ---
+
+   Your content here...
+   ```
+
+2. Update navigation in `_config.yml`
+   ```yaml
+   nav:
+     - name: "New Page"
+       url: "/new-page/"
+   ```
 
 ### Custom Layouts
 
@@ -230,19 +285,67 @@ If you encounter any issues or have questions:
 2. Review [GitHub Pages documentation](https://docs.github.com/en/pages)
 3. Open an issue in this repository
 
+## 🎨 Hyde Theme Customization
+
+### Theme Colors
+The Hyde theme supports multiple color schemes. You can change the theme by adding a class to the `<body>` tag in `_layouts/default.html`:
+
+- `theme-base-08` - Red
+- `theme-base-09` - Orange
+- `theme-base-0a` - Yellow
+- `theme-base-0b` - Green
+- `theme-base-0c` - Cyan
+- `theme-base-0d` - Blue (current)
+- `theme-base-0e` - Magenta
+- `theme-base-0f` - Brown
+
+### Sidebar Customization
+Edit `_includes/sidebar.html` to customize:
+- Site title and tagline
+- Navigation links
+- Social media links
+- Additional sidebar content
+
+## 🔒 Security Features
+
+This portfolio includes several security features:
+
+- **GPG Integration**: Contact page includes GPG public key for secure communications
+- **Digital Fingerprint**: Verification of identity through cryptographic proof
+- **Secure Asset Loading**: All assets loaded over HTTPS
+- **Content Security**: No external dependencies that could compromise security
+
 ## 🎯 Next Steps
 
 After setting up your portfolio:
 
-1. **Customize content** with your personal information
-2. **Add your projects** to the portfolio section
-3. **Upload images** for profile and projects
-4. **Test responsiveness** on different devices
-5. **Optimize for SEO** with proper meta descriptions
-6. **Set up analytics** (Google Analytics, etc.)
-7. **Add a blog section** if desired
-8. **Implement contact form** with a service provider
+1. **Customize content** with your personal information in `_config.yml`
+2. **Add your projects** to `_data/projects.yml`
+3. **Upload images** to `public/images/` and `public/images/projects/`
+4. **Update skills** in `_data/skills.yml`
+5. **Customize colors** in `public/css/hyde-custom.css`
+6. **Add your resume** to `public/resume/`
+7. **Test responsiveness** on different devices
+8. **Set up analytics** (Google Analytics, etc.)
+9. **Optimize for SEO** with proper meta descriptions
+10. **Deploy to GitHub Pages**
+
+## 🚀 Deployment
+
+This site is configured for automatic deployment to GitHub Pages:
+
+1. Push changes to the `main` branch
+2. GitHub Actions will automatically build and deploy
+3. Site will be available at `https://yourusername.github.io`
+
+## 📊 Analytics & Monitoring
+
+To add analytics:
+
+1. **Google Analytics**: Add tracking ID to `_config.yml`
+2. **GitHub Pages Insights**: Monitor traffic in repository insights
+3. **Performance Monitoring**: Use Lighthouse for performance audits
 
 ---
 
-**Built with ❤️ using Jekyll and deployed on GitHub Pages**
+**Built with ❤️ using Jekyll, Hyde theme, and deployed on GitHub Pages**
