@@ -17,7 +17,7 @@ permalink: /contact/
         <div class="contact-info">
           <h3>Email</h3>
           <p>For professional inquiries and collaboration</p>
-          <a href="mailto:sunil.murthy@example.com" class="contact-link">sunil.murthy@example.com</a>
+          <a href="mailto:sunhick@gmail.com" class="contact-link">sunhick@gmail.com</a>
         </div>
       </div>
 
@@ -28,7 +28,7 @@ permalink: /contact/
         <div class="contact-info">
           <h3>LinkedIn</h3>
           <p>Connect with me professionally</p>
-          <a href="https://linkedin.com/in/sunilmurthy" target="_blank" class="contact-link">linkedin.com/in/sunilmurthy</a>
+          <a href="https://linkedin.com/in/sunhick" target="_blank" class="contact-link">linkedin.com/in/sunhick</a>
         </div>
       </div>
 
@@ -39,7 +39,7 @@ permalink: /contact/
         <div class="contact-info">
           <h3>GitHub</h3>
           <p>Check out my code and projects</p>
-          <a href="https://github.com/sunilmurthy" target="_blank" class="contact-link">github.com/sunilmurthy</a>
+          <a href="https://github.com/sunhick" target="_blank" class="contact-link">github.com/sunhick</a>
         </div>
       </div>
 
@@ -51,6 +51,19 @@ permalink: /contact/
           <h3>Location</h3>
           <p>Based in San Francisco, CA</p>
           <span class="contact-text">Open to remote opportunities</span>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <i class="fas fa-key"></i>
+        </div>
+        <div class="contact-info">
+          <h3>GPG Public Key</h3>
+          <p>For secure communications</p>
+          <a href="https://github.com/Sunhick/gpg-public-keyc" target="_blank" class="contact-link">Digital Proof</a>
+          <br>
+          <small class="gpg-fingerprint">FE0F 6B71 2C06 7595 E7ED 20E7 F0B7 BA42 9658 890D</small>
         </div>
       </div>
     </div>
@@ -251,6 +264,17 @@ permalink: /contact/
 .status-text p {
   color: var(--dark-gray);
   margin: 0;
+}
+
+.gpg-fingerprint {
+  font-family: 'Courier New', monospace;
+  font-size: 0.8em;
+  color: var(--dark-gray);
+  background: #f5f5f5;
+  padding: 0.25em 0.5em;
+  border-radius: 3px;
+  margin-top: 0.5em;
+  display: inline-block;
 }
 
 @media (max-width: 768px) {

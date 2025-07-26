@@ -1,83 +1,107 @@
-- category: "Frontend Development"
+- category: "Systems Programming"
   skills:
-    - name: "HTML5 & CSS3"
-      level: 95
-      icon: "fab fa-html5"
-    - name: "JavaScript (ES6+)"
+    - name: "C/C++"
       level: 90
-      icon: "fab fa-js-square"
-    - name: "React.js"
-      level: 85
-      icon: "fab fa-react"
-    - name: "Vue.js"
-      level: 75
-      icon: "fab fa-vuejs"
-    - name: "SCSS/Sass"
+      icon: "fas fa-code"
+    - name: "System Architecture"
       level: 88
-      icon: "fab fa-sass"
-    - name: "Bootstrap"
-      level: 90
-      icon: "fab fa-bootstrap"
+      icon: "fas fa-sitemap"
+    - name: "Memory Management"
+      level: 85
+      icon: "fas fa-microchip"
+    - name: "Performance Optimization"
+      level: 87
+      icon: "fas fa-tachometer-alt"
+    - name: "Low-level Programming"
+      level: 82
+      icon: "fas fa-cogs"
 
-- category: "Backend Development"
+- category: "Enterprise Development"
   skills:
+    - name: "Java"
+      level: 88
+      icon: "fab fa-java"
+    - name: "C# / .NET Core"
+      level: 85
+      icon: "fas fa-code"
+    - name: "Kotlin"
+      level: 80
+      icon: "fas fa-mobile-alt"
+    - name: "Spring Boot"
+      level: 82
+      icon: "fas fa-leaf"
+    - name: "Microservices"
+      level: 85
+      icon: "fas fa-cubes"
+
+- category: "Modern Development"
+  skills:
+    - name: "Python"
+      level: 92
+      icon: "fab fa-python"
+    - name: "TypeScript"
+      level: 88
+      icon: "fas fa-code"
     - name: "Node.js"
       level: 85
       icon: "fab fa-node-js"
-    - name: "Python"
-      level: 80
-      icon: "fab fa-python"
-    - name: "Django"
-      level: 75
+    - name: "Django/FastAPI"
+      level: 87
       icon: "fas fa-server"
-    - name: "Express.js"
-      level: 82
-      icon: "fas fa-code"
     - name: "RESTful APIs"
-      level: 88
+      level: 90
       icon: "fas fa-exchange-alt"
-    - name: "GraphQL"
-      level: 70
-      icon: "fas fa-project-diagram"
 
-- category: "Database & Tools"
+- category: "Security & Authentication"
   skills:
-    - name: "MongoDB"
-      level: 80
-      icon: "fas fa-database"
-    - name: "PostgreSQL"
-      level: 75
-      icon: "fas fa-database"
-    - name: "Git & GitHub"
-      level: 92
-      icon: "fab fa-git-alt"
-    - name: "Docker"
-      level: 70
-      icon: "fab fa-docker"
-    - name: "AWS"
-      level: 65
-      icon: "fab fa-aws"
-    - name: "Firebase"
-      level: 78
-      icon: "fas fa-fire"
-
-- category: "Mobile & Other"
-  skills:
-    - name: "React Native"
-      level: 75
-      icon: "fab fa-react"
-    - name: "Flutter"
-      level: 60
-      icon: "fas fa-mobile-alt"
-    - name: "Jekyll"
+    - name: "Authentication Systems"
+      level: 90
+      icon: "fas fa-shield-alt"
+    - name: "Authorization (RBAC)"
+      level: 88
+      icon: "fas fa-user-shield"
+    - name: "Cryptography"
       level: 85
-      icon: "fas fa-gem"
-    - name: "WordPress"
-      level: 70
-      icon: "fab fa-wordpress"
-    - name: "Figma"
-      level: 65
-      icon: "fab fa-figma"
-    - name: "Photoshop"
-      level: 60
-      icon: "fas fa-paint-brush"
+      icon: "fas fa-lock"
+    - name: "Digital Signatures"
+      level: 82
+      icon: "fas fa-certificate"
+    - name: "Security Best Practices"
+      level: 87
+      icon: "fas fa-security"
+
+- category: "Cloud & DevOps"
+  skills:
+    - name: "AWS Services"
+      level: 88
+      icon: "fab fa-aws"
+    - name: "Docker"
+      level: 85
+      icon: "fab fa-docker"
+    - name: "Kubernetes"
+      level: 82
+      icon: "fas fa-dharmachakra"
+    - name: "CI/CD Pipelines"
+      level: 80
+      icon: "fas fa-sync-alt"
+    - name: "Infrastructure as Code"
+      level: 78
+      icon: "fas fa-code-branch"
+
+- category: "Specialized Technologies"
+  skills:
+    - name: "TLA+ (Formal Verification)"
+      level: 75
+      icon: "fas fa-check-circle"
+    - name: "Device Management"
+      level: 90
+      icon: "fas fa-mobile-alt"
+    - name: "Cell-based Architecture"
+      level: 85
+      icon: "fas fa-th"
+    - name: "Chromium Development"
+      level: 80
+      icon: "fab fa-chrome"
+    - name: "System Verification"
+      level: 78
+      icon: "fas fa-tasks"

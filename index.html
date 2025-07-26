@@ -5,57 +5,51 @@ title: Home
 
 <div class="posts">
     <div class="post">
-        <h1 class="post-title">Welcome to My Portfolio</h1>
-        <p class="lead">
-            Hello! I'm <strong>Sunil Murthy</strong>, a passionate software developer and technology enthusiast.
-            I specialize in creating innovative solutions and building user-friendly applications that make a
-            difference.
-        </p>
-
-        <p>
-            With expertise in full-stack development, I enjoy working with modern technologies and frameworks
-            to bring ideas to life. Whether it's building responsive web applications, developing mobile apps,
-            or contributing to open-source projects, I'm always excited to take on new challenges.
-        </p>
-
-        <h2>What I Do</h2>
-        <ul>
-            <li><strong>Frontend Development:</strong> Creating responsive, interactive user interfaces with React,
-                Vue.js, and modern CSS</li>
-            <li><strong>Backend Development:</strong> Building robust APIs and server-side applications with Node.js,
-                Python, and databases</li>
-            <li><strong>Full-Stack Projects:</strong> End-to-end application development from concept to deployment</li>
-            <li><strong>Open Source:</strong> Contributing to the developer community through open-source projects</li>
-        </ul>
-
-        <h2>Featured Projects</h2>
-        <div class="projects-grid">
-            {% for project in site.data.projects limit:3 %}
-            {% if project.featured %}
-            <div class="project-card">
-                <h3 class="project-title">{{ project.title }}</h3>
-                <p class="project-description">{{ project.description }}</p>
-                <div class="project-tech">
-                    {% for tech in project.technologies %}
-                    <span class="tech-tag">{{ tech }}</span>
-                    {% endfor %}
-                </div>
-                <div class="project-links">
-                    {% if project.url %}
-                    <a href="{{ project.url }}" target="_blank">View Code</a>
-                    {% endif %}
-                    {% if project.demo_url %}
-                    <a href="{{ project.demo_url }}" target="_blank">Live Demo</a>
-                    {% endif %}
-                </div>
+        <div class="hero-section">
+            <div class="profile-image">
+                <img src="{{ site.baseurl }}/assets/images/profile.jpg" alt="Sunil Murthy" class="profile-photo">
             </div>
-            {% endif %}
-            {% endfor %}
+            <div class="hero-content">
+                <h1 class="post-title">Sunil Murthy</h1>
+                <p class="lead">
+                    Software Engineer specializing in <strong>Device Management</strong>, <strong>Authentication
+                        Systems</strong>, and <strong>Cell-based Architecture</strong>
+                </p>
+
+                <p>
+                    Currently working on client device management solutions and learning <strong>TLA+</strong> for
+                    formal system
+                    verification.
+                    Active contributor to <strong>Chromium</strong> and various open-source projects.
+                </p>
+            </div>
         </div>
 
-        <p>
-            <a href="{{ site.baseurl }}/portfolio/">View all projects →</a>
-        </p>
+        <div class="tech-stack">
+            <h3>Technologies</h3>
+            <div class="tech-tags">
+                <span class="tech-tag">C/C++</span>
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">Kotlin</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">AWS</span>
+                <span class="tech-tag">TLA+</span>
+            </div>
+        </div>
+
+        <div class="current-focus">
+            <h3>Currently</h3>
+            <ul>
+                <li>🔭 Working on: <strong>Device Management, Authentication & Authorization, Cell-based
+                        Architecture</strong></li>
+                <li>🌱 Learning: <strong>Client device management & TLA+ for formal system verification</strong></li>
+                <li>💬 Ask me about: <strong>Open source projects, Chromium, and AWS</strong></li>
+            </ul>
+        </div>
+
+
 
         <h2>Let's Connect</h2>
         <p>

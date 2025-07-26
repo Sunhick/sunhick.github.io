@@ -6,39 +6,50 @@ permalink: /about/
 
 ## Hello, I'm Sunil Murthy
 
-I'm a passionate software developer and technology enthusiast with a love for creating innovative solutions that make a difference. With several years of experience in full-stack development, I specialize in building scalable web applications, mobile apps, and exploring emerging technologies.
+I'm a passionate software engineer and technology enthusiast with extensive experience in building scalable systems, device management solutions, and contributing to cutting-edge technologies. My expertise spans multiple programming languages including C/C++, C#, Java, Kotlin, TypeScript, and Python, with a focus on system architecture, security, and formal verification.
 
 ### My Journey
 
-My journey in technology began with curiosity about how things work behind the scenes. What started as tinkering with HTML and CSS has evolved into a comprehensive skill set spanning multiple programming languages, frameworks, and development methodologies.
+My journey in technology has been driven by a deep curiosity about system design and the fundamental principles that make complex software systems work reliably. From low-level system programming to high-level architectural patterns, I've developed expertise across the entire technology stack.
 
-I believe in continuous learning and staying updated with the latest industry trends. Whether it's exploring new JavaScript frameworks, diving into cloud technologies, or contributing to open-source projects, I'm always eager to expand my knowledge and skills.
+I'm particularly passionate about formal methods and system verification, currently learning TLA+ to formally verify distributed systems. This reflects my commitment to building not just functional software, but provably correct and reliable systems.
 
 ### What I Do
 
-**Frontend Development**
-- Creating responsive, user-friendly interfaces using modern frameworks like React and Vue.js
-- Implementing pixel-perfect designs with attention to user experience and accessibility
-- Optimizing performance and ensuring cross-browser compatibility
+**Device Management & System Architecture**
+- Building comprehensive client device management and monitoring systems
+- Designing scalable cell-based architectural patterns for distributed systems
+- Implementing fault-tolerant systems with automated failover and recovery mechanisms
 
-**Backend Development**
-- Building robust APIs and server-side applications using Node.js and Python
-- Designing and implementing database schemas for optimal performance
-- Implementing authentication, security best practices, and scalable architectures
+**Authentication & Security**
+- Developing secure authentication systems with fine-grained authorization mechanisms
+- Implementing cryptographic solutions and digital signature systems
+- Building security-first applications with threat modeling and vulnerability assessment
 
-**Full-Stack Projects**
-- End-to-end application development from concept to deployment
-- Integration of frontend and backend systems with seamless user experiences
-- DevOps practices including CI/CD, containerization, and cloud deployment
+**System Verification & Formal Methods**
+- Using TLA+ to formally verify distributed systems and ensure correctness properties
+- Applying formal verification techniques to critical system components
+- Developing tools and frameworks for automated system verification
+
+**Cloud Technologies & AWS**
+- Extensive experience with AWS services for scalable cloud-native applications
+- Implementing microservices architectures with containerization and orchestration
+- Building CI/CD pipelines and infrastructure as code solutions
+
+**Open Source & Chromium Development**
+- Active contributor to various open-source projects and community tools
+- Contributing to the Chromium project with focus on performance and web standards
+- Maintaining and developing developer tools and utilities
 
 ### My Approach
 
-I believe in writing clean, maintainable code and following best practices. I'm a strong advocate for:
+I believe in building systems that are not only functional but also provably correct and secure. My development philosophy centers around:
 
-- **Test-Driven Development**: Writing comprehensive tests to ensure code reliability
-- **Agile Methodologies**: Collaborative development with iterative improvements
-- **User-Centered Design**: Putting user needs at the forefront of development decisions
-- **Continuous Integration**: Automated testing and deployment for efficient workflows
+- **Formal Verification**: Using mathematical methods like TLA+ to prove system correctness
+- **Security-First Design**: Implementing security considerations from the ground up
+- **Scalable Architecture**: Designing systems that can grow and adapt to changing requirements
+- **Open Source Collaboration**: Contributing to and learning from the global developer community
+- **Continuous Learning**: Staying current with emerging technologies and best practices
 
 ### Beyond Code
 

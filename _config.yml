@@ -20,7 +20,7 @@ version: 2.1.0
 
 # Sidebar links
 github:
-  repo: https://github.com/sunilmurthy
+  repo: https://github.com/sunhick
 
 # Navigation
 nav:
@@ -37,9 +37,9 @@ nav:
 
 # Social links
 social:
-  github: "sunilmurthy"
-  linkedin: "sunilmurthy"
-  email: "sunil.murthy@example.com"
+  github: "sunhick"
+  linkedin: "sunhick"
+  email: "sunhick@gmail.com"
 
 # Plugins
 plugins:
