@@ -51,6 +51,42 @@ I believe in building systems that are not only functional but also provably cor
 - **Open Source Collaboration**: Contributing to and learning from the global developer community
 - **Continuous Learning**: Staying current with emerging technologies and best practices
 
+### Resume
+
+Want to learn more about my professional background and experience? You can view or download my resume below:
+
+<div class="resume-section">
+  <div class="resume-actions">
+    <a href="/assets/resume/Sunil_Murthy_Resume.pdf" class="resume-btn download-btn" target="_blank">
+      📄 Download Resume (PDF)
+    </a>
+    <a href="#resume-preview" class="resume-btn view-btn" onclick="toggleResumePreview()">
+      👁️ View Resume
+    </a>
+  </div>
+
+  <div id="resume-preview" class="resume-preview" style="display: none;">
+    <iframe src="/assets/resume/Sunil_Murthy_Resume.pdf" width="100%" height="800px" frameborder="0">
+      <p>Your browser doesn't support PDF viewing. <a href="/assets/resume/Sunil_Murthy_Resume.pdf">Download the PDF</a> instead.</p>
+    </iframe>
+  </div>
+</div>
+
+<script>
+function toggleResumePreview() {
+  const preview = document.getElementById('resume-preview');
+  const viewBtn = document.querySelector('.view-btn');
+
+  if (preview.style.display === 'none') {
+    preview.style.display = 'block';
+    viewBtn.textContent = '🔼 Hide Resume';
+  } else {
+    preview.style.display = 'none';
+    viewBtn.textContent = '👁️ View Resume';
+  }
+}
+</script>
+
 ### Beyond Code
 
 When I'm not coding, you can find me:
