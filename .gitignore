@@ -112,5 +112,7 @@ jspm_packages/
 # Local development
 .jekyll-livereload
 
-# Kiro IDE files
-.kiro/
+# Kiro IDE files (keep specs)
+.kiro/settings/
+.kiro/cache/
+.kiro/logs/

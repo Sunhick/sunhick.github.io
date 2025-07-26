@@ -41,6 +41,12 @@ social:
   linkedin: "sunhick"
   email: "sunhick@gmail.com"
 
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
 # Plugins
 plugins:
   - jekyll-feed
@@ -51,6 +57,14 @@ plugins:
 # Pagination
 paginate: 5
 paginate_path: "/page:num/"
+
+# Defaults
+defaults:
+  - scope:
+      path: "_pages"
+      type: "pages"
+    values:
+      layout: "page"
 
 # Exclude files
 exclude:

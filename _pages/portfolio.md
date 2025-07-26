@@ -4,117 +4,90 @@ title: Portfolio
 permalink: /portfolio/
 ---
 
-<div class="projects-section">
-  <h2>Featured Projects</h2>
-  <p>Here are some of my recent projects that showcase my skills in web development, mobile applications, and software engineering. Each project demonstrates different aspects of my technical expertise and problem-solving abilities.</p>
+## My Projects
 
-  <div class="projects-grid">
-    {% for project in site.data.projects %}
-      {% if project.featured %}
-        <div class="project-card fade-in">
-          {% if project.image %}
-            <img src="{{ project.image }}" alt="{{ project.title }}" class="project-image">
-          {% else %}
-            <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2em;">
-              {{ project.title }}
-            </div>
+Here's a showcase of my work across different domains including device management, system architecture, authentication systems, and contributions to open-source projects. Each project demonstrates my expertise in various programming languages and technologies.
+
+### Featured Projects
+
+<div class="projects-grid">
+  {% for project in site.data.projects %}
+    {% if project.featured %}
+      <div class="project-card">
+        <h3 class="project-title">{{ project.title }}</h3>
+        <p class="project-description">{{ project.description }}</p>
+
+        <div class="project-tech">
+          {% for tech in project.technologies %}
+            <span class="tech-tag">{{ tech }}</span>
+          {% endfor %}
+        </div>
+
+        <div class="project-links">
+          {% if project.url %}
+            <a href="{{ project.url }}" target="_blank">View Code</a>
           {% endif %}
-
-          <div class="project-content">
-            <h3 class="project-title">{{ project.title }}</h3>
-            <p class="project-description">{{ project.description }}</p>
-
-            <div class="project-tech">
-              {% for tech in project.technologies %}
-                <span class="tech-tag">{{ tech }}</span>
-              {% endfor %}
-            </div>
-
-            <div class="project-links">
-              {% if project.url %}
-                <a href="{{ project.url }}" target="_blank" class="btn btn-primary">
-                  <i class="fab fa-github"></i> View Code
-                </a>
-              {% endif %}
-              {% if project.demo_url %}
-                <a href="{{ project.demo_url }}" target="_blank" class="btn btn-outline">
-                  <i class="fas fa-external-link-alt"></i> Live Demo
-                </a>
-              {% endif %}
-            </div>
-          </div>
+          {% if project.demo_url %}
+            <a href="{{ project.demo_url }}" target="_blank">Live Demo</a>
+          {% endif %}
         </div>
-      {% endif %}
-    {% endfor %}
-  </div>
-
-  <h2>Other Projects</h2>
-  <div class="other-projects">
-    {% for project in site.data.projects %}
-      {% unless project.featured %}
-        <div class="project-item">
-          <h4><a href="{{ project.url }}" target="_blank">{{ project.title }}</a></h4>
-          <p>{{ project.description }}</p>
-          <div class="project-tech">
-            {% for tech in project.technologies %}
-              <span class="tech-tag">{{ tech }}</span>
-            {% endfor %}
-          </div>
-        </div>
-      {% endunless %}
-    {% endfor %}
-  </div>
+      </div>
+    {% endif %}
+  {% endfor %}
 </div>
 
-<style>
-.other-projects {
-  margin-top: 3em;
-}
+### All Projects
 
-.project-item {
-  border-left: 4px solid var(--secondary-color);
-  padding-left: 1.5em;
-  margin-bottom: 2em;
-}
+{% assign categories = site.data.projects | map: 'category' | uniq | sort %}
 
-.project-item h4 {
-  margin-bottom: 0.5em;
-  color: var(--primary-color);
-}
+{% for category in categories %}
+  <h4>{{ category }}</h4>
+  <ul>
+    {% for project in site.data.projects %}
+      {% if project.category == category %}
+        <li>
+          <strong><a href="{{ project.url }}" target="_blank">{{ project.title }}</a></strong>
+          - {{ project.description }}
+          <br>
+          <small>
+            Technologies:
+            {% for tech in project.technologies %}
+              {{ tech }}{% unless forloop.last %}, {% endunless %}
+            {% endfor %}
+          </small>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endfor %}
 
-.project-item h4 a {
-  text-decoration: none;
-  color: inherit;
-}
+### Programming Languages & Technologies
 
-.project-item h4 a:hover {
-  color: var(--secondary-color);
-}
+Based on my project portfolio, here are the main technologies I work with:
 
-.project-item p {
-  margin-bottom: 1em;
-  color: var(--dark-gray);
-}
-</style>
+**Systems Programming:** C, C++
+**Enterprise Development:** Java, C#/.NET Core
+**Modern Development:** Kotlin, TypeScript, Python
+**Web Technologies:** Node.js, React, Django, FastAPI
+**Cloud & DevOps:** AWS, Docker, Kubernetes
+**Databases:** PostgreSQL, MongoDB, Redis
+**Security:** OpenPGP, JWT, OAuth2, Cryptography
+**Formal Methods:** TLA+, System Verification
+**Browser Technologies:** Chromium, V8, WebAssembly
 
-<script>
-// Add fade-in animation on scroll
-document.addEventListener('DOMContentLoaded', function() {
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
+### Open Source Contributions
 
-  const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, observerOptions);
+I'm an active contributor to the open-source community with contributions to:
 
-  document.querySelectorAll('.fade-in').forEach(el => {
-    observer.observe(el);
-  });
-});
-</script>
+- **Chromium Project** - Performance improvements and web platform features
+- **Developer Tools** - TypeScript utilities and VS Code extensions
+- **System Utilities** - Python automation and administration tools
+- **Security Tools** - GPG and cryptographic utilities
+
+### Contact for Collaboration
+
+Interested in collaborating on a project or discussing opportunities? Feel free to reach out:
+
+- **Email:** [sunhick@gmail.com](mailto:sunhick@gmail.com)
+- **GitHub:** [github.com/sunhick](https://github.com/sunhick)
+- **LinkedIn:** [linkedin.com/in/sunhick](https://linkedin.com/in/sunhick)

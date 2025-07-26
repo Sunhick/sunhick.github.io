@@ -110,7 +110,7 @@ A modern, responsive Jekyll-based portfolio website optimized for GitHub Pages h
    ```yaml
    - title: "Project Name"
      description: "Project description"
-     image: "/assets/images/projects/project.jpg"
+     image: "/public/images/projects/project.jpg"
      url: "https://github.com/yourusername/project"
      technologies: ["HTML", "CSS", "JavaScript"]
      featured: true
@@ -152,8 +152,8 @@ A modern, responsive Jekyll-based portfolio website optimized for GitHub Pages h
 
 ### Adding Images
 
-1. **Profile photo**: Add `profile.jpg` to `/assets/images/`
-2. **Project images**: Add to `/assets/images/projects/`
+1. **Profile photo**: Add `profile.jpg` to `/public/images/`
+2. **Project images**: Add to `/public/images/projects/`
 3. **Update image paths** in data files and pages
 
 ## 📝 Content Guidelines
