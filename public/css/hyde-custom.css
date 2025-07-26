@@ -440,3 +440,59 @@ h6,
 button {
     text-align: inherit !important;
 }
+
+/* REMOVE ALL PROGRESS BARS FROM SKILLS PAGE */
+.skills-section .skill-bar,
+.skills-section .skill-progress,
+.skills-section .skill-level,
+.skills-two-column .skill-bar,
+.skills-two-column .skill-progress,
+.skills-two-column .skill-level,
+.skill-bar,
+.skill-progress,
+.skill-level {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Ensure skill items don't have space for progress bars */
+.skills-section .skill-item,
+.skills-two-column .skill-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+}
+
+.skills-section .skill-info,
+.skills-two-column .skill-info {
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+}
+
+.skills-section .skill-name,
+.skills-two-column .skill-name {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.4 !important;
+}
+
+/* Remove any containers that might hold progress bars */
+.skills-section .progress-container,
+.skills-section .skill-progress-container,
+.skills-two-column .progress-container,
+.skills-two-column .skill-progress-container {
+    display: none !important;
+}
+
+/* Clean skill item layout without progress elements */
+.skills-section .skill-item>*:not(.skill-icon):not(.skill-info):not(.skill-name),
+.skills-two-column .skill-item>*:not(.skill-icon):not(.skill-info):not(.skill-name) {
+    display: none !important;
+}
