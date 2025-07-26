@@ -17,18 +17,9 @@ Here's a showcase of my work across different domains including device managemen
         <h3 class="project-title">{{ project.title }}</h3>
         <p class="project-description">{{ project.description }}</p>
 
-        <div class="project-tech">
-          {% for tech in project.technologies %}
-            <span class="tech-tag">{{ tech }}</span>
-          {% endfor %}
-        </div>
-
         <div class="project-links">
           {% if project.url %}
             <a href="{{ project.url }}" target="_blank">View Code</a>
-          {% endif %}
-          {% if project.demo_url %}
-            <a href="{{ project.demo_url }}" target="_blank">Live Demo</a>
           {% endif %}
         </div>
       </div>
