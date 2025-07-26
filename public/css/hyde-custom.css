@@ -334,3 +334,109 @@ body:not(.dark-theme) .profile-photo:hover {
 
 color: inherit !important;
 }
+
+/* Universal Text Justification for All Pages */
+p {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+    line-height: 1.6;
+}
+
+/* Content area text justification */
+.content p,
+.content li,
+.page p,
+.page li,
+.post p,
+.post li,
+.posts p,
+.posts li {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+}
+
+/* Specific page sections */
+.hero-section p,
+.hero-content p,
+.tech-stack p,
+.current-focus p,
+.current-focus li,
+.projects-section p,
+.contact-section p,
+.about-section p,
+.portfolio-section p,
+.skills-section p,
+.resume-section p {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+}
+
+/* Data-driven content */
+.project-description,
+.skill-description,
+.contact-info p,
+.availability-section p,
+.project-card p,
+.contact-item p {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+}
+
+/* Markdown-generated content */
+.page div p,
+.page section p,
+.page article p,
+.content div p,
+.content section p,
+.content article p {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+}
+
+/* List items with longer text */
+.content ul li,
+.content ol li,
+.page ul li,
+.page ol li,
+.post ul li,
+.post ol li {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+}
+
+/* Form and contact sections */
+.contact-grid p,
+.form-group p,
+.resume-actions p {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+}
+
+/* Override any center or left alignment for content paragraphs */
+.content p:not(.text-center):not(.text-left):not(.text-right),
+.page p:not(.text-center):not(.text-left):not(.text-right),
+.post p:not(.text-center):not(.text-left):not(.text-right) {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+}
+
+/* Keep headings left-aligned */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.page-title,
+.post-title,
+.project-title {
+    text-align: left !important;
+}
+
+/* Keep navigation and buttons centered/left as appropriate */
+.sidebar-nav,
+.sidebar-nav-item,
+.btn,
+button {
+    text-align: inherit !important;
+}
