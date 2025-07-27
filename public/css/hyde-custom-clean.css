@@ -1,0 +1,472 @@
+/*
+ * Hyde Theme Custom Styles
+ * Customized for Sunil Murthy's Portfolio
+ * Based on Poole and Hyde by @mdo
+ *
+ * Table of Contents:
+ * 1. CSS Custom Properties (Variables)
+ * 2. Base Typography & Layout
+ * 3. Profile Image Component
+ * 4. Skills Section Component
+ * 5. Projects Section Component
+ * 6. Theme Toggle Component
+ * 7. Responsive Design
+ * 8. Utility Classes
+ */
+
+/* ==========================================================================
+   1. CSS Custom Properties (Variables)
+   ========================================================================== */
+
+:root {
+    /* Theme Colors */
+    --primary-color: #dc322f;
+    --secondary-color: #cb4b16;
+    --accent-color: #e74c3c;
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
+    --text-color: #2c3e50;
+    --light-gray: #ecf0f1;
+    --dark-gray: #34495e;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* Typography */
+    --font-size-sm: 0.8rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.2rem;
+    --font-size-xl: 1.4rem;
+    --line-height-base: 1.6;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 20px;
+}
+
+/* ==========================================================================
+   2. Base Typography & Layout
+   ========================================================================== */
+
+/* Text Justification */
+p {
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: var(--line-height-base);
+}
+
+/* Content area text justification */
+.content p,
+.content li,
+.page p,
+.page li {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Keep headings left-aligned */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.page-title {
+    text-align: left;
+}
+
+/* ==========================================================================
+   3. Profile Image Component
+   ========================================================================== */
+
+.profile-image {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.profile-photo {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    border: 3px solid #ffffff;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Dark theme adjustments */
+.dark-theme .profile-photo {
+    border-color: #e0e0e0;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive profile image */
+@media (max-width: 768px) {
+    .profile-photo {
+        width: 150px;
+        height: 188px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-photo {
+        width: 120px;
+        height: 150px;
+    }
+}
+
+/* ==========================================================================
+   4. Skills Section Component
+   ========================================================================== */
+
+.skills-section,
+.skills-two-column {
+    margin: var(--spacing-lg) 0;
+}
+
+.skills-section .skill-category,
+.skills-two-column .skill-category {
+    margin-bottom: var(--spacing-lg);
+}
+
+.skills-section .skill-category h3,
+.skills-two-column .skill-category h3 {
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: var(--spacing-xs);
+}
+
+/* Individual skills in 2 columns */
+.skills-section .skill-item,
+.skills-two-column .skill-item {
+    display: flex;
+    align-items: center;
+    width: calc(50% - var(--spacing-xs));
+    padding: var(--spacing-xs);
+    margin-bottom: 0.75rem;
+    border-radius: var(--radius-sm);
+    background-color: rgba(220, 50, 47, 0.05);
+    transition: background-color var(--transition-base);
+    box-sizing: border-box;
+}
+
+.skills-section .skill-item:hover,
+.skills-two-column .skill-item:hover {
+    background-color: rgba(220, 50, 47, 0.1);
+}
+
+.skills-section .skill-icon,
+.skills-two-column .skill-icon {
+    width: 30px;
+    text-align: center;
+    margin-right: var(--spacing-sm);
+    color: var(--secondary-color);
+    font-size: var(--font-size-lg);
+    flex-shrink: 0;
+}
+
+.skills-section .skill-info,
+.skills-two-column .skill-info {
+    flex: 1;
+}
+
+.skills-section .skill-name,
+.skills-two-column .skill-name {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Hide progress bars and skill levels */
+.skill-bar,
+.skill-progress,
+.skill-level {
+    display: none;
+}
+
+/* Mobile: single column for skills */
+@media (max-width: 768px) {
+
+    .skills-section .skill-item,
+    .skills-two-column .skill-item {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+/* ==========================================================================
+   5. Projects Section Component
+   ========================================================================== */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.project-card {
+    background: #ffffff;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 12px rgba(220, 50, 47, 0.15);
+    overflow: hidden;
+    transition: all var(--transition-base);
+    position: relative;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(220, 50, 47, 0.25);
+    border-color: var(--secondary-color);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.project-content {
+    padding: var(--spacing-md);
+}
+
+.project-title {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.project-description {
+    color: var(--text-color);
+    line-height: var(--line-height-base);
+    text-align: justify;
+    text-justify: inter-word;
+    margin-bottom: 0;
+}
+
+/* Hide elements we don't want */
+.project-tech,
+.tech-tag,
+.project-links,
+.project-card::before {
+    display: none;
+}
+
+/* Other projects styling */
+.other-projects {
+    margin-top: var(--spacing-xl);
+}
+
+.project-item {
+    border-left: 4px solid var(--primary-color);
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    background: rgba(220, 50, 47, 0.05);
+    border-radius: var(--radius-md);
+}
+
+.project-item h4 {
+    margin-bottom: var(--spacing-xs);
+    color: var(--primary-color);
+}
+
+.project-item h4 a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-base);
+}
+
+.project-item h4 a:hover {
+    color: var(--secondary-color);
+}
+
+.project-item p {
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-color);
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Responsive projects */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+}
+
+/* ==========================================================================
+   6. Theme Toggle Component
+   ========================================================================== */
+
+.theme-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: var(--secondary-color);
+    color: white;
+    font-size: var(--font-size-lg);
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle-btn:hover {
+    background: var(--primary-color);
+    transform: scale(1.1);
+    box-shadow: var(--shadow-lg);
+}
+
+.theme-toggle-btn:active {
+    transform: scale(0.95);
+}
+
+.theme-toggle-btn:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* Dark theme button styling */
+.dark-theme .theme-toggle-btn {
+    background: #6a9fb5;
+}
+
+.dark-theme .theme-toggle-btn:hover {
+    background: #5a8fa5;
+}
+
+/* ==========================================================================
+   7. Responsive Design
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    :root {
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --spacing-sm: 0.75rem;
+        --spacing-md: 1rem;
+        --spacing-lg: 1.25rem;
+        --spacing-xl: 1.5rem;
+    }
+
+    .theme-toggle-btn {
+        top: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+}
+
+/* ==========================================================================
+   8. Utility Classes
+   ========================================================================== */
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-sm {
+    margin-bottom: var(--spacing-sm);
+}
+
+.mb-md {
+    margin-bottom: var(--spacing-md);
+}
+
+.mb-lg {
+    margin-bottom: var(--spacing-lg);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   9. Print Styles
+   ========================================================================== */
+
+@media print {
+
+    .theme-toggle-btn,
+    .sidebar {
+        display: none;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .project-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}
