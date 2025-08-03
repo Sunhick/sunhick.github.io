@@ -325,16 +325,6 @@ body:not(.dark-theme) .profile-photo:hover {
     }
 }
 
-
-
-
-
-
-
-
-color: inherit !important;
-}
-
 /* Universal Text Justification for All Pages */
 p {
     text-align: justify !important;

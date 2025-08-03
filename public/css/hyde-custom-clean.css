@@ -280,8 +280,6 @@ h6,
 }
 
 /* Hide elements we don't want */
-.project-tech,
-.tech-tag,
 .project-links,
 .project-card::before {
     display: none;
