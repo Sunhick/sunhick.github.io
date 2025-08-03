@@ -532,3 +532,17 @@ body:not(.dark-theme) .project-card {
     padding: 1.5rem !important;
     border-radius: 8px !important;
 }
+
+/* Update contact cards to match project card styling */
+body:not(.dark-theme) .contact-item {
+    background-color: var(--off-white) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    border: none !important;
+}
+
+body:not(.dark-theme) .contact-item:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
