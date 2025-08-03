@@ -514,7 +514,21 @@ body:not(.dark-theme) .project-card {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-body:not(.dark-theme) .tech-stack,
-body:not(.dark-theme) .current-focus {
-    background-color: var(--off-white);
+/* Remove container styling for tech-stack and current-focus */
+.tech-stack,
+.current-focus {
+    background: none !important;
+    border: none !important;
+    border-left: none !important;
+    padding: 0 !important;
+    margin: 2rem 0 !important;
+}
+
+/* Keep dark theme containers for better readability in dark mode */
+.dark-theme .tech-stack,
+.dark-theme .current-focus {
+    background: #2d2d2d !important;
+    border-left: 4px solid #6a9fb5 !important;
+    padding: 1.5rem !important;
+    border-radius: 8px !important;
 }
