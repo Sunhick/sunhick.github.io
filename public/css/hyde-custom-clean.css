@@ -164,7 +164,7 @@ h6,
 .skills-two-column .skill-item {
     display: flex;
     align-items: center;
-    width: calc(50% - var(--spacing-xs));
+    width: 100%;
     padding: var(--spacing-xs);
     margin-bottom: 0.75rem;
     border-radius: var(--radius-sm);
