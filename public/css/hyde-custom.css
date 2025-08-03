@@ -14,6 +14,16 @@
     --text-color: #2c3e50;
     --light-gray: #ecf0f1;
     --dark-gray: #34495e;
+    --off-white: #fdf6f0;
+}
+
+/* Off-white background for the main content area */
+body {
+    background-color: var(--off-white);
+}
+
+.content {
+    background-color: var(--off-white);
 }
 
 /* Custom Typography */
@@ -170,7 +180,7 @@ a.btn-download i,
 }
 
 .project-card {
-    background: white;
+    background: var(--off-white);
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -487,4 +497,24 @@ button {
 .skills-section .skill-item>*:not(.skill-icon):not(.skill-info):not(.skill-name),
 .skills-two-column .skill-item>*:not(.skill-icon):not(.skill-info):not(.skill-name) {
     display: none !important;
+}
+
+/* Light theme adjustments - ensure off-white background */
+body:not(.dark-theme) {
+    background-color: var(--off-white) !important;
+}
+
+body:not(.dark-theme) .content {
+    background-color: var(--off-white) !important;
+}
+
+/* Ensure project cards and other elements work well with off-white background */
+body:not(.dark-theme) .project-card {
+    background-color: var(--off-white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body:not(.dark-theme) .tech-stack,
+body:not(.dark-theme) .current-focus {
+    background-color: var(--off-white);
 }
