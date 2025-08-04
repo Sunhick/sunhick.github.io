@@ -5,6 +5,14 @@ permalink: /resume-html/
 ---
 
 <div class="resume-html-container">
+    <!-- PDF Download Link -->
+    <div class="resume-download-section">
+        <a href="{{ site.baseurl }}/public/resume/Sunil_Murthy_Resume.pdf" class="resume-download-btn" download>
+            <i class="fas fa-download"></i>
+            Download PDF Resume
+        </a>
+    </div>
+
     <!-- Header Section -->
     <header class="resume-header">
         <h1 class="resume-name">Sunil Murthy</h1>
