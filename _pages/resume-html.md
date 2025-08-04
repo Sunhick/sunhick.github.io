@@ -7,24 +7,26 @@ permalink: /resume-html/
 <div class="resume-html-container">
     <!-- Header Section -->
     <header class="resume-header">
+        <h1 class="resume-name">Sunil Murthy</h1>
         <div class="resume-contact-info">
-            <h1 class="resume-name">Sunil Murthy</h1>
             <div class="resume-contact-details">
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
-                    <span>sunilmurthy@example.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <span>linkedin.com/in/sunil-murthy</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <span>github.com/sunhick</span>
+                    <span>sunhick@gmail.com</span>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-globe"></i>
                     <span>sunhick.github.io</span>
+                </div>
+            </div>
+            <div class="resume-contact-details">
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>linkedin.com/in/sunhick</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <span>github.com/sunhick</span>
                 </div>
             </div>
         </div>
@@ -156,33 +158,27 @@ permalink: /resume-html/
         <h2 class="section-title">Projects</h2>
         <div class="section-content">
             <div class="project-item">
-                <h3 class="project-title">Music recommender system [2016]</h3>
-                <p class="project-description">A personal music recommender system using user preference analysis. I used hybrid model approach which is a combination of collaborative and content based filtering. Apart from recommender system I also build a automatic genre classifier. I used Apache spark (map-reduce) for processing large data-set and Mlib (part of spark) for constructing a model.</p>
+                <span class="project-title">Music recommender system [2016]</span> <span class="project-description">A personal music recommender system using user preference analysis. I used hybrid model approach which is a combination of collaborative and content based filtering. Apart from recommender system I also build a automatic genre classifier. I used Apache spark (map-reduce) for processing large data-set and Mlib (part of spark) for constructing a model.</span>
             </div>
 
             <div class="project-item">
-                <h3 class="project-title">pyFFT [2016]</h3>
-                <p class="project-description">The python implementation of Fast Fourier transformations and Discrete Fourier transformations.</p>
+                <span class="project-title">pyFFT [2016]</span> <span class="project-description">The python implementation of Fast Fourier transformations and Discrete Fourier transformations.</span>
             </div>
 
             <div class="project-item">
-                <h3 class="project-title">YPOD [2016]</h3>
-                <p class="project-description">The YPOD is an embedded-systems platform developed at the University of Colorado at Boulder intended for mobile air quality and environmental monitoring. The configurable design accommodates a variety of sensors, making it a valuable tool for a multitude of applications.</p>
+                <span class="project-title">YPOD [2016]</span> <span class="project-description">The YPOD is an embedded-systems platform developed at the University of Colorado at Boulder intended for mobile air quality and environmental monitoring. The configurable design accommodates a variety of sensors, making it a valuable tool for a multitude of applications.</span>
             </div>
 
             <div class="project-item">
-                <h3 class="project-title">Distributed File Server [2015]</h3>
-                <p class="project-description">Client/server based application that allows client to store and retrieve files from multiple servers. Support for simultaneous multiple users, authentication and data encryption using AES.</p>
+                <span class="project-title">Distributed File Server [2015]</span> <span class="project-description">Client/server based application that allows client to store and retrieve files from multiple servers. Support for simultaneous multiple users, authentication and data encryption using AES.</span>
             </div>
 
             <div class="project-item">
-                <h3 class="project-title">Web server [2015]</h3>
-                <p class="project-description">Implementation of HTTP web server in C++11. Supports handling of multiple clients, HTTP 1.0 and HTTP 1.1, persistent connection (pipe-lining). Brings up the web server based on the web configuration file.</p>
+                <span class="project-title">Web server [2015]</span> <span class="project-description">Implementation of HTTP web server in C++11. Supports handling of multiple clients, HTTP 1.0 and HTTP 1.1, persistent connection (pipe-lining). Brings up the web server based on the web configuration file.</span>
             </div>
 
             <div class="project-item">
-                <h3 class="project-title">Screen Recorder [2014]</h3>
-                <p class="project-description">Screen recorder records all screen activity on your computer and create a video file using FFMPEG encoder. It is written in C#. It let's you save the video in the required format (MP4, AVI, MKV etc.).</p>
+                <span class="project-title">Screen Recorder [2014]</span> <span class="project-description">Screen recorder records all screen activity on your computer and create a video file using FFMPEG encoder. It is written in C#. It let's you save the video in the required format (MP4, AVI, MKV etc.).</span>
             </div>
         </div>
     </section>

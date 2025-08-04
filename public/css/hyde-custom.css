@@ -547,96 +547,106 @@ body:not(.dark-theme) .contact-item:hover {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* HTML Resume Styling */
+/* HTML Resume Styling - Match PDF Layout */
 .resume-html-container {
-    max-width: 800px;
+    max-width: 8.5in;
     margin: 0 auto;
     background-color: var(--off-white);
-    padding: 2rem;
-    line-height: 1.6;
-    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    padding: 0.6in 0.75in 0.6in 0.5in;
+    line-height: 1.4;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 11pt;
+    color: black;
 }
 
-/* Resume Header */
+/* Resume Header - Match PDF Layout */
 .resume-header {
     text-align: center;
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 2px solid var(--secondary-color);
+    margin-bottom: 1.5rem;
 }
 
 .resume-name {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
+    font-size: 18pt;
+    font-weight: bold;
+    color: black;
     margin-bottom: 1rem;
-    font-family: "Abril Fatface", serif;
+    font-family: 'Times New Roman', Times, serif;
+    display: block;
+    width: 100%;
+}
+
+.resume-contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    clear: both;
+    width: 100%;
 }
 
 .resume-contact-details {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    width: 45%;
+}
+
+.resume-contact-details:first-child {
+    text-align: left;
+}
+
+.resume-contact-details:last-child {
+    text-align: right;
 }
 
 .resume-contact-details .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--text-color);
-    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.2rem;
+    color: black;
+    font-size: 11pt;
+    line-height: 1.2;
 }
 
 .resume-contact-details .contact-item i {
-    color: var(--secondary-color);
+    color: black;
     width: 16px;
+    margin-right: 0.3rem;
 }
 
-/* Resume Sections */
+/* Resume Sections - Match PDF Layout */
 .resume-section {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .section-title {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--secondary-color);
+    font-size: 11pt;
+    font-weight: normal;
+    color: black;
+    margin-bottom: 0.3rem;
+    padding-bottom: 0.1rem;
+    border-bottom: 1px solid black;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    font-variant: small-caps;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .section-content {
-    margin-left: 0;
+    margin-left: 0.75em;
+    margin-top: 0.3rem;
 }
 
-/* Skills Grid */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-}
-
-.skill-category h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--secondary-color);
-    margin-bottom: 0.5rem;
-}
-
-.skill-category p {
+/* Skills - Match PDF Layout */
+.section-content p {
     margin: 0;
-    color: var(--text-color);
+    color: black;
+    font-size: 11pt;
+    line-height: 1.4;
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-/* Experience Items */
+/* Experience Items - Match PDF Layout */
 .experience-item {
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
 .experience-item:last-child {
@@ -646,16 +656,17 @@ body:not(.dark-theme) .contact-item:hover {
 .experience-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 0.5rem;
-    flex-wrap: wrap;
+    align-items: baseline;
+    margin-bottom: 0.2rem;
+    line-height: 1.2;
 }
 
 .job-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--primary-color);
+    font-size: 11pt;
+    font-weight: bold;
+    color: black;
     margin: 0;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .company-info {
@@ -666,75 +677,94 @@ body:not(.dark-theme) .contact-item:hover {
 }
 
 .company-name {
-    font-weight: 600;
-    color: var(--secondary-color);
-    font-size: 1rem;
+    font-weight: normal;
+    color: black;
+    font-size: 11pt;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .job-duration {
-    font-size: 0.9rem;
-    color: var(--dark-gray);
+    font-size: 11pt;
+    color: black;
     font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .job-location {
-    color: var(--dark-gray);
-    font-size: 0.9rem;
-    margin-bottom: 0.75rem;
+    display: none;
 }
 
 .job-responsibilities {
     margin: 0;
-    padding-left: 1.2rem;
+    padding-left: 0;
+    list-style: none;
 }
 
 .job-responsibilities li {
     margin-bottom: 0.5rem;
-    color: var(--text-color);
+    color: black;
+    font-size: 11pt;
+    line-height: 1.4;
+    position: relative;
+    padding-left: 1em;
 }
 
-/* Education Items */
+.job-responsibilities li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+}
+
+/* Education Items - Match PDF Layout */
 .education-item {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .education-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-    flex-wrap: wrap;
+    align-items: baseline;
+    margin-bottom: 0.2rem;
+    line-height: 1.2;
 }
 
 .degree {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--primary-color);
+    font-size: 11pt;
+    font-weight: bold;
+    color: black;
     margin: 0;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .graduation-year {
-    font-weight: 600;
-    color: var(--secondary-color);
+    font-weight: normal;
+    color: black;
+    font-style: italic;
+    font-size: 11pt;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .university {
-    color: var(--secondary-color);
-    font-weight: 500;
-    margin-bottom: 0.5rem;
+    color: black;
+    font-weight: normal;
+    margin-bottom: 0.2rem;
+    font-size: 11pt;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .education-details p {
-    margin: 0;
-    color: var(--text-color);
-    font-size: 0.95rem;
+    margin: 0 0 0.2rem 0;
+    color: black;
+    font-size: 11pt;
+    line-height: 1.4;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-/* Project Items */
+/* Project Items - Match PDF Layout */
 .project-item {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
 .project-item:last-child {
@@ -742,22 +772,26 @@ body:not(.dark-theme) .contact-item:hover {
 }
 
 .project-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 0.25rem;
+    font-size: 11pt;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 0.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    display: inline;
 }
 
 .project-tech {
-    font-size: 0.85rem;
-    color: var(--secondary-color);
-    font-weight: 500;
-    margin-bottom: 0.5rem;
+    display: none;
 }
 
 .project-description {
     margin: 0;
-    color: var(--text-color);
+    color: black;
+    font-size: 11pt;
+    line-height: 1.4;
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+    display: inline;
 }
 
 /* Certifications */
@@ -910,4 +944,17 @@ body:not(.dark-theme) .contact-item:hover {
     background: none !important;
     transform: none !important;
     box-shadow: none !important;
+}
+
+/* Ensure proper line breaks in resume header */
+.resume-header h1 {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.resume-header .resume-contact-info {
+    display: flex;
+    width: 100%;
+    margin-top: 1rem;
 }
