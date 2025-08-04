@@ -1,6 +1,6 @@
 # Sunil Murthy - Personal Portfolio Website
 
-A modern, responsive Jekyll-based portfolio website built with the Hyde theme and optimized for GitHub Pages hosting. This website showcases projects, skills, and professional information in a clean, professional design with a distinctive sidebar layout.
+A modern, responsive Jekyll-based portfolio website built with the Hyde theme and optimized for GitHub Pages hosting. This website showcases projects, skills, and professional information in a clean, professional design with a distinctive sidebar layout and warm 3500K color temperature for comfortable viewing.
 
 ## 🚀 Features
 
@@ -8,11 +8,14 @@ A modern, responsive Jekyll-based portfolio website built with the Hyde theme an
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
 - **Jekyll-Powered**: Static site generation with easy content management
 - **Portfolio Showcase**: Dynamic project display with filtering capabilities
-- **Skills Visualization**: Interactive skill bars and expertise sections
-- **Contact Integration**: Professional contact page with secure communication options
+- **Skills Visualization**: Clean skills presentation without progress bars
+- **Contact Integration**: Professional contact page with card-based layout
+- **Resume Integration**: Both PDF and native HTML resume versions
 - **SEO Optimized**: Proper meta tags, structured data, and search engine optimization
 - **GitHub Pages Ready**: Seamless deployment with GitHub Pages
 - **Dark Theme Support**: Professional dark theme with customizable colors
+- **Warm Color Scheme**: 3500K warm background for comfortable reading
+- **Development Tools**: Comprehensive Makefile for development workflow
 
 ## 📁 Project Structure
 
@@ -29,28 +32,20 @@ A modern, responsive Jekyll-based portfolio website built with the Hyde theme an
 │   ├── page.html           # Standard page layout
 │   └── post.html           # Blog post layout
 ├── _pages/                  # Site pages (organized in subdirectory)
-│   ├── about.md            # About page
-│   ├── contact.md          # Contact page with GPG integration
+│   ├── index.md            # Home page content
 │   ├── portfolio.md        # Portfolio showcase
-│   ├── resume.md           # Resume with PDF viewer
-│   └── skills.md           # Skills and expertise
+│   └── resume-html.md      # Native HTML resume version
 ├── public/                  # Static assets (Hyde theme convention)
 │   ├── css/                # Stylesheets
 │   │   ├── hyde.css        # Hyde theme styles
-│   │   ├── hyde-custom.css # Custom theme overrides
-│   │   ├── main.scss       # Main stylesheet with customizations
-│   │   ├── poole.css       # Base Poole styles
-│   │   └── syntax.css      # Code syntax highlighting
+│   │   ├── hyde-custom.css # Custom theme overrides with warm colors
+│   │   └── hyde-custom-clean.css # Alternative clean theme
 │   ├── images/             # Images and media files
-│   │   ├── profile.jpg     # Profile photo
-│   │   └── projects/       # Project screenshots
-│   ├── js/                 # JavaScript files
-│   │   └── main.js         # Custom JavaScript functionality
-│   ├── resume/             # Resume files
-│   │   └── Sunil_Murthy_Resume.pdf
-│   ├── favicon.ico         # Site favicon
-│   └── apple-touch-icon-144-precomposed.png
+│   │   └── profile.jpg     # Profile photo (rectangular format)
+│   └── resume/             # Resume files
+│       └── Sunil_Murthy_Resume.pdf
 ├── index.html              # Home page with hero section
+├── Makefile                # Development workflow automation
 ├── Gemfile                 # Ruby dependencies
 └── README.md               # This file
 ```
@@ -63,133 +58,185 @@ A modern, responsive Jekyll-based portfolio website built with the Hyde theme an
 - Bundler gem
 - Git
 
-### Local Development
+### Quick Start with Makefile
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/your-portfolio.git
-   cd your-portfolio
+   git clone https://github.com/sunhick/sunhick.github.io.git
+   cd sunhick.github.io
    ```
 
-2. **Install dependencies**
+2. **Full development setup**
    ```bash
-   bundle install --path vendor/bundle
+   make dev
    ```
+   This will clean, install dependencies, and start the development server with hot-reload.
 
-3. **Run locally**
-   ```bash
-   bundle exec jekyll serve
-   ```
-
-4. **View in browser**
+3. **View in browser**
    Open `http://localhost:4000` in your browser
+
+### Manual Setup
+
+1. **Install dependencies**
+   ```bash
+   make install
+   # or manually: bundle install
+   ```
+
+2. **Start development server**
+   ```bash
+   make serve
+   # or manually: bundle exec jekyll serve --livereload
+   ```
+
+3. **Stop server**
+   ```bash
+   make stop
+   ```
+
+## 🔧 Makefile Commands
+
+This project includes a comprehensive Makefile for streamlined development:
+
+### Development Commands
+```bash
+make serve          # Start development server with hot-reload
+make serve-prod     # Start server with production settings
+make serve-port PORT=3000  # Start on custom port
+make build          # Build for production
+make clean          # Clean generated files
+make stop           # Stop all running Jekyll instances
+```
+
+### Content Creation
+```bash
+make new-post TITLE="My New Post"    # Create new blog post
+make new-page NAME="about"           # Create new page
+```
+
+### Deployment & Git
+```bash
+make deploy         # Build and deploy to GitHub Pages
+make push           # Git add, commit, and push
+make pull           # Pull latest changes
+```
+
+### Shortcuts
+```bash
+make s              # Shortcut for serve
+make b              # Shortcut for build
+make c              # Shortcut for clean
+make d              # Shortcut for deploy
+```
+
+### Utility Commands
+```bash
+make help           # Show all available commands
+make info           # Show environment information
+make doctor         # Check for Jekyll issues
+make update         # Update dependencies
+```
 
 ### GitHub Pages Deployment
 
-1. **Enable GitHub Pages**
-   - Go to your repository settings
-   - Navigate to "Pages" section
-   - Select "GitHub Actions" as the source
+1. **Deploy using Makefile**
+   ```bash
+   make deploy
+   ```
 
-2. **Push to main branch**
+2. **Manual deployment**
    ```bash
    git add .
-   git commit -m "Initial portfolio setup"
+   git commit -m "Update portfolio"
    git push origin main
    ```
 
 3. **Automatic deployment**
-   - GitHub Actions will automatically build and deploy your site
-   - Your site will be available at `https://yourusername.github.io`
+   - GitHub Pages will automatically build and deploy your site
+   - Your site will be available at `https://sunhick.github.io`
 
 ## 🎨 Customization Guide
+
+### Color Scheme
+
+The site uses a warm 3500K color temperature for comfortable viewing:
+
+```css
+:root {
+    --off-white: #fdf6f0;  /* Warm 3500K background */
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+}
+```
 
 ### Personal Information
 
 1. **Update _config.yml**
    ```yaml
-   title: "Your Name"
-   tagline: "Your Professional Tagline"
-   description: "Your professional description"
-   url: "https://yourusername.github.io"
+   title: "Sunil Murthy"
+   tagline: "Software Engineer"
+   description: "Personal portfolio and resume"
+   url: "https://sunhick.github.io"
 
    author:
-     name: "Your Name"
-     email: "your.email@example.com"
-
-   # Social links (Hyde theme format)
-   social:
-     github: "yourusername"
-     linkedin: "yourprofile"
-     email: "your.email@example.com"
+     name: "Sunil Murthy"
+     email: "sunhick@gmail.com"
    ```
 
-2. **Update navigation**
-   ```yaml
-   nav:
-     - name: "Home"
-       url: "/"
-     - name: "About"
-       url: "/about/"
-     - name: "Portfolio"
-       url: "/portfolio/"
-     - name: "Skills"
-       url: "/skills/"
-     - name: "Contact"
-       url: "/contact/"
-   ```
+2. **Update home page content**
+   Edit `_pages/index.md` to customize:
+   - Professional summary
+   - Technology stack
+   - Current focus areas
 
-### Content Management
+### Resume Management
 
-1. **Projects (_data/projects.yml)**
-   ```yaml
-   - title: "Project Name"
-     description: "Project description"
-     image: "/public/images/projects/project.jpg"
-     url: "https://github.com/yourusername/project"
-     technologies: ["HTML", "CSS", "JavaScript"]
-     featured: true
-   ```
+This portfolio includes both PDF and HTML resume versions:
 
-2. **Skills (_data/skills.yml)**
-   ```yaml
-   - category: "Frontend Development"
-     skills:
-       - name: "HTML/CSS"
-         level: 90
-         icon: "fab fa-html5"
-       - name: "JavaScript"
-         level: 85
-         icon: "fab fa-js-square"
-   ```
+1. **PDF Resume**
+   - Located at `public/resume/Sunil_Murthy_Resume.pdf`
+   - Generated from LaTeX source at `/Users/sunilmur/prv/github/resume`
+   - Update using: `make resume-update`
 
-### Styling Customization
+2. **HTML Resume**
+   - Native HTML version at `/resume-html/`
+   - Matches PDF formatting exactly
+   - Includes download link to PDF version
+   - Fully searchable and SEO-friendly
 
-1. **Colors (public/css/main.scss)**
-   ```scss
-   :root {
-     --primary-color: #2c3e50;
-     --secondary-color: #3498db;
-     --accent-color: #e74c3c;
-     --success-color: #27ae60;
-     --text-color: #2c3e50;
-     --light-gray: #ecf0f1;
-     --dark-gray: #34495e;
-   }
-   ```
+3. **Updating Resume Content**
+   - Edit LaTeX source files in the resume repository
+   - Rebuild PDF and copy to `public/resume/`
+   - Update HTML version in `_pages/resume-html.md`
 
-2. **Hyde Theme Customization (public/css/hyde-custom.css)**
+### Styling Features
+
+1. **Warm Color Scheme**
+   - 3500K warm background (`#fdf6f0`) for comfortable reading
+   - Consistent warm tones throughout the site
+   - Professional appearance with cozy feel
+
+2. **Component Styling**
    ```css
-   /* Custom sidebar colors */
-   .sidebar {
-     background-color: #your-color;
+   /* Remove containers for clean look */
+   .tech-stack, .current-focus {
+     background: none;
+     border: none;
+     padding: 0;
    }
 
-   /* Custom link colors */
-   .sidebar-nav-item {
-     color: #your-color;
+   /* Contact cards with warm background */
+   .contact-item {
+     background-color: var(--off-white);
+     border: 1px solid #e8ddd4;
    }
    ```
+
+3. **Profile Image**
+   - Rectangular format (200x250px)
+   - Rounded corners with hover effects
+   - Responsive sizing for mobile devices
 
 ### Adding Images
 
@@ -315,28 +362,66 @@ This portfolio includes several security features:
 - **Secure Asset Loading**: All assets loaded over HTTPS
 - **Content Security**: No external dependencies that could compromise security
 
-## 🎯 Next Steps
+## 🎯 Development Workflow
 
-After setting up your portfolio:
+### Daily Development
+```bash
+# Start development
+make serve
 
-1. **Customize content** with your personal information in `_config.yml`
-2. **Add your projects** to `_data/projects.yml`
-3. **Upload images** to `public/images/` and `public/images/projects/`
-4. **Update skills** in `_data/skills.yml`
-5. **Customize colors** in `public/css/hyde-custom.css`
-6. **Add your resume** to `public/resume/`
-7. **Test responsiveness** on different devices
-8. **Set up analytics** (Google Analytics, etc.)
-9. **Optimize for SEO** with proper meta descriptions
-10. **Deploy to GitHub Pages**
+# Make changes to files (hot-reload will update automatically)
 
-## 🚀 Deployment
+# Stop server when done
+make stop
+```
 
-This site is configured for automatic deployment to GitHub Pages:
+### Content Updates
+```bash
+# Update home page content
+vim _pages/index.md
 
-1. Push changes to the `main` branch
-2. GitHub Actions will automatically build and deploy
-3. Site will be available at `https://yourusername.github.io`
+# Update portfolio projects
+vim _pages/portfolio.md
+
+# Update resume
+vim _pages/resume-html.md
+```
+
+### Deployment
+```bash
+# Deploy changes
+make deploy
+
+# Or manually
+make build
+make push
+```
+
+### Resume Updates
+```bash
+# Check for resume source updates
+make resume-update
+
+# Update HTML resume to match PDF changes
+vim _pages/resume-html.md
+```
+
+## 🚀 Live Site
+
+The portfolio is live at: **https://sunhick.github.io**
+
+### Key Pages
+- **Home**: Professional summary and technology stack
+- **Portfolio**: Featured projects and work samples
+- **Resume (HTML)**: Native HTML resume with PDF download
+- **Contact**: Professional contact information
+
+### Features
+- **Responsive Design**: Works on all devices
+- **Dark Theme**: Automatic theme switching
+- **Warm Colors**: 3500K color temperature for comfortable viewing
+- **Fast Loading**: Optimized for performance
+- **SEO Friendly**: Proper meta tags and structure
 
 ## 📊 Analytics & Monitoring
 
