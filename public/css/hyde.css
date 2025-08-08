@@ -62,12 +62,6 @@ html {
     background-color: #202020;
 }
 
-.dark-theme .sidebar {
-    background-color: #000000;
-    border-right: 1px solid #333333;
-    color: rgba(255, 255, 255, .8);
-}
-
 @media (min-width: 48em) {
     .sidebar {
         position: fixed;
@@ -219,14 +213,14 @@ a.sidebar-nav-item:focus {
 
 /* Base16 (http://chriskempson.github.io/base16/#default) */
 
-/* Black Theme */
+/* Red */
 .theme-base-08 .sidebar {
-    background-color: #1a1a1a;
+    background-color: #ac4142;
 }
 
 .theme-base-08 .content a,
 .theme-base-08 .related-posts li a:hover {
-    color: #ffffff;
+    color: #ac4142;
 }
 
 /* Orange */
@@ -540,284 +534,139 @@ a.sidebar-nav-item:focus {
     color: #ffffff;
 }
 
-/* Light theme code and content elements */
-code {
-    background-color: #f9f9f9;
-    color: #bf616a;
-    border: 1px solid #e5e5e5;
-}
-
-pre {
-    background-color: #f9f9f9;
-    border: 1px solid #e5e5e5;
-}
-
-blockquote {
-    color: #7a7a7a;
-    border-left-color: #e5e5e5;
-}
-
-table {
-    border-color: #e5e5e5;
-}
-
-td,
-th {
-    border-color: #e5e5e5;
-    color: #515151;
-}
-
-tbody tr:nth-child(odd) td,
-tbody tr:nth-child(odd) th {
-    background-color: #f9f9f9;
-}
-
-hr {
-    border-top-color: #e5e5e5;
-    border-bottom-color: #f9f9f9;
-}
-
 .dark-theme code {
-    background-color: #1a1a1a !important;
-    color: #ffffff !important;
-    border: 1px solid #333333 !important;
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    border: 1px solid #404040;
 }
 
 .dark-theme pre {
-    background-color: #1a1a1a !important;
-    border: 1px solid #333333 !important;
+    background-color: #2d2d2d;
+    border: 1px solid #404040;
 }
 
 .dark-theme blockquote {
-    color: #cccccc !important;
-    border-left-color: #333333 !important;
+    color: #b0b0b0;
+    border-left-color: #404040;
 }
 
 .dark-theme table {
-    border-color: #333333 !important;
+    border-color: #404040;
 }
 
 .dark-theme td,
 .dark-theme th {
-    border-color: #333333 !important;
-    color: #e0e0e0 !important;
+    border-color: #404040;
 }
 
 .dark-theme tbody tr:nth-child(odd) td,
 .dark-theme tbody tr:nth-child(odd) th {
-    background-color: #1a1a1a !important;
+    background-color: #2d2d2d;
 }
 
 .dark-theme hr {
-    border-top-color: #333333 !important;
-    border-bottom-color: #1a1a1a !important;
-}
-
-/* Light theme project cards */
-.project-card {
-    background: #f9f9f9;
-    border-radius: 8px;
-    padding: 1.5rem;
-    border-left: 4px solid #ac4142;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.project-title {
-    color: #313131;
-}
-
-.project-description {
-    color: #515151;
-}
-
-.tech-tag {
-    background: #ac4142;
-    color: white;
-}
-
-.project-links a {
-    color: #ac4142;
-}
-
-.project-links a:hover {
-    color: #8f3536;
+    border-top-color: #404040;
+    border-bottom-color: #2d2d2d;
 }
 
 /* Dark theme project cards */
 .dark-theme .project-card {
-    background-color: #1a1a1a !important;
-    border-left-color: #ffffff !important;
-    color: #e0e0e0 !important;
-    border: 1px solid #333333 !important;
+    background-color: #2d2d2d;
+    border-left-color: #6a9fb5;
+    color: #e0e0e0;
 }
 
 .dark-theme .project-card:hover {
-    background-color: #2d2d2d !important;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1) !important;
+    background-color: #333333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .dark-theme .project-title {
-    color: #ffffff !important;
+    color: #ffffff;
 }
 
 .dark-theme .project-description {
-    color: #e0e0e0 !important;
+    color: #e0e0e0;
 }
 
 .dark-theme .tech-tag {
-    background-color: #333333 !important;
-    color: #ffffff !important;
-    border: 1px solid #555555 !important;
+    background-color: #6a9fb5;
+    color: #ffffff;
 }
 
 .dark-theme .project-links a {
-    color: #ffffff !important;
+    color: #6a9fb5;
 }
 
 .dark-theme .project-links a:hover {
-    color: #cccccc !important;
-}
-
-/* Light theme skills section */
-.skills-section h3 {
-    color: #313131;
-    border-bottom-color: #ac4142;
-}
-
-.skill-item {
-    background-color: #f9f9f9;
-    color: #515151;
-}
-
-.skill-icon {
-    color: #ac4142;
-}
-
-.skill-name {
-    color: #313131;
-}
-
-.skill-bar {
-    background-color: #e5e5e5;
-}
-
-.skill-progress {
-    background: linear-gradient(90deg, #ac4142, #d28445);
-}
-
-.skill-level {
-    color: #ac4142;
+    color: #8bb5c7;
 }
 
 /* Dark theme skills section */
 .dark-theme .skills-section h3 {
-    color: #ffffff !important;
-    border-bottom-color: #ffffff !important;
+    color: #ffffff;
+    border-bottom-color: #6a9fb5;
 }
 
 .dark-theme .skill-item {
-    background-color: #1a1a1a !important;
-    color: #e0e0e0 !important;
-    border: 1px solid #333333 !important;
+    background-color: #2d2d2d;
+    color: #e0e0e0;
 }
 
 .dark-theme .skill-icon {
-    color: #ffffff !important;
+    color: #6a9fb5;
 }
 
 .dark-theme .skill-name {
-    color: #ffffff !important;
+    color: #ffffff;
 }
 
 .dark-theme .skill-bar {
-    background-color: #333333 !important;
+    background-color: #404040;
 }
 
 .dark-theme .skill-progress {
-    background: linear-gradient(90deg, #ffffff, #cccccc) !important;
+    background: linear-gradient(90deg, #6a9fb5, #8bb5c7);
 }
 
 .dark-theme .skill-level {
-    color: #ffffff !important;
-}
-
-/* Light theme contact section */
-.contact-item {
-    background: #f9f9f9;
-    color: #515151;
-}
-
-.contact-icon {
-    color: #ac4142;
-}
-
-.contact-form input,
-.contact-form textarea {
-    background-color: #ffffff;
-    border-color: #ddd;
-    color: #515151;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: #ac4142;
-    outline: none;
-}
-
-.contact-form label {
-    color: #313131;
-}
-
-.btn {
-    background: #ac4142;
-    color: white;
-}
-
-.btn:hover {
-    background: #8f3536;
+    color: #6a9fb5;
 }
 
 /* Dark theme contact section */
 .dark-theme .contact-item {
-    background-color: #1a1a1a !important;
-    color: #e0e0e0 !important;
-    border: 1px solid #333333 !important;
+    background-color: #2d2d2d;
+    color: #e0e0e0;
 }
 
 .dark-theme .contact-icon {
-    color: #ffffff !important;
+    color: #6a9fb5;
 }
 
 .dark-theme .contact-form input,
 .dark-theme .contact-form textarea {
-    background-color: #1a1a1a !important;
-    border-color: #333333 !important;
-    color: #e0e0e0 !important;
+    background-color: #2d2d2d;
+    border-color: #404040;
+    color: #e0e0e0;
 }
 
 .dark-theme .contact-form input:focus,
 .dark-theme .contact-form textarea:focus {
-    border-color: #ffffff !important;
-    outline: none !important;
+    border-color: #6a9fb5;
+    outline: none;
 }
 
 .dark-theme .contact-form label {
-    color: #ffffff !important;
+    color: #ffffff;
 }
 
 .dark-theme .btn {
-    background-color: #333333 !important;
-    color: #ffffff !important;
-    border: 1px solid #555555 !important;
+    background-color: #6a9fb5;
+    color: #ffffff;
 }
 
 .dark-theme .btn:hover {
-    background-color: #555555 !important;
+    background-color: #5a8fa5;
 }
 
 /* Dark theme message/alert boxes */
@@ -887,9 +736,6 @@ hr {
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .theme-toggle-btn:hover {
@@ -904,10 +750,6 @@ hr {
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
 }
 
-.theme-toggle-btn:active {
-    transform: scale(0.95);
-}
-
 /* Light theme adjustments */
 body:not(.dark-theme) {
     background-color: #fff;
@@ -920,87 +762,44 @@ body:not(.dark-theme) .content {
 }
 
 /* Smooth transitions for theme switching */
-body.theme-transitions,
-body.theme-transitions .content,
-body.theme-transitions .project-card,
-body.theme-transitions .skill-item,
-body.theme-transitions .contact-item,
-body.theme-transitions .message,
-body.theme-transitions .pagination-item,
-body.theme-transitions .sidebar {
+body,
+.content,
+.project-card,
+.skill-item,
+.contact-item,
+.message,
+.pagination-item {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-body.theme-transitions h1,
-body.theme-transitions h2,
-body.theme-transitions h3,
-body.theme-transitions h4,
-body.theme-transitions h5,
-body.theme-transitions h6,
-body.theme-transitions .page-title,
-body.theme-transitions .post-title,
-body.theme-transitions p,
-body.theme-transitions li,
-body.theme-transitions td,
-body.theme-transitions th,
-body.theme-transitions a,
-body.theme-transitions strong,
-body.theme-transitions code,
-body.theme-transitions pre,
-body.theme-transitions blockquote {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.page-title,
+.post-title,
+p,
+li,
+td,
+th,
+a,
+strong,
+code,
+pre,
+blockquote {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Light Theme - Default */
-body {
-    background-color: #ffffff;
-    color: #515151;
-}
-
-body .content {
-    background-color: #ffffff;
-    color: #515151;
-}
-
-body h1,
-body h2,
-body h3,
-body h4,
-body h5,
-body h6 {
-    color: #313131;
-}
-
-body p {
-    color: #515151;
-}
-
-body .post-title,
-body .page-title {
-    color: #313131;
-}
-
-body a {
-    color: #ac4142;
-}
-
-body a:hover,
-body a:focus {
-    color: #8f3536;
-}
-
-body strong {
-    color: #313131;
-}
-
-/* Black Theme - Applied when dark-theme class is present */
+/* Force dark theme styles with higher specificity */
 body.dark-theme {
-    background-color: #000000 !important;
+    background-color: #1a1a1a !important;
     color: #e0e0e0 !important;
 }
 
 body.dark-theme .content {
-    background-color: #000000 !important;
+    background-color: #1a1a1a !important;
     color: #e0e0e0 !important;
 }
 
@@ -1023,12 +822,7 @@ body.dark-theme .page-title {
 }
 
 body.dark-theme a {
-    color: #ffffff !important;
-}
-
-body.dark-theme a:hover,
-body.dark-theme a:focus {
-    color: #cccccc !important;
+    color: #6a9fb5 !important;
 }
 
 body.dark-theme strong {

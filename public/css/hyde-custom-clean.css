@@ -19,15 +19,15 @@
    ========================================================================== */
 
 :root {
-    /* Black Theme Colors */
-    --primary-color: #ffffff;
-    --secondary-color: #cccccc;
-    --accent-color: #ffffff;
-    --success-color: #ffffff;
-    --warning-color: #ffffff;
-    --text-color: #e0e0e0;
-    --light-gray: #333333;
-    --dark-gray: #1a1a1a;
+    /* Theme Colors */
+    --primary-color: #dc322f;
+    --secondary-color: #cb4b16;
+    --accent-color: #e74c3c;
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
+    --text-color: #2c3e50;
+    --light-gray: #ecf0f1;
+    --dark-gray: #34495e;
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -64,23 +64,11 @@
    2. Base Typography & Layout
    ========================================================================== */
 
-/* Black Theme Base Styles */
-body {
-    background-color: #000000 !important;
-    color: #e0e0e0 !important;
-}
-
-.content {
-    background-color: #000000 !important;
-    color: #e0e0e0 !important;
-}
-
 /* Text Justification */
 p {
     text-align: justify;
     text-justify: inter-word;
     line-height: var(--line-height-base);
-    color: #e0e0e0 !important;
 }
 
 /* Content area text justification */
@@ -90,7 +78,6 @@ p {
 .page li {
     text-align: justify;
     text-justify: inter-word;
-    color: #e0e0e0 !important;
 }
 
 /* Keep headings left-aligned */
@@ -102,7 +89,6 @@ h5,
 h6,
 .page-title {
     text-align: left;
-    color: #ffffff !important;
 }
 
 /* ==========================================================================

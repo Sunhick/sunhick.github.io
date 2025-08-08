@@ -17,15 +17,13 @@
     --off-white: #fdf6f0;
 }
 
-/* Black background for the main content area */
+/* Off-white background for the main content area */
 body {
-    background-color: #000000 !important;
-    color: #e0e0e0 !important;
+    background-color: var(--off-white);
 }
 
 .content {
-    background-color: #000000 !important;
-    color: #e0e0e0 !important;
+    background-color: var(--off-white);
 }
 
 /* Custom Typography */
@@ -501,22 +499,19 @@ button {
     display: none !important;
 }
 
-/* Black theme adjustments */
+/* Light theme adjustments - ensure off-white background */
 body:not(.dark-theme) {
-    background-color: #000000 !important;
-    color: #e0e0e0 !important;
+    background-color: var(--off-white) !important;
 }
 
 body:not(.dark-theme) .content {
-    background-color: #000000 !important;
-    color: #e0e0e0 !important;
+    background-color: var(--off-white) !important;
 }
 
-/* Ensure project cards work well with black background */
+/* Ensure project cards and other elements work well with off-white background */
 body:not(.dark-theme) .project-card {
-    background-color: #1a1a1a !important;
-    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1) !important;
-    border: 1px solid #333333 !important;
+    background-color: var(--off-white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Remove container styling for tech-stack and current-focus */
