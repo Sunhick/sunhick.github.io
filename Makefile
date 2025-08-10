@@ -34,11 +34,11 @@ serve-prod: ## Start server with production settings
 
 serve-port: ## Start server on custom port (usage: make serve-port PORT=3000)
 	@echo "🚀 Starting Jekyll server on port $(PORT)..."
-	bundle exec jekyll serve --livereload --port $(PORT)
+	bundle exec jekyll serve --port $(PORT)
 
 serve-host: ## Start server accessible from network (usage: make serve-host HOST=0.0.0.0)
 	@echo "🌐 Starting Jekyll server accessible from network..."
-	bundle exec jekyll serve --livereload --host $(HOST) --port 4000
+	bundle exec jekyll serve --host $(HOST) --port 4000
 
 stop: ## Stop all running Jekyll server instances
 	@echo "🛑 Stopping all Jekyll server instances..."

@@ -1,3 +1,44 @@
+<!-- Mobile Hamburger Button -->
+<button class="hamburger-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">
+    <i class="fas fa-bars hamburger-fa-icon"></i>
+</button>
+
+<!-- Mobile Navigation Overlay -->
+<div class="mobile-nav-overlay" id="mobile-nav-overlay">
+    <nav class="mobile-nav" id="mobile-nav" role="menu" aria-label="Mobile navigation" aria-hidden="true">
+        <a class="mobile-nav-item{% unless page.url contains 'about' or page.url contains 'portfolio' or page.url contains 'contact' or page.url contains 'resume' or page.url contains 'skills' %}{% if page.url == '/' %} active{% endif %}{% endunless %}"
+            href="{{ site.baseurl }}/" tabindex="-1" role="menuitem">
+            <i class="fas fa-home"></i> Home
+        </a>
+
+        <a class="mobile-nav-item{% if page.url contains 'about' %} active{% endif %}" href="{{ site.baseurl }}/about/"
+            tabindex="-1" role="menuitem">
+            <i class="fas fa-user"></i> About
+        </a>
+
+        <a class="mobile-nav-item{% if page.url contains 'portfolio' %} active{% endif %}"
+            href="{{ site.baseurl }}/portfolio/" tabindex="-1" role="menuitem">
+            <i class="fas fa-briefcase"></i> Portfolio
+        </a>
+
+        <a class="mobile-nav-item{% if page.url contains 'contact' %} active{% endif %}"
+            href="{{ site.baseurl }}/contact/" tabindex="-1" role="menuitem">
+            <i class="fas fa-envelope"></i> Contact
+        </a>
+
+        <a class="mobile-nav-item{% if page.url contains 'resume' %} active{% endif %}"
+            href="{{ site.baseurl }}/resume/" tabindex="-1" role="menuitem">
+            <i class="fas fa-file-alt"></i> Resume
+        </a>
+
+        <a class="mobile-nav-item{% if page.url contains 'skills' %} active{% endif %}"
+            href="{{ site.baseurl }}/skills/" tabindex="-1" role="menuitem">
+            <i class="fas fa-cogs"></i> Skills
+        </a>
+    </nav>
+</div>
+
+<!-- Desktop Sidebar -->
 <div class="sidebar">
     <div class="container sidebar-sticky">
         <div class="sidebar-about">
@@ -10,7 +51,7 @@
         </div>
 
         <nav class="sidebar-nav">
-            <a class="sidebar-nav-item{% if page.url == site.baseurl %}/" %} active{% endif %}"
+            <a class="sidebar-nav-item{% unless page.url contains 'about' or page.url contains 'portfolio' or page.url contains 'contact' or page.url contains 'resume' or page.url contains 'skills' %}{% if page.url == '/' %} active{% endif %}{% endunless %}"
                 href="{{ site.baseurl }}/">
                 <i class="fas fa-home"></i> Home
             </a>
@@ -20,23 +61,30 @@
             `layout: page` in the front-matter. See readme for usage.
             {% endcomment %}
 
-            <a class="sidebar-nav-item{% if page.url == '/about/' %} active{% endif %}"
+            <a class="sidebar-nav-item{% if page.url contains 'about' %} active{% endif %}"
                 href="{{ site.baseurl }}/about/">
                 <i class="fas fa-user"></i> About
             </a>
 
-            <a class="sidebar-nav-item{% if page.url == '/portfolio/' %} active{% endif %}"
+            <a class="sidebar-nav-item{% if page.url contains 'portfolio' %} active{% endif %}"
                 href="{{ site.baseurl }}/portfolio/">
                 <i class="fas fa-briefcase"></i> Portfolio
             </a>
 
+            <a class="sidebar-nav-item{% if page.url contains 'contact' %} active{% endif %}"
+                href="{{ site.baseurl }}/contact/">
+                <i class="fas fa-envelope"></i> Contact
+            </a>
 
+            <a class="sidebar-nav-item{% if page.url contains 'resume' %} active{% endif %}"
+                href="{{ site.baseurl }}/resume/">
+                <i class="fas fa-file-alt"></i> Resume
+            </a>
 
-
-
-
-
-
+            <a class="sidebar-nav-item{% if page.url contains 'skills' %} active{% endif %}"
+                href="{{ site.baseurl }}/skills/">
+                <i class="fas fa-cogs"></i> Skills
+            </a>
         </nav>
 
         <div class="sidebar-social">

@@ -175,8 +175,372 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Mobile Navigation Functionality
+    initializeMobileNavigation();
+
     console.log('Sunil Murthy Portfolio - JavaScript loaded successfully!');
 });
+
+// Mobile Navigation State Management System
+function initializeMobileNavigation() {
+    // Mobile navigation state object
+    const mobileNavState = {
+        isOpen: false,
+        hamburgerBtn: document.querySelector('.hamburger-btn') || document.querySelector('.hamburger-btn-alt'),
+        overlay: document.querySelector('.mobile-nav-overlay'),
+        mobileNav: document.querySelector('.mobile-nav'),
+        navItems: document.querySelectorAll('.mobile-nav-item'),
+        focusedIndex: -1
+    };
+
+    // Check if mobile navigation elements exist
+    if (!mobileNavState.hamburgerBtn || !mobileNavState.overlay) {
+        return; // Exit if mobile nav elements don't exist
+    }
+
+    // Add event listeners for hamburger button click/touch
+    mobileNavState.hamburgerBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        toggleMobileMenu(mobileNavState);
+    });
+
+    // Handle keyboard events for hamburger button (Enter and Space)
+    mobileNavState.hamburgerBtn.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleMobileMenu(mobileNavState);
+        }
+    });
+
+    // Add click-outside-to-close functionality for overlay
+    mobileNavState.overlay.addEventListener('click', function (e) {
+        // Only close if clicking on the overlay itself, not the nav content
+        if (e.target === mobileNavState.overlay) {
+            closeMobileMenu(mobileNavState);
+        }
+    });
+
+    // Handle navigation link clicks to close menu automatically
+    mobileNavState.navItems.forEach(function (navItem, index) {
+        navItem.addEventListener('click', function () {
+            closeMobileMenu(mobileNavState);
+        });
+
+        // Handle keyboard activation (Enter and Space) for navigation items
+        navItem.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                // Trigger click to navigate and close menu
+                this.click();
+            }
+        });
+
+        // Update focused index when item receives focus
+        navItem.addEventListener('focus', function () {
+            mobileNavState.focusedIndex = index;
+        });
+    });
+
+    // Handle keyboard navigation within mobile menu
+    document.addEventListener('keydown', function (e) {
+        // Handle Escape key to close menu
+        if (e.key === 'Escape' && mobileNavState.isOpen) {
+            e.preventDefault();
+            closeMobileMenu(mobileNavState);
+            return;
+        }
+
+        // Handle Tab navigation within open menu (focus trap)
+        if (mobileNavState.isOpen && (e.key === 'Tab' || e.key === 'ArrowDown' || e.key === 'ArrowUp')) {
+            handleMenuNavigation(e, mobileNavState);
+        }
+    });
+
+    // Handle window resize and orientation changes for responsive behavior
+    let resizeTimeout;
+    window.addEventListener('resize', function () {
+        // Debounce resize events to improve performance
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function () {
+            handleResponsiveResize(mobileNavState);
+        }, 100);
+    });
+
+    // Handle orientation change events specifically for mobile devices
+    window.addEventListener('orientationchange', function () {
+        // Add a small delay to allow the viewport to adjust
+        setTimeout(function () {
+            handleResponsiveResize(mobileNavState);
+        }, 200);
+    });
+
+    // Initialize responsive behavior on page load
+    handleResponsiveResize(mobileNavState);
+
+    // Test breakpoint behavior (for debugging - can be removed in production)
+    if (window.location.search.includes('debug=true')) {
+        setTimeout(testBreakpointBehavior, 1000);
+    }
+}
+
+// Menu toggle functionality with proper state tracking
+function toggleMobileMenu(state) {
+    if (state.isOpen) {
+        closeMobileMenu(state);
+    } else {
+        openMobileMenu(state);
+    }
+}
+
+// Open mobile menu
+function openMobileMenu(state) {
+    state.isOpen = true;
+
+    // Update ARIA attributes
+    state.hamburgerBtn.setAttribute('aria-expanded', 'true');
+
+    // Update ARIA state for mobile nav container
+    if (state.mobileNav) {
+        state.mobileNav.setAttribute('aria-hidden', 'false');
+    }
+
+    // Enable tabindex for menu items (make them focusable)
+    state.navItems.forEach(function (item) {
+        item.setAttribute('tabindex', '0');
+    });
+
+    // Add active classes for styling
+    state.hamburgerBtn.classList.add('active');
+    state.overlay.classList.add('active');
+
+    // Prevent body scrolling when menu is open
+    document.body.style.overflow = 'hidden';
+
+    // Move focus to first menu item after a short delay to allow animation
+    setTimeout(function () {
+        if (state.navItems.length > 0) {
+            state.navItems[0].focus();
+            state.focusedIndex = 0;
+        }
+    }, 150);
+}
+
+// Close mobile menu
+function closeMobileMenu(state) {
+    state.isOpen = false;
+
+    // Update ARIA attributes
+    state.hamburgerBtn.setAttribute('aria-expanded', 'false');
+
+    // Update ARIA state for mobile nav container
+    if (state.mobileNav) {
+        state.mobileNav.setAttribute('aria-hidden', 'true');
+    }
+
+    // Disable tabindex for menu items (remove from tab order)
+    state.navItems.forEach(function (item) {
+        item.setAttribute('tabindex', '-1');
+    });
+
+    // Remove active classes
+    state.hamburgerBtn.classList.remove('active');
+    state.overlay.classList.remove('active');
+
+    // Restore body scrolling
+    document.body.style.overflow = '';
+
+    // Return focus to hamburger button
+    state.hamburgerBtn.focus();
+    state.focusedIndex = -1;
+}
+
+// Handle keyboard navigation within the mobile menu (focus trap)
+function handleMenuNavigation(e, state) {
+    const focusableItems = Array.from(state.navItems);
+    const currentIndex = state.focusedIndex;
+
+    if (e.key === 'Tab') {
+        e.preventDefault();
+
+        if (e.shiftKey) {
+            // Shift+Tab: Move to previous item or wrap to last
+            if (currentIndex <= 0) {
+                state.focusedIndex = focusableItems.length - 1;
+            } else {
+                state.focusedIndex = currentIndex - 1;
+            }
+        } else {
+            // Tab: Move to next item or wrap to first
+            if (currentIndex >= focusableItems.length - 1) {
+                state.focusedIndex = 0;
+            } else {
+                state.focusedIndex = currentIndex + 1;
+            }
+        }
+
+        // Focus the new item
+        if (focusableItems[state.focusedIndex]) {
+            focusableItems[state.focusedIndex].focus();
+        }
+    } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        // Arrow Down: Move to next item or wrap to first
+        if (currentIndex >= focusableItems.length - 1) {
+            state.focusedIndex = 0;
+        } else {
+            state.focusedIndex = currentIndex + 1;
+        }
+
+        if (focusableItems[state.focusedIndex]) {
+            focusableItems[state.focusedIndex].focus();
+        }
+    } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        // Arrow Up: Move to previous item or wrap to last
+        if (currentIndex <= 0) {
+            state.focusedIndex = focusableItems.length - 1;
+        } else {
+            state.focusedIndex = currentIndex - 1;
+        }
+
+        if (focusableItems[state.focusedIndex]) {
+            focusableItems[state.focusedIndex].focus();
+        }
+    }
+}
+
+// Handle responsive behavior and screen size changes
+function handleResponsiveResize(state) {
+    const currentWidth = window.innerWidth;
+    const isMobile = currentWidth < 768;
+    const isDesktop = currentWidth >= 768;
+
+    // Automatically close mobile menu when screen size increases to desktop
+    if (isDesktop && state.isOpen) {
+        closeMobileMenu(state);
+
+        // Log the transition for debugging (can be removed in production)
+        console.log('Mobile menu closed due to screen size change to desktop view');
+    }
+
+    // Ensure proper behavior when switching between mobile and desktop views
+    if (isMobile) {
+        // Ensure mobile navigation elements are properly initialized for mobile view
+        ensureMobileNavigation(state);
+    } else {
+        // Ensure desktop navigation is properly restored
+        ensureDesktopNavigation(state);
+    }
+
+    // Update ARIA attributes based on current view
+    updateResponsiveARIA(state, isMobile);
+}
+
+// Ensure mobile navigation is properly set up for mobile view
+function ensureMobileNavigation(state) {
+    // Ensure hamburger button is accessible
+    if (state.hamburgerBtn) {
+        state.hamburgerBtn.setAttribute('tabindex', '0');
+        state.hamburgerBtn.style.display = 'flex';
+    }
+
+    // Ensure mobile navigation overlay is available
+    if (state.overlay) {
+        state.overlay.style.display = 'block';
+    }
+
+    // Reset any desktop-specific states that might interfere
+    document.body.classList.add('mobile-view');
+    document.body.classList.remove('desktop-view');
+}
+
+// Ensure desktop navigation is properly restored
+function ensureDesktopNavigation(state) {
+    // Ensure mobile menu is closed and reset
+    if (state.isOpen) {
+        closeMobileMenu(state);
+    }
+
+    // Reset body overflow in case it was locked by mobile menu
+    document.body.style.overflow = '';
+
+    // Update body classes for styling purposes
+    document.body.classList.add('desktop-view');
+    document.body.classList.remove('mobile-view');
+
+    // Ensure focus is not trapped in mobile navigation elements
+    if (document.activeElement &&
+        (document.activeElement === state.hamburgerBtn ||
+            Array.from(state.navItems).includes(document.activeElement))) {
+        // Move focus to a safe element (like the main content or first sidebar link)
+        const mainContent = document.querySelector('main') || document.querySelector('.content');
+        const sidebarLink = document.querySelector('.sidebar-nav-item');
+
+        if (sidebarLink) {
+            sidebarLink.focus();
+        } else if (mainContent) {
+            mainContent.focus();
+        }
+    }
+}
+
+// Update ARIA attributes based on responsive state
+function updateResponsiveARIA(state, isMobile) {
+    if (isMobile) {
+        // Mobile view: hamburger button should be available to screen readers
+        if (state.hamburgerBtn) {
+            state.hamburgerBtn.setAttribute('aria-hidden', 'false');
+        }
+
+        // Mobile navigation should be available but initially hidden
+        if (state.mobileNav) {
+            state.mobileNav.setAttribute('aria-hidden', state.isOpen ? 'false' : 'true');
+        }
+    } else {
+        // Desktop view: hamburger button should be hidden from screen readers
+        if (state.hamburgerBtn) {
+            state.hamburgerBtn.setAttribute('aria-hidden', 'true');
+        }
+
+        // Mobile navigation should be completely hidden from screen readers
+        if (state.mobileNav) {
+            state.mobileNav.setAttribute('aria-hidden', 'true');
+        }
+    }
+}
+
+// Test breakpoint behavior at 768px threshold
+function testBreakpointBehavior() {
+    const testWidth = 768;
+    const currentWidth = window.innerWidth;
+
+    // Log current state for debugging
+    console.log(`Current screen width: ${currentWidth}px`);
+    console.log(`Breakpoint threshold: ${testWidth}px`);
+    console.log(`Mobile view active: ${currentWidth < testWidth}`);
+
+    // Test if CSS media queries are working correctly
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
+    const sidebar = document.querySelector('.sidebar');
+
+    if (hamburgerBtn && sidebar) {
+        const hamburgerDisplay = window.getComputedStyle(hamburgerBtn).display;
+        const sidebarDisplay = window.getComputedStyle(sidebar).display;
+
+        console.log(`Hamburger button display: ${hamburgerDisplay}`);
+        console.log(`Sidebar display: ${sidebarDisplay}`);
+
+        // Verify correct display states at breakpoint
+        if (currentWidth < testWidth) {
+            console.log('Expected: Hamburger visible, Sidebar hidden');
+        } else {
+            console.log('Expected: Hamburger hidden, Sidebar visible');
+        }
+    }
+}
+
+// Initialize responsive behavior testing (can be called from console for debugging)
+window.testMobileNavBreakpoint = testBreakpointBehavior;
 
 // Add CSS for scroll-to-top button
 const scrollToTopStyles = `
@@ -290,3 +654,4 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initial update
     updateSideNavigation();
 });
+

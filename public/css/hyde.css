@@ -1630,7 +1630,238 @@ body {
     color: rgba(255, 255, 255, 0.6) !important;
     font-size: 1.1rem !important;
     transition: color 0.2s ease !important;
-    margin: 0 0.3rem !important;
+}
+
+.sidebar-social a:hover {
+    color: #55dcf7 !important;
+}
+
+/* ==========================================================================
+   MOBILE HAMBURGER MENU STYLES
+   ========================================================================== */
+
+
+
+/* Mobile Navigation Overlay */
+.mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-nav-overlay.active {
+    opacity: 1;
+}
+
+/* Mobile Navigation Menu */
+.mobile-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100%;
+    background: #1a1c1d;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-nav-overlay.active .mobile-nav {
+    transform: translateX(0);
+}
+
+/* Mobile Navigation Header */
+.mobile-nav-header {
+    padding: 2rem 1.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav-title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    font-family: 'Roboto Slab', serif;
+}
+
+.mobile-nav-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Mobile Navigation Items */
+.mobile-nav-items {
+    padding: 1rem 0;
+}
+
+.mobile-nav-item {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.mobile-nav-item:hover,
+.mobile-nav-item:focus {
+    background: rgba(85, 220, 247, 0.1);
+    color: #55dcf7;
+    text-decoration: none;
+    padding-left: 2rem;
+}
+
+.mobile-nav-item.active {
+    background: rgba(85, 220, 247, 0.15);
+    color: #55dcf7;
+    border-left: 3px solid #55dcf7;
+}
+
+.mobile-nav-item i {
+    margin-right: 0.75rem;
+    width: 1.2rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.mobile-nav-item:hover i,
+.mobile-nav-item:focus i,
+.mobile-nav-item.active i {
+    color: #55dcf7;
+}
+
+/* Mobile Social Links */
+.mobile-nav-social {
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.mobile-nav-social a {
+    display: inline-block;
+    margin: 0 0.75rem;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 0.3s ease;
+}
+
+.mobile-nav-social a:hover {
+    color: #55dcf7;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 767px) {
+
+    /* Hide sidebar on mobile */
+    .sidebar {
+        display: none;
+    }
+
+    /* Show hamburger button on mobile */
+    .hamburger-btn {
+        display: flex;
+    }
+
+    /* Show mobile navigation overlay */
+    .mobile-nav-overlay {
+        display: block;
+    }
+
+    /* Adjust content margin for mobile */
+    .content {
+        margin-left: 0;
+        margin-right: 0;
+        padding-top: 5rem;
+    }
+}
+
+/* Tablet and up - ensure sidebar is shown and mobile nav is hidden */
+@media (min-width: 768px) {
+    .hamburger-btn {
+        display: none !important;
+    }
+
+    .mobile-nav-overlay {
+        display: none !important;
+    }
+
+    .sidebar {
+        display: block !important;
+    }
+}
+
+/* Focus trap and accessibility improvements */
+.mobile-nav-overlay.active .mobile-nav-item:first-child {
+    /* First focusable element in mobile menu */
+}
+
+.mobile-nav-overlay.active .mobile-nav-social a:last-child {
+    /* Last focusable element in mobile menu */
+}
+
+/* Smooth hardware-accelerated animations */
+.mobile-nav,
+.mobile-nav-overlay,
+.hamburger-line {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .hamburger-btn {
+        border-color: #fff;
+    }
+
+    .hamburger-line {
+        background: #fff;
+    }
+
+    .mobile-nav {
+        border-right: 2px solid #fff;
+    }
+
+    .mobile-nav-item {
+        border-bottom-color: rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+
+    .hamburger-btn,
+    .hamburger-line,
+    .mobile-nav-overlay,
+    .mobile-nav,
+    .mobile-nav-item {
+        transition: none;
+    }
+}
+
+/* Print styles - hide mobile navigation */
+@media print {
+
+    .hamburger-btn,
+    .mobile-nav-overlay {
+        display: none !important;
+    }
+}
+
+ortant;
+margin: 0 0.3rem !important;
 }
 
 .sidebar-social a:hover {
@@ -1912,5 +2143,436 @@ body:not(.dark-theme) .profile-photo:hover {
         width: 120px !important;
         height: 150px !important;
         /* Maintain aspect ratio */
+    }
+}
+
+/* ==========================================================================
+   MOBILE HAMBURGER MENU ANIMATIONS AND TRANSITIONS
+   ========================================================================== */
+
+/* Hamburger Button Styles and Animations */
+.hamburger-btn {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001;
+    background: rgba(26, 28, 29, 0.95);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 0.75rem;
+    cursor: pointer;
+    display: none;
+    /* Hidden by default, shown on mobile */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+}
+
+.hamburger-btn:hover {
+    background: rgba(85, 220, 247, 0.1);
+    border-color: #55dcf7;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(85, 220, 247, 0.2);
+}
+
+.hamburger-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(85, 220, 247, 0.3);
+}
+
+/* Hamburger Lines */
+.hamburger-line {
+    display: block !important;
+    width: 20px !important;
+    height: 3px !important;
+    background: #ffffff !important;
+    border-radius: 2px;
+    margin: 4px 0 !important;
+    transition: all 0.3s ease;
+    transform-origin: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    opacity: 1 !important;
+}
+
+/* Hamburger Animation to X when active */
+.hamburger-btn.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    background: #55dcf7;
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    background: #55dcf7;
+}
+
+/* Mobile Navigation Overlay */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    display: none;
+    /* Hidden by default, shown on mobile */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+/* Backdrop fade-in/fade-out animation */
+.mobile-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mobile Navigation Container */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100%;
+    background: #1a1c1d;
+    padding: 5rem 0 2rem 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    will-change: transform;
+    /* Hardware acceleration hint */
+}
+
+/* Menu slide-in animation */
+.mobile-nav-overlay.active .mobile-nav {
+    transform: translateX(0);
+}
+
+/* Mobile Navigation Items */
+.mobile-nav-item {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover and focus state transitions for menu items */
+.mobile-nav-item:hover,
+.mobile-nav-item:focus {
+    background: rgba(85, 220, 247, 0.1);
+    color: #55dcf7;
+    text-decoration: none;
+    transform: translateX(8px);
+    padding-left: 2rem;
+}
+
+.mobile-nav-item:focus {
+    outline: none;
+    box-shadow: inset 3px 0 0 #55dcf7;
+}
+
+.mobile-nav-item.active {
+    background: rgba(85, 220, 247, 0.15);
+    color: #55dcf7;
+    font-weight: 600;
+}
+
+.mobile-nav-item i {
+    margin-right: 0.75rem;
+    width: 1.2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.mobile-nav-item:hover i,
+.mobile-nav-item:focus i {
+    transform: scale(1.1);
+}
+
+/* Ripple effect for mobile nav items */
+.mobile-nav-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(85, 220, 247, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: -1;
+}
+
+.mobile-nav-item:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Mobile-specific responsive styles */
+@media (max-width: 767px) {
+    .hamburger-btn {
+        display: flex !important;
+        visibility: visible !important;
+    }
+
+    .mobile-nav-overlay {
+        display: block;
+    }
+
+    .sidebar {
+        display: none;
+    }
+}
+
+/* Tablet and larger screens - hide mobile navigation */
+@media (min-width: 768px) {
+    .hamburger-btn {
+        display: none !important;
+    }
+
+    .mobile-nav-overlay {
+        display: none !important;
+    }
+
+    .sidebar {
+        display: block;
+    }
+}
+
+/* Animation performance optimizations */
+.mobile-nav,
+.mobile-nav-overlay,
+.hamburger-btn,
+.hamburger-line,
+.mobile-nav-item {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+
+/* Smooth transitions for theme switching compatibility */
+.mobile-nav-item,
+.hamburger-btn,
+.mobile-nav {
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/* Dark theme compatibility for mobile navigation */
+.dark-theme .hamburger-btn {
+    background: rgba(45, 45, 45, 0.95) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.dark-theme .hamburger-btn:hover {
+    background: rgba(85, 220, 247, 0.1) !important;
+    border-color: #55dcf7 !important;
+}
+
+.dark-theme .hamburger-line {
+    background: #ffffff !important;
+}
+
+.dark-theme .mobile-nav {
+    background: #2d2d2d;
+}
+
+.dark-theme .mobile-nav-item:hover,
+.dark-theme .mobile-nav-item:focus {
+    background: rgba(106, 159, 181, 0.1);
+    color: #6a9fb5;
+}
+
+.dark-theme .mobile-nav-item:focus {
+    box-shadow: inset 3px 0 0 #6a9fb5;
+}
+
+.dark-theme .mobile-nav-item.active {
+    background: rgba(106, 159, 181, 0.15);
+    color: #6a9fb5;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+
+    .hamburger-btn,
+    .hamburger-line,
+    .mobile-nav-overlay,
+    .mobile-nav,
+    .mobile-nav-item {
+        transition: none;
+    }
+
+    .mobile-nav-item::before {
+        display: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .hamburger-btn {
+        border: 2px solid #fff;
+    }
+
+    .mobile-nav {
+        border-right: 2px solid #fff;
+    }
+
+    .mobile-nav-item {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* CRITICAL: Ensure hamburger button is always visible on mobile */
+@media (max-width: 767px) {
+    .hamburger-btn {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: fixed !important;
+        top: 1rem !important;
+        left: 1rem !important;
+        z-index: 1001 !important;
+        background: rgba(26, 28, 29, 0.95) !important;
+        border: 2px solid rgba(255, 255, 255, 0.4) !important;
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .hamburger-line {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 20px !important;
+        height: 3px !important;
+        background: #ffffff !important;
+        margin: 4px 0 !important;
+    }
+}
+
+/* Theme overrides for hamburger visibility */
+.theme-base-cole .hamburger-btn,
+.dark-theme .hamburger-btn,
+body .hamburger-btn {
+    background: rgba(26, 28, 29, 0.95) !important;
+    border: 2px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+.theme-base-cole .hamburger-line,
+.dark-theme .hamburger-line,
+body .hamburger-line {
+    background: #ffffff !important;
+    opacity: 1 !important;
+}
+
+/* Unicode hamburger icon fallback */
+.hamburger-icon {
+    font-size: 24px !important;
+    color: #ffffff !important;
+    line-height: 1 !important;
+    display: block !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 2 !important;
+}
+
+/* Hide hamburger lines when using Unicode icon */
+@media (max-width: 767px) {
+    .hamburger-btn .hamburger-line {
+        display: none !important;
+    }
+
+    .hamburger-btn .hamburger-icon {
+        display: block !important;
+    }
+}
+
+/* Alternative CSS-only hamburger using pseudo-elements */
+.hamburger-btn-alt {
+    position: fixed !important;
+    top: 1rem !important;
+    left: 1rem !important;
+    z-index: 1001 !important;
+    width: 50px !important;
+    height: 50px !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 2px solid #ffffff !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    display: none !important;
+}
+
+.hamburger-btn-alt::before,
+.hamburger-btn-alt::after {
+    content: '' !important;
+    position: absolute !important;
+    left: 50% !important;
+    width: 20px !important;
+    height: 3px !important;
+    background: #ffffff !important;
+    transform: translateX(-50%) !important;
+    transition: all 0.3s ease !important;
+}
+
+.hamburger-btn-alt::before {
+    top: 15px !important;
+    box-shadow: 0 8px 0 #ffffff !important;
+}
+
+.hamburger-btn-alt::after {
+    top: 31px !important;
+}
+
+@media (max-width: 767px) {
+    .hamburger-btn-alt {
+        display: block !important;
+    }
+}
+
+/* Font Awesome hamburger icon */
+.hamburger-fa-icon {
+    font-size: 20px !important;
+    color: #ffffff !important;
+    display: block !important;
+    line-height: 1 !important;
+}
+
+/* Hide all other hamburger elements when using Font Awesome */
+@media (max-width: 767px) {
+
+    .hamburger-btn .hamburger-line,
+    .hamburger-btn .hamburger-icon {
+        display: none !important;
+    }
+
+    .hamburger-btn .hamburger-fa-icon {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .hamburger-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
 }
