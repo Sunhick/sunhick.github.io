@@ -6,8 +6,8 @@
 <!-- Mobile Navigation Overlay -->
 <div class="mobile-nav-overlay" id="mobile-nav-overlay">
     <nav class="mobile-nav" id="mobile-nav" role="menu" aria-label="Mobile navigation" aria-hidden="true">
-        <a class="mobile-nav-item{% unless page.url contains 'about' or page.url contains 'portfolio' or page.url contains 'contact' or page.url contains 'resume' or page.url contains 'skills' %}{% if page.url == '/' %} active{% endif %}{% endunless %}"
-            href="{{ site.baseurl }}/" tabindex="-1" role="menuitem">
+        <a class="mobile-nav-item{% if page.url == '/' %} active{% endif %}" href="{{ site.baseurl }}/" tabindex="-1"
+            role="menuitem">
             <i class="fas fa-home"></i> Home
         </a>
 
@@ -25,16 +25,6 @@
             href="{{ site.baseurl }}/contact/" tabindex="-1" role="menuitem">
             <i class="fas fa-envelope"></i> Contact
         </a>
-
-        <a class="mobile-nav-item{% if page.url contains 'resume' %} active{% endif %}"
-            href="{{ site.baseurl }}/resume/" tabindex="-1" role="menuitem">
-            <i class="fas fa-file-alt"></i> Resume
-        </a>
-
-        <a class="mobile-nav-item{% if page.url contains 'skills' %} active{% endif %}"
-            href="{{ site.baseurl }}/skills/" tabindex="-1" role="menuitem">
-            <i class="fas fa-cogs"></i> Skills
-        </a>
     </nav>
 </div>
 
@@ -51,8 +41,7 @@
         </div>
 
         <nav class="sidebar-nav">
-            <a class="sidebar-nav-item{% unless page.url contains 'about' or page.url contains 'portfolio' or page.url contains 'contact' or page.url contains 'resume' or page.url contains 'skills' %}{% if page.url == '/' %} active{% endif %}{% endunless %}"
-                href="{{ site.baseurl }}/">
+            <a class="sidebar-nav-item{% if page.url == '/' %} active{% endif %}" href="{{ site.baseurl }}/">
                 <i class="fas fa-home"></i> Home
             </a>
 
@@ -74,16 +63,6 @@
             <a class="sidebar-nav-item{% if page.url contains 'contact' %} active{% endif %}"
                 href="{{ site.baseurl }}/contact/">
                 <i class="fas fa-envelope"></i> Contact
-            </a>
-
-            <a class="sidebar-nav-item{% if page.url contains 'resume' %} active{% endif %}"
-                href="{{ site.baseurl }}/resume/">
-                <i class="fas fa-file-alt"></i> Resume
-            </a>
-
-            <a class="sidebar-nav-item{% if page.url contains 'skills' %} active{% endif %}"
-                href="{{ site.baseurl }}/skills/">
-                <i class="fas fa-cogs"></i> Skills
             </a>
         </nav>
 

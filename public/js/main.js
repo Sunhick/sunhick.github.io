@@ -594,64 +594,6 @@ const scrollToTopStyles = `
 const styleSheet = document.createElement('style');
 styleSheet.textContent = scrollToTopStyles;
 document.head.appendChild(styleSheet);
-// Fixed Side Navigation Enhancement
-document.addEventListener('DOMContentLoaded', function () {
-    // Smooth scroll for side navigation links
-    const sideNavLinks = document.querySelectorAll('.fixed-side-nav .nav-link');
-
-    sideNavLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            // Only prevent default for same-page links (if they have hash)
-            if (this.getAttribute('href').includes('#')) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }
-        });
-    });
-
-    // Highlight current section in side navigation
-    function updateSideNavigation() {
-        const sections = document.querySelectorAll('section[id], .page__content');
-        const sideNavLinks = document.querySelectorAll('.fixed-side-nav .nav-link');
-
-        let current = '';
-        const scrollPosition = window.pageYOffset + 100;
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                current = section.getAttribute('id') || 'home';
-            }
-        });
-
-        sideNavLinks.forEach(link => {
-            link.classList.remove('active');
-            const href = link.getAttribute('href');
-
-            // Check if current page matches the link
-            if (window.location.pathname === href ||
-                (window.location.pathname === '/' && href === '/') ||
-                (href !== '/' && window.location.pathname.includes(href.replace('/', '')))) {
-                link.classList.add('active');
-            }
-        });
-    }
-
-    // Update navigation on scroll
-    window.addEventListener('scroll', updateSideNavigation);
-
-    // Initial update
-    updateSideNavigation();
-});
+// Fixed Side Navigation Enhancement - Removed problematic active state management
+// The Liquid template logic in sidebar.html now handles active states correctly
 

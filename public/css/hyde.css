@@ -1718,16 +1718,21 @@ body {
 
 .mobile-nav-item:hover,
 .mobile-nav-item:focus {
-    background: rgba(85, 220, 247, 0.1);
-    color: #55dcf7;
-    text-decoration: none;
-    padding-left: 2rem;
+    background: transparent !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    text-decoration: none !important;
+    padding-left: 1.5rem !important;
 }
 
+/* Disable active states for mobile navigation items - High specificity override */
+.mobile-nav .mobile-nav-item.active,
+.mobile-nav-overlay .mobile-nav .mobile-nav-item.active,
 .mobile-nav-item.active {
-    background: rgba(85, 220, 247, 0.15);
-    color: #55dcf7;
-    border-left: 3px solid #55dcf7;
+    background: transparent !important;
+    background-color: transparent !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    border-left: none !important;
+    border: none !important;
 }
 
 .mobile-nav-item i {
@@ -1738,9 +1743,15 @@ body {
 }
 
 .mobile-nav-item:hover i,
-.mobile-nav-item:focus i,
+.mobile-nav-item:focus i {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Disable active icon styling for mobile navigation - High specificity override */
+.mobile-nav .mobile-nav-item.active i,
+.mobile-nav-overlay .mobile-nav .mobile-nav-item.active i,
 .mobile-nav-item.active i {
-    color: #55dcf7;
+    color: rgba(255, 255, 255, 0.6) !important;
 }
 
 /* Mobile Social Links */
@@ -2575,4 +2586,54 @@ body .hamburger-line {
         align-items: center !important;
         justify-content: center !important;
     }
+}
+
+/* MOBILE NAVIGATION STATES - CONTROLLED OVERRIDE */
+.mobile-nav-item,
+.mobile-nav-item:link,
+.mobile-nav-item:visited {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    border-left: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.mobile-nav-item i,
+.mobile-nav-item:link i,
+.mobile-nav-item:visited i {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Allow active state styling with more prominent background */
+.mobile-nav-item.active,
+.mobile-nav-item.active:link,
+.mobile-nav-item.active:visited {
+    background: rgba(85, 220, 247, 0.25) !important;
+    background-color: rgba(85, 220, 247, 0.25) !important;
+    color: #55dcf7 !important;
+    border-left: 3px solid #55dcf7 !important;
+}
+
+.mobile-nav-item.active i,
+.mobile-nav-item.active:link i,
+.mobile-nav-item.active:visited i {
+    color: #55dcf7 !important;
+}
+
+/* Disable ALL interactive states including hover and focus */
+.mobile-nav-item:hover,
+.mobile-nav-item:focus {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    padding-left: 1.5rem !important;
+    border: none !important;
+    text-decoration: none !important;
+}
+
+.mobile-nav-item:hover i,
+.mobile-nav-item:focus i {
+    color: rgba(255, 255, 255, 0.6) !important;
 }
