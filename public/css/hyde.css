@@ -1451,3 +1451,412 @@ body.dark-theme strong {
         padding: 2rem 1rem;
     }
 }
+
+/* ==========================================================================
+   CUSTOM STYLES - CONSOLIDATED FROM hyde-custom-clean.css and hyde-custom.css
+   ========================================================================== */
+
+/* Custom Color Variables - Updated for Dark Theme */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
+    --text-color: #2c3e50;
+    --light-gray: #ecf0f1;
+    --dark-gray: #34495e;
+    --off-white: #2c3033;
+    --content-bg: #2c3033;
+    --sidebar-bg: #1a1a1a;
+    --sidebar-text: #ffffff;
+    --sidebar-accent: #00d4aa;
+    --border-color: #e1e1e1;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* Typography */
+    --font-size-sm: 0.8rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.2rem;
+    --font-size-xl: 1.4rem;
+    --line-height-base: 1.6;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 20px;
+}
+
+/* Dark background for the main content area */
+body {
+    background-color: var(--content-bg) !important;
+}
+
+.content {
+    background-color: var(--content-bg) !important;
+}
+
+/* Override sidebar background - Very Dark */
+.sidebar {
+    background-color: var(--sidebar-bg) !important;
+    color: var(--sidebar-text) !important;
+    border-right: 1px solid #333 !important;
+}
+
+/* Sidebar title styling */
+.sidebar-about h1 {
+    color: var(--sidebar-text) !important;
+    font-size: 2.2rem !important;
+    margin-bottom: 0.3rem !important;
+    font-weight: 700 !important;
+}
+
+.sidebar-about h1 a {
+    color: var(--sidebar-text) !important;
+    text-decoration: none !important;
+}
+
+.sidebar-about h1 a:hover {
+    color: var(--sidebar-accent) !important;
+}
+
+/* Sidebar description */
+.sidebar .lead {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 0.95rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 1.5rem !important;
+    font-style: italic !important;
+}
+
+/* Navigation items - Clean minimal style */
+.sidebar-nav-item {
+    color: rgba(255, 255, 255, 0.8) !important;
+    border-bottom: none !important;
+    padding: 0.6rem 1rem !important;
+    transition: all 0.2s ease !important;
+    border-radius: 0 !important;
+    margin-bottom: 0.2rem !important;
+    font-size: 0.95rem !important;
+}
+
+.sidebar-nav-item:hover,
+.sidebar-nav-item:focus {
+    background-color: rgba(0, 212, 170, 0.1) !important;
+    color: var(--sidebar-accent) !important;
+    border-radius: 4px !important;
+    transform: none !important;
+    padding-left: 1rem !important;
+}
+
+.sidebar-nav-item.active {
+    background-color: rgba(0, 212, 170, 0.15) !important;
+    color: var(--sidebar-accent) !important;
+    border-radius: 4px !important;
+    padding-left: 1rem !important;
+}
+
+/* Social links */
+.sidebar-social a {
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 1.1rem !important;
+    transition: color 0.2s ease !important;
+    margin: 0 0.3rem !important;
+}
+
+.sidebar-social a:hover {
+    color: var(--sidebar-accent) !important;
+}
+
+/* Content area colors - RGB(44, 48, 51) */
+body {
+    background-color: #2c3033 !important;
+}
+
+.content {
+    background-color: #2c3033 !important;
+    color: #e2e8f0 !important;
+}
+
+.content.container {
+    background-color: #2c3033 !important;
+}
+
+/* Override any off-white backgrounds */
+body:not(.dark-theme) {
+    background-color: #2c3033 !important;
+}
+
+body:not(.dark-theme) .content {
+    background-color: #2c3033 !important;
+}
+
+/* Heading colors */
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+    color: #f7fafc !important;
+}
+
+.content h2 {
+    border-bottom: 2px solid var(--sidebar-accent) !important;
+    padding-bottom: 0.5rem !important;
+}
+
+.content h3 {
+    color: var(--sidebar-accent) !important;
+}
+
+/* Paragraph text color */
+.content p {
+    color: #cbd5e0 !important;
+}
+
+/* List text color */
+.content li {
+    color: #cbd5e0 !important;
+}
+
+/* Strong text color */
+.content strong {
+    color: #f7fafc !important;
+}
+
+/* Link colors for dark background */
+.content a {
+    color: var(--sidebar-accent) !important;
+    border-bottom: 1px solid transparent !important;
+    transition: border-color 0.2s ease !important;
+}
+
+.content a:hover {
+    color: var(--sidebar-accent) !important;
+    border-bottom-color: var(--sidebar-accent) !important;
+}
+
+/* Table styling for dark background */
+.content table td {
+    color: #cbd5e0 !important;
+}
+
+.content table td:first-child {
+    color: #f7fafc !important;
+}
+
+/* Code blocks */
+.content code {
+    background-color: #f8f9fa !important;
+    color: #e83e8c !important;
+    padding: 0.2rem 0.4rem !important;
+    border-radius: 3px !important;
+}
+
+.content pre {
+    background-color: #f8f9fa !important;
+    border: 1px solid #e9ecef !important;
+    border-radius: 5px !important;
+    padding: 1rem !important;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--sidebar-accent) !important;
+    border-color: var(--sidebar-accent) !important;
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--sidebar-bg) !important;
+    border-color: var(--sidebar-bg) !important;
+}
+
+/* Tables */
+.content table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin: 1rem 0 !important;
+}
+
+.content table th,
+.content table td {
+    border: 1px solid var(--border-color) !important;
+    padding: 0.75rem !important;
+    text-align: left !important;
+}
+
+.content table th {
+    background-color: #f8f9fa !important;
+    font-weight: 600 !important;
+}
+
+/* Footer */
+.sidebar p:last-child {
+    color: rgba(236, 240, 241, 0.6) !important;
+    font-size: 0.85rem !important;
+    margin-top: 2rem !important;
+}
+
+/* Sidebar Navigation Styling - High Specificity for GitHub Pages */
+.sidebar .sidebar-nav .sidebar-nav-item {
+    border-radius: 8px !important;
+    margin-bottom: 0.1rem !important;
+    transition: all 0.3s ease !important;
+    padding: 0.3rem 0.5rem 0.3rem 1rem !important;
+    display: block !important;
+}
+
+.sidebar .sidebar-nav a.sidebar-nav-item:hover,
+.sidebar .sidebar-nav a.sidebar-nav-item:focus {
+    background-color: rgba(255, 255, 255, .15) !important;
+    border-radius: 8px !important;
+    transform: translateX(3px) !important;
+    border-color: transparent !important;
+    padding-left: 1.2rem !important;
+    text-decoration: none !important;
+}
+
+.sidebar .sidebar-nav .sidebar-nav-item.active {
+    background-color: rgba(255, 255, 255, .2) !important;
+    border-radius: 8px !important;
+    border-color: transparent !important;
+    padding-left: 1.2rem !important;
+}
+
+/* Sidebar Description - Italics */
+.sidebar .sidebar-about .lead {
+    font-style: italic !important;
+    text-align: left !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0.75rem !important;
+    padding: 0 !important;
+}
+
+/* Sidebar Section Spacing */
+.sidebar .sidebar-about {
+    margin-bottom: 1rem !important;
+}
+
+.sidebar .sidebar-nav {
+    margin-bottom: 1rem !important;
+}
+
+.sidebar .sidebar-social {
+    margin: 1rem 0 0.5rem !important;
+}
+
+/* FORCE BACKGROUND RGB(44, 48, 51) - HIGHEST PRIORITY */
+html {
+    background-color: #2c3033 !important;
+}
+
+html body {
+    background-color: #2c3033 !important;
+}
+
+html body .content {
+    background-color: #2c3033 !important;
+}
+
+html body .content.container {
+    background-color: #2c3033 !important;
+}
+
+/* Override any possible theme or variable conflicts */
+* {
+    --off-white: #2c3033 !important;
+    --content-bg: #2c3033 !important;
+}
+
+/* Force all possible content selectors */
+.page,
+.post,
+.posts,
+main,
+article,
+section {
+    background-color: #2c3033 !important;
+}
+
+/* Profile Image Styling - Rectangle */
+.profile-image {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Profile Image - Force Rectangle Override */
+.profile-image .profile-photo,
+.hero-section .profile-photo,
+img.profile-photo {
+    width: 200px !important;
+    height: 250px !important;
+    object-fit: cover !important;
+    border-radius: 12px !important;
+    /* Soft rounded corners for a modern look */
+    border: 3px solid #ffffff !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.profile-image .profile-photo:hover,
+.hero-section .profile-photo:hover,
+img.profile-photo:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Dark theme profile image adjustments */
+body.dark-theme .profile-photo {
+    border-color: #e0e0e0;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .profile-photo:hover {
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Light theme profile image adjustments */
+body:not(.dark-theme) .profile-photo {
+    border-color: #2c3e50;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+body:not(.dark-theme) .profile-photo:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive profile image */
+@media (max-width: 768px) {
+    .profile-photo {
+        width: 150px !important;
+        height: 188px !important;
+        /* Maintain aspect ratio */
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-photo {
+        width: 120px !important;
+        height: 150px !important;
+        /* Maintain aspect ratio */
+    }
+}
