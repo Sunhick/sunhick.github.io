@@ -342,6 +342,39 @@ p {
     line-height: 1.6;
 }
 
+/* Sidebar description - remove excessive spacing */
+.sidebar .lead {
+    text-align: left !important;
+    line-height: 1.4 !important;
+    margin-bottom: 1rem !important;
+    padding: 0 !important;
+}
+
+/* Sidebar navigation - soft rounded corners on hover */
+.sidebar-nav-item {
+    border-radius: 8px !important;
+    margin-bottom: 0.25rem !important;
+    transition: all 0.3s ease !important;
+    padding-left: 1rem !important;
+    padding-right: 0.5rem !important;
+}
+
+a.sidebar-nav-item:hover,
+a.sidebar-nav-item:focus {
+    background-color: rgba(255, 255, 255, .15) !important;
+    border-radius: 8px !important;
+    transform: translateX(3px) !important;
+    border-color: transparent !important;
+    padding-left: 1.2rem !important;
+}
+
+.sidebar-nav-item.active {
+    background-color: rgba(255, 255, 255, .2) !important;
+    border-radius: 8px !important;
+    border-color: transparent !important;
+    padding-left: 1.2rem !important;
+}
+
 /* Content area text justification */
 .content p,
 .content li,
