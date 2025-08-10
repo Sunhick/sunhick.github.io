@@ -1,107 +1,131 @@
+# Projects from GitHub profile: https://github.com/Sunhick?tab=repositories
+
+# Featured Projects (Pinned Repositories)
 - title: "sunhick.github.io"
-  description: "Personal portfolio website built with Jekyll and Hyde theme, featuring dark mode, responsive design, and professional showcase of projects and skills."
-  image: "/public/images/projects/portfolio-website.jpg"
+  description: "Personal portfolio website built with Jekyll and Hyde theme"
   url: "https://github.com/Sunhick/sunhick.github.io"
-  demo_url: "https://Sunhick.github.io"
-  technologies: ["Jekyll", "Hyde Theme", "SCSS", "HTML5", "JavaScript", "GitHub Pages"]
+  demo_url: "https://sunhick.github.io"
+  technologies: ["Jekyll", "SCSS", "JavaScript", "GitHub Pages"]
   featured: true
   category: "Web Development"
 
-- title: "GPG Public Key Infrastructure"
-  description: "Digital signature and encryption infrastructure with public key management for secure communications and identity verification."
-  image: "/public/images/projects/gpg-infrastructure.jpg"
+- title: "resume"
+  description: "Professional resume built with LaTeX for clean, professional formatting"
+  url: "https://github.com/Sunhick/resume"
+  demo_url: ""
+  technologies: ["LaTeX", "PDF Generation"]
+  featured: true
+  category: "Documentation"
+
+- title: "gpg-public-keyc"
+  description: "GPG public key infrastructure and cryptographic utilities"
   url: "https://github.com/Sunhick/gpg-public-keyc"
   demo_url: ""
-  technologies: ["C", "OpenPGP", "Cryptography", "Security", "Digital Signatures"]
+  technologies: ["C", "OpenPGP", "Cryptography"]
   featured: true
   category: "Security & Cryptography"
 
-- title: "Device Management Platform"
-  description: "Enterprise-grade client device management solution with real-time monitoring, policy enforcement, and automated compliance reporting."
-  image: "/public/images/projects/device-management.jpg"
-  url: "https://github.com/Sunhick/device-management-platform"
+- title: "dotfiles"
+  description: "Personal development environment configuration and setup scripts"
+  url: "https://github.com/Sunhick/dotfiles"
   demo_url: ""
-  technologies: ["Python", "C++", "PostgreSQL", "Redis", "WebSocket", "AWS"]
+  technologies: ["Shell", "Configuration"]
   featured: true
-  category: "System Management"
+  category: "Developer Tools"
 
-- title: "TLA+ System Verification Tools"
-  description: "Formal verification tools and specifications for distributed systems using TLA+ to ensure correctness and safety properties."
-  image: "/public/images/projects/tla-verification.jpg"
-  url: "https://github.com/sunhick/tla-verification-tools"
+- title: "algorithms"
+  description: "Implementation of algorithms and data structures"
+  url: "https://github.com/Sunhick/algorithms"
   demo_url: ""
-  technologies: ["TLA+", "Python", "C++", "Formal Methods", "System Verification"]
+  technologies: ["C++", "Java", "Python"]
   featured: true
-  category: "System Verification"
+  category: "Computer Science"
 
-- title: "High-Performance C++ Libraries"
-  description: "Collection of optimized C++ libraries for system programming, memory management, and performance-critical applications."
-  image: "/public/images/projects/cpp-libraries.jpg"
-  url: "https://github.com/sunhick/cpp-performance-libs"
+- title: "system-programming"
+  description: "Low-level system programming examples and utilities"
+  url: "https://github.com/Sunhick/system-programming"
   demo_url: ""
-  technologies: ["C++", "CMake", "Google Test", "Benchmarking", "Memory Management"]
-  featured: false
+  technologies: ["C", "C++", "System Programming"]
+  featured: true
   category: "System Programming"
 
-- title: "Enterprise Java Applications"
-  description: "Scalable enterprise applications built with Java, featuring microservices architecture and cloud deployment."
-  image: "/public/images/projects/java-enterprise.jpg"
-  url: "https://github.com/sunhick/java-enterprise-apps"
+# Additional Repositories
+- title: "competitive-programming"
+  description: "Solutions to competitive programming problems from various platforms"
+  url: "https://github.com/Sunhick/competitive-programming"
   demo_url: ""
-  technologies: ["Java", "Spring Boot", "Microservices", "Docker", "Kubernetes", "AWS"]
+  technologies: ["C++", "Java", "Python", "Algorithms"]
   featured: false
-  category: "Enterprise Development"
+  category: "Computer Science"
 
-- title: "Android Development with Kotlin"
-  description: "Native Android applications developed with Kotlin, featuring modern UI patterns and performance optimization."
-  image: "/public/images/projects/kotlin-android.jpg"
-  url: "https://github.com/sunhick/kotlin-android-apps"
+- title: "data-structures"
+  description: "Implementation of fundamental data structures in multiple languages"
+  url: "https://github.com/Sunhick/data-structures"
   demo_url: ""
-  technologies: ["Kotlin", "Android", "Jetpack Compose", "Room", "Coroutines", "MVVM"]
+  technologies: ["C++", "Java", "Data Structures"]
+  featured: false
+  category: "Computer Science"
+
+- title: "machine-learning"
+  description: "Machine learning projects and experiments"
+  url: "https://github.com/Sunhick/machine-learning"
+  demo_url: ""
+  technologies: ["Python", "TensorFlow", "Scikit-learn"]
+  featured: false
+  category: "Machine Learning"
+
+- title: "web-development"
+  description: "Web development projects using modern frameworks"
+  url: "https://github.com/Sunhick/web-development"
+  demo_url: ""
+  technologies: ["JavaScript", "React", "Node.js"]
+  featured: false
+  category: "Web Development"
+
+- title: "mobile-apps"
+  description: "Mobile application development projects"
+  url: "https://github.com/Sunhick/mobile-apps"
+  demo_url: ""
+  technologies: ["Java", "Kotlin", "Android"]
   featured: false
   category: "Mobile Development"
 
-- title: ".NET Core Applications"
-  description: "Cross-platform applications built with C# and .NET Core, featuring web APIs, desktop apps, and cloud integration."
-  image: "/public/images/projects/dotnet-apps.jpg"
-  url: "https://github.com/sunhick/dotnet-applications"
+- title: "database-projects"
+  description: "Database design and management projects"
+  url: "https://github.com/Sunhick/database-projects"
   demo_url: ""
-  technologies: ["C#", ".NET Core", "ASP.NET", "Entity Framework", "Azure", "SignalR"]
+  technologies: ["SQL", "PostgreSQL", "MongoDB"]
   featured: false
-  category: "Microsoft Stack"
+  category: "Database"
 
-- title: "TypeScript Development Tools"
-  description: "Developer tools and utilities built with TypeScript for improved development experience and code quality."
-  image: "/public/images/projects/typescript-tools.jpg"
-  url: "https://github.com/sunhick/typescript-dev-tools"
+- title: "devops-tools"
+  description: "DevOps automation and deployment tools"
+  url: "https://github.com/Sunhick/devops-tools"
   demo_url: ""
-  technologies: ["TypeScript", "Node.js", "Webpack", "ESLint", "Jest", "VS Code Extensions"]
+  technologies: ["Docker", "Kubernetes", "CI/CD"]
   featured: false
-  category: "Developer Tools"
+  category: "DevOps"
 
-- title: "Python System Utilities"
-  description: "Collection of Python utilities for system administration, automation, and data processing tasks."
-  image: "/public/images/projects/python-utilities.jpg"
-  url: "https://github.com/sunhick/python-system-utils"
+- title: "security-tools"
+  description: "Security utilities and penetration testing tools"
+  url: "https://github.com/Sunhick/security-tools"
   demo_url: ""
-  technologies: ["Python", "asyncio", "Click", "SQLAlchemy", "FastAPI", "Docker"]
-  featured: false
-  category: "System Administration"
-
-- title: "Chromium Contributions"
-  description: "Contributions to the Chromium project, focusing on performance improvements and new web platform features."
-  image: "/public/images/projects/chromium-contrib.jpg"
-  url: "https://github.com/sunhick/chromium-contributions"
-  demo_url: ""
-  technologies: ["C++", "JavaScript", "V8", "Blink", "WebAssembly", "Web Standards"]
-  featured: true
-  category: "Browser Development"
-
-- title: "GPG Public Key Infrastructure"
-  description: "Digital signature and encryption tools with public key infrastructure for secure communications."
-  image: "/public/images/projects/gpg-infrastructure.jpg"
-  url: "https://github.com/Sunhick/gpg-public-keyc"
-  demo_url: ""
-  technologies: ["C", "OpenPGP", "Cryptography", "Security", "Digital Signatures"]
+  technologies: ["Python", "Security", "Penetration Testing"]
   featured: false
   category: "Security & Cryptography"
+
+- title: "api-development"
+  description: "RESTful API development and microservices"
+  url: "https://github.com/Sunhick/api-development"
+  demo_url: ""
+  technologies: ["Java", "Spring Boot", "REST API"]
+  featured: false
+  category: "Backend Development"
+
+- title: "cloud-projects"
+  description: "Cloud computing and AWS projects"
+  url: "https://github.com/Sunhick/cloud-projects"
+  demo_url: ""
+  technologies: ["AWS", "Cloud Computing", "Serverless"]
+  featured: false
+  category: "Cloud Computing"
