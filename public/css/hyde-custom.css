@@ -1755,3 +1755,51 @@ body:not(.dark-theme) .contact-item:hover {
         column-rule: none;
     }
 }
+
+/* Sidebar Navigation Styling - High Specificity for GitHub Pages */
+.sidebar .sidebar-nav .sidebar-nav-item {
+    border-radius: 8px !important;
+    margin-bottom: 0.1rem !important;
+    transition: all 0.3s ease !important;
+    padding: 0.3rem 0.5rem 0.3rem 1rem !important;
+    display: block !important;
+}
+
+.sidebar .sidebar-nav a.sidebar-nav-item:hover,
+.sidebar .sidebar-nav a.sidebar-nav-item:focus {
+    background-color: rgba(255, 255, 255, .15) !important;
+    border-radius: 8px !important;
+    transform: translateX(3px) !important;
+    border-color: transparent !important;
+    padding-left: 1.2rem !important;
+    text-decoration: none !important;
+}
+
+.sidebar .sidebar-nav .sidebar-nav-item.active {
+    background-color: rgba(255, 255, 255, .2) !important;
+    border-radius: 8px !important;
+    border-color: transparent !important;
+    padding-left: 1.2rem !important;
+}
+
+/* Sidebar Description - Italics */
+.sidebar .sidebar-about .lead {
+    font-style: italic !important;
+    text-align: left !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0.75rem !important;
+    padding: 0 !important;
+}
+
+/* Sidebar Section Spacing */
+.sidebar .sidebar-about {
+    margin-bottom: 1rem !important;
+}
+
+.sidebar .sidebar-nav {
+    margin-bottom: 1rem !important;
+}
+
+.sidebar .sidebar-social {
+    margin: 1rem 0 0.5rem !important;
+}
