@@ -45,6 +45,11 @@ p {
     text-align: center;
 }
 
+/* Sidebar description - render in italics */
+.sidebar .lead {
+    font-style: italic !important;
+}
+
 /* Fix PDF download button text visibility - Nuclear option */
 .resume-actions a[href*="pdf"],
 .resume-actions a[href*="PDF"],
