@@ -657,10 +657,17 @@ function displayRandomQuote() {
     }, 200);
 }
 
-// Initialize quote display on page load
+// Initialize quote display on page load (only on home page)
 document.addEventListener('DOMContentLoaded', function () {
-    // Add a small delay to ensure page is fully loaded
-    setTimeout(displayRandomQuote, 500);
+    // Check if we're on the home page
+    const isHomePage = window.location.pathname === '/' ||
+        window.location.pathname === '/index.html' ||
+        window.location.pathname.endsWith('/') && window.location.pathname.split('/').length <= 2;
+
+    if (isHomePage) {
+        // Add a small delay to ensure page is fully loaded
+        setTimeout(displayRandomQuote, 500);
+    }
 });
 
 // Add CSS styles for the quote display
