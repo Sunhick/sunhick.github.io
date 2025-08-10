@@ -41,7 +41,7 @@ permalink: /resume/
     align-items: center;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #6a9fb5;
+    border-bottom: 2px solid #55dcf7;
     flex-shrink: 0;
 }
 
@@ -54,8 +54,8 @@ permalink: /resume/
     display: inline-flex;
     align-items: center;
     padding: 0.5rem 1rem;
-    background-color: #6a9fb5;
-    color: white;
+    background-color: #55dcf7;
+    color: #1a1c1d;
     text-decoration: none;
     border-radius: 6px;
     font-weight: 600;
@@ -66,11 +66,11 @@ permalink: /resume/
 }
 
 .btn-download:hover {
-    background-color: #5a8fa5;
+    background-color: #75e6ff;
     text-decoration: none;
-    color: white;
+    color: #1a1c1d;
     transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(106, 159, 181, 0.3);
+    box-shadow: 0 2px 8px rgba(85, 220, 247, 0.3);
 }
 
 .btn-download i {
@@ -78,11 +78,11 @@ permalink: /resume/
 }
 
 .resume-viewer {
-    background: white;
+    background: #1a1c1d;
     border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     overflow: hidden;
-    border: 1px solid #e5e5e5;
+    border: 1px solid #404040;
     flex: 1;
     width: 100%;
     min-height: 600px;
@@ -105,8 +105,8 @@ permalink: /resume/
 .pdf-fallback {
     padding: 2rem;
     text-align: center;
-    background: #f8f9fa;
-    color: #6c757d;
+    background: #1a1c1d;
+    color: #99aeb5;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -119,28 +119,30 @@ permalink: /resume/
     font-size: 1rem;
 }
 
-/* Dark theme adjustments */
-.dark-theme .resume-header {
-    border-bottom-color: #6a9fb5;
+/* Theme adjustments - Cole's theme colors */
+.theme-base-cole .resume-header {
+    border-bottom-color: #55dcf7;
 }
 
-.dark-theme .resume-viewer {
-    background-color: #2d2d2d;
+.theme-base-cole .resume-viewer {
+    background-color: #1a1c1d;
     border-color: #404040;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.dark-theme .pdf-fallback {
-    background-color: #1a1a1a;
-    color: #b0b0b0;
+.theme-base-cole .pdf-fallback {
+    background-color: #1a1c1d;
+    color: #99aeb5;
 }
 
-.dark-theme .btn-download {
-    background-color: #6a9fb5;
+.theme-base-cole .btn-download {
+    background-color: #55dcf7;
+    color: #1a1c1d;
 }
 
-.dark-theme .btn-download:hover {
-    background-color: #5a8fa5;
+.theme-base-cole .btn-download:hover {
+    background-color: #75e6ff;
+    color: #1a1c1d;
 }
 
 /* Responsive adjustments */

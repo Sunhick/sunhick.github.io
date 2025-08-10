@@ -4,6 +4,8 @@ title: Resume
 permalink: /resume-html/
 ---
 
+
+
 <div class="resume-html-container">
     <!-- PDF Download Link -->
     <div class="resume-download-section">

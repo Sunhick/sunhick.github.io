@@ -48,7 +48,7 @@ body {
 }
 
 html {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'PT Sans', sans-serif;
     font-size: 16px;
     line-height: 1.5;
 }
@@ -60,15 +60,15 @@ html {
 }
 
 body {
-    color: #515151;
-    background-color: #fff;
+    color: #99aeb5;
+    background-color: #2c3033;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
 }
 
 /* No `:visited` state is required by default (browsers will use `a`) */
 a {
-    color: #268bd2;
+    color: #55dcf7;
     text-decoration: none;
 }
 
@@ -92,7 +92,7 @@ h6 {
     margin-bottom: .5rem;
     font-weight: bold;
     line-height: 1.25;
-    color: #313131;
+    color: #ebfaff;
     text-rendering: optimizeLegibility;
 }
 
@@ -121,10 +121,11 @@ h6 {
 p {
     margin-top: 0;
     margin-bottom: 1rem;
+    font-size: 0.9rem;
 }
 
 strong {
-    color: #303030;
+    color: #ebfaff;
 }
 
 
@@ -134,10 +135,12 @@ ol,
 dl {
     margin-top: 0;
     margin-bottom: 1rem;
+    font-size: 0.9rem;
 }
 
 dt {
     font-weight: bold;
+    color: #ebfaff;
 }
 
 dd {
@@ -174,8 +177,8 @@ pre {
 code {
     padding: .25em .5em;
     font-size: 85%;
-    color: #bf616a;
-    background-color: #f9f9f9;
+    color: #ebfaff;
+    background-color: #1a1c1d;
     border-radius: 3px;
 }
 
@@ -190,7 +193,7 @@ pre {
     white-space: pre-wrap;
     word-break: break-all;
     word-wrap: break-word;
-    background-color: #f9f9f9;
+    background-color: #1a1c1d;
 }
 
 pre code {
@@ -240,8 +243,8 @@ pre code {
 blockquote {
     padding: .5rem 1rem;
     margin: .8rem 0;
-    color: #7a7a7a;
-    border-left: .25rem solid #e5e5e5;
+    color: #ebfaff;
+    border-left: .25rem solid #55dcf7;
 }
 
 blockquote p:last-child {
@@ -304,8 +307,8 @@ tbody tr:nth-child(odd) th {
 .message {
     margin-bottom: 1rem;
     padding: 1rem;
-    color: #717171;
-    background-color: #f9f9f9;
+    color: #ebfaff;
+    background-color: #1a1c1d;
 }
 
 
@@ -370,7 +373,7 @@ tbody tr:nth-child(odd) th {
 .page-title,
 .post-title,
 .post-title a {
-    color: #303030;
+    color: #ebfaff;
 }
 
 .page-title,
@@ -383,7 +386,7 @@ tbody tr:nth-child(odd) th {
     display: block;
     margin-top: -.5rem;
     margin-bottom: 1rem;
-    color: #9a9a9a;
+    color: #99aeb5;
 }
 
 /* Related posts */

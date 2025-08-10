@@ -3,14 +3,14 @@
    Custom Styles for Sunil Murthy's Portfolio
    ========================================================================== */
 
-/* Custom Color Variables */
+/* Custom Color Variables - Cole's Theme */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --accent-color: #e74c3c;
+    --primary-color: #2c3033;
+    --secondary-color: #55dcf7;
+    --accent-color: #55dcf7;
     --success-color: #27ae60;
     --warning-color: #f39c12;
-    --text-color: #2c3e50;
+    --text-color: #99aeb5;
     --light-gray: #ecf0f1;
     --dark-gray: #34495e;
 }
@@ -112,9 +112,9 @@
 }
 
 .project-card {
-    background: white;
+    background: #1a1c1d;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
@@ -134,14 +134,14 @@
         padding: 1.5em;
 
         .project-title {
-            color: var(--primary-color);
+            color: #ebfaff;
             margin-bottom: 0.5em;
             font-size: 1.3em;
             font-weight: 600;
         }
 
         .project-description {
-            color: var(--dark-gray);
+            color: #99aeb5;
             margin-bottom: 1em;
             line-height: 1.6;
         }
