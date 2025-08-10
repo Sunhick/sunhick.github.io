@@ -353,10 +353,12 @@ p {
 /* Sidebar navigation - soft rounded corners on hover */
 .sidebar-nav-item {
     border-radius: 8px !important;
-    margin-bottom: 0.25rem !important;
+    margin-bottom: 0.1rem !important;
     transition: all 0.3s ease !important;
     padding-left: 1rem !important;
     padding-right: 0.5rem !important;
+    padding-top: 0.3rem !important;
+    padding-bottom: 0.3rem !important;
 }
 
 a.sidebar-nav-item:hover,
@@ -374,6 +376,25 @@ a.sidebar-nav-item:focus {
     border-color: transparent !important;
     padding-left: 1.2rem !important;
 }
+
+/* Reduce vertical spacing between sidebar sections */
+.sidebar-about {
+    margin-bottom: 1rem !important;
+}
+
+.sidebar-nav {
+    margin-bottom: 1rem !important;
+}
+
+.sidebar-social {
+    margin: 1rem 0 0.5rem !important;
+}
+
+.sidebar .lead {
+    margin-bottom: 0.75rem !important;
+}
+
+
 
 /* Content area text justification */
 .content p,

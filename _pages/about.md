@@ -34,6 +34,6 @@ I'm actively involved in the developer community through open-source contributio
 
 ## Let's Connect
 
-I'm always interested in discussing technical challenges, new opportunities, or collaborating on interesting projects.
+I'm always interested in discussing technical challenges, new opportunities, or collaborating on interesting projects. Whether you want to discuss system architecture, explore collaboration opportunities, or just connect with a fellow developer, I'd love to hear from you.
 
-[Get in Touch]({{ site.baseurl }}/contact/) • [GitHub](https://github.com/{{ site.social.github }}) • [LinkedIn](https://linkedin.com/in/{{ site.social.linkedin }})
+**Ready to connect?** [Contact Me]({{ site.baseurl }}/contact/) for detailed contact information and availability.
