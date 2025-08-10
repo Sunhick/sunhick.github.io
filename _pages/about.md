@@ -4,65 +4,36 @@ title: About Me
 permalink: /about/
 ---
 
-## Hello, I'm Sunil Murthy
+# Hello, I'm Sunil Murthy
 
-I'm a passionate software engineer and technology enthusiast with extensive experience in building scalable systems, device management solutions, and contributing to cutting-edge technologies. My expertise spans multiple programming languages including C/C++, C#, Java, Kotlin, TypeScript, and Python, with a focus on system architecture, security, and formal verification.
+Software Engineer with **8+ years of experience** building enterprise-grade systems, device management solutions, and contributing to open-source technologies. My expertise spans from low-level systems programming to modern cloud-native applications, with focus on **authentication systems**, **distributed architecture**, and **formal verification**.
 
-### My Journey
+## Background
 
-My journey in technology has been driven by a deep curiosity about system design and the fundamental principles that make complex software systems work reliably. From low-level system programming to high-level architectural patterns, I've developed expertise across the entire technology stack.
+I've evolved from writing system-level code in C/C++ to architecting enterprise solutions that serve thousands of users. My journey includes building large-scale applications with Java and C#/.NET, embracing cloud-native development with AWS, and currently diving deep into TLA+ for formal system verification. I'm also an active contributor to major projects like **Chromium**.
 
-I'm particularly passionate about formal methods and system verification, currently learning TLA+ to formally verify distributed systems. This reflects my commitment to building not just functional software, but provably correct and reliable systems.
+## Core Expertise
 
-### What I Do
+- **Security & Authentication** - Enterprise authentication systems, OAuth2/OpenID Connect, cryptographic solutions
+- **Distributed Systems** - Cell-based architectures, fault-tolerant systems, formal verification with TLA+
+- **Cloud & Open Source** - AWS cloud-native applications, Chromium contributions, developer tools
 
-**Device Management & System Architecture**
-- Building comprehensive client device management and monitoring systems
-- Designing scalable cell-based architectural patterns for distributed systems
-- Implementing fault-tolerant systems with automated failover and recovery mechanisms
+## Philosophy
 
-**Authentication & Security**
-- Developing secure authentication systems with fine-grained authorization mechanisms
-- Implementing cryptographic solutions and digital signature systems
-- Building security-first applications with threat modeling and vulnerability assessment
+I believe great software is **reliable**, **secure**, and **maintainable**. My approach focuses on:
 
-**System Verification & Formal Methods**
-- Using TLA+ to formally verify distributed systems and ensure correctness properties
-- Applying formal verification techniques to critical system components
-- Developing tools and frameworks for automated system verification
+- **Correctness** - Using formal methods like TLA+ to verify system properties
+- **Security by Design** - Building security into every layer from the start
+- **Scalability** - Designing systems that grow gracefully
+- **Collaboration** - Code reviews, knowledge sharing, and open-source contributions
+- **Continuous Learning** - Staying current with emerging technologies
 
-**Cloud Technologies & AWS**
-- Extensive experience with AWS services for scalable cloud-native applications
-- Implementing microservices architectures with containerization and orchestration
-- Building CI/CD pipelines and infrastructure as code solutions
+## Beyond Code
 
-**Open Source & Chromium Development**
-- Active contributor to various open-source projects and community tools
-- Contributing to the Chromium project with focus on performance and web standards
-- Maintaining and developing developer tools and utilities
+I'm actively involved in the developer community through open-source contributions, technical writing, and mentoring. I enjoy sharing knowledge about formal verification, distributed systems, and security best practices while helping junior developers grow in their careers.
 
-### My Approach
+## Let's Connect
 
-I believe in building systems that are not only functional but also provably correct and secure. My development philosophy centers around:
+I'm always interested in discussing technical challenges, new opportunities, or collaborating on interesting projects.
 
-- **Formal Verification**: Using mathematical methods like TLA+ to prove system correctness
-- **Security-First Design**: Implementing security considerations from the ground up
-- **Scalable Architecture**: Designing systems that can grow and adapt to changing requirements
-- **Open Source Collaboration**: Contributing to and learning from the global developer community
-- **Continuous Learning**: Staying current with emerging technologies and best practices
-
-### Beyond Code
-
-When I'm not coding, you can find me:
-
-- Contributing to open-source projects and the developer community
-- Writing technical blog posts and sharing knowledge
-- Exploring new technologies and attending tech meetups
-- Mentoring aspiring developers and participating in coding bootcamps
-- Enjoying outdoor activities and photography
-
-### Let's Connect
-
-I'm always interested in discussing new opportunities, collaborating on interesting projects, or simply connecting with fellow developers. Feel free to reach out through any of the channels listed below.
-
-Whether you're looking for a developer to join your team, need help with a project, or want to discuss the latest in tech, I'd love to hear from you!
+[Get in Touch]({{ site.baseurl }}/contact/) • [GitHub](https://github.com/{{ site.social.github }}) • [LinkedIn](https://linkedin.com/in/{{ site.social.linkedin }})

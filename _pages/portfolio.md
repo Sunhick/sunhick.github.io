@@ -52,29 +52,6 @@ Here's a showcase of my work across different domains including device managemen
   </ul>
 {% endfor %}
 
-### Programming Languages & Technologies
-
-Based on my project portfolio, here are the main technologies I work with:
-
-**Systems Programming:** C, C++
-**Enterprise Development:** Java, C#/.NET Core
-**Modern Development:** Kotlin, TypeScript, Python
-**Web Technologies:** Node.js, React, Django, FastAPI
-**Cloud & DevOps:** AWS, Docker, Kubernetes
-**Databases:** PostgreSQL, MongoDB, Redis
-**Security:** OpenPGP, JWT, OAuth2, Cryptography
-**Formal Methods:** TLA+, System Verification
-**Browser Technologies:** Chromium, V8, WebAssembly
-
-### Open Source Contributions
-
-I'm an active contributor to the open-source community with contributions to:
-
-- **Chromium Project** - Performance improvements and web platform features
-- **Developer Tools** - TypeScript utilities and VS Code extensions
-- **System Utilities** - Python automation and administration tools
-- **Security Tools** - GPG and cryptographic utilities
-
 ### Contact for Collaboration
 
 Interested in collaborating on a project or discussing opportunities? Feel free to reach out:
