@@ -670,7 +670,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// Add CSS styles for the quote display
+// Add CSS styles for the quote display and profile image
 const quoteStyles = `
 .cs-quote-simple {
     margin-bottom: 1.5rem;
@@ -690,6 +690,16 @@ const quoteStyles = `
     .quote-text {
         font-size: 0.9rem;
     }
+}
+
+/* Profile image black and white filter */
+.profile-photo {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.profile-photo:hover {
+    filter: grayscale(0%);
 }
 `;
 
