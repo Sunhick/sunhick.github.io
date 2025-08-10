@@ -597,3 +597,96 @@ document.head.appendChild(styleSheet);
 // Fixed Side Navigation Enhancement - Removed problematic active state management
 // The Liquid template logic in sidebar.html now handles active states correctly
 
+
+// Computer Science Quotes Feature
+function displayRandomQuote() {
+    // CS quotes data - embedded in JavaScript for immediate availability
+    const csQuotes = [
+        { quote: "The best way to predict the future is to invent it.", author: "Alan Kay" },
+        { quote: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.", author: "Martin Fowler" },
+        { quote: "First, solve the problem. Then, write the code.", author: "John Johnson" },
+        { quote: "Code is like humor. When you have to explain it, it's bad.", author: "Cory House" },
+        { quote: "The most important property of a program is whether it accomplishes the intention of its user.", author: "C.A.R. Hoare" },
+        { quote: "Simplicity is the ultimate sophistication.", author: "Leonardo da Vinci" },
+        { quote: "Programs must be written for people to read, and only incidentally for machines to execute.", author: "Harold Abelson" },
+        { quote: "The computer was born to solve problems that did not exist before.", author: "Bill Gates" },
+        { quote: "Software is a great combination between artistry and engineering.", author: "Bill Gates" },
+        { quote: "Talk is cheap. Show me the code.", author: "Linus Torvalds" },
+        { quote: "The only way to learn a new programming language is by writing programs in it.", author: "Dennis Ritchie" },
+        { quote: "Debugging is twice as hard as writing the code in the first place.", author: "Brian Kernighan" },
+        { quote: "It's not a bug – it's an undocumented feature.", author: "Anonymous" },
+        { quote: "Good code is its own best documentation.", author: "Steve McConnell" },
+        { quote: "The function of good software is to make the complex appear to be simple.", author: "Grady Booch" }
+    ];
+
+    // Get random quote
+    const randomIndex = Math.floor(Math.random() * csQuotes.length);
+    const selectedQuote = csQuotes[randomIndex];
+
+    // Find or create quote container
+    let quoteContainer = document.getElementById('cs-quote-container');
+
+    if (!quoteContainer) {
+        // Create quote container if it doesn't exist
+        quoteContainer = document.createElement('div');
+        quoteContainer.id = 'cs-quote-container';
+        quoteContainer.className = 'cs-quote-simple';
+
+        // Insert below the page title
+        const pageTitle = document.querySelector('.page-title') || document.querySelector('h1');
+        if (pageTitle) {
+            // Insert after the page title
+            pageTitle.parentNode.insertBefore(quoteContainer, pageTitle.nextSibling);
+        } else {
+            // Fallback: insert at the top of the content container
+            const contentContainer = document.querySelector('.content');
+            if (contentContainer) {
+                contentContainer.insertBefore(quoteContainer, contentContainer.firstChild);
+            }
+        }
+    }
+
+    // Update quote content with fade effect
+    quoteContainer.style.opacity = '0';
+
+    setTimeout(() => {
+        quoteContainer.innerHTML = `
+            <p class="quote-text">"${selectedQuote.quote}" — ${selectedQuote.author}</p>
+        `;
+        quoteContainer.style.opacity = '1';
+    }, 200);
+}
+
+// Initialize quote display on page load
+document.addEventListener('DOMContentLoaded', function () {
+    // Add a small delay to ensure page is fully loaded
+    setTimeout(displayRandomQuote, 500);
+});
+
+// Add CSS styles for the quote display
+const quoteStyles = `
+.cs-quote-simple {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.quote-text {
+    font-style: italic;
+    color: #666;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .quote-text {
+        font-size: 0.9rem;
+    }
+}
+`;
+
+// Inject quote styles
+const quoteStyleSheet = document.createElement('style');
+quoteStyleSheet.textContent = quoteStyles;
+document.head.appendChild(quoteStyleSheet);
