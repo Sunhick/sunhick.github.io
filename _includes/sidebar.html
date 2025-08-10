@@ -30,17 +30,11 @@
                 <i class="fas fa-briefcase"></i> Portfolio
             </a>
 
-            <a class="sidebar-nav-item{% if page.url == '/skills/' %} active{% endif %}"
-                href="{{ site.baseurl }}/skills/">
-                <i class="fas fa-code"></i> Skills
-            </a>
 
 
 
-            <a class="sidebar-nav-item{% if page.url == '/resume/' %} active{% endif %}"
-                href="{{ site.baseurl }}/resume/">
-                <i class="fas fa-file-alt"></i> Resume
-            </a>
+
+
 
 
         </nav>
@@ -63,6 +57,10 @@
                 <i class="fas fa-envelope"></i>
             </a>
             {% endif %}
+
+            <a href="{{ site.baseurl }}/resume/" title="Resume">
+                <i class="fas fa-file-alt"></i>
+            </a>
         </div>
 
         <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>

@@ -42,3 +42,49 @@ permalink: /
 
 
 
+<style>
+/* Remove all horizontal lines below headers */
+h1, h2, h3, h4, h5, h6 {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    border: none !important;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    border: none !important;
+}
+
+/* Remove any hr elements or pseudo-elements that might create lines */
+hr {
+    display: none !important;
+}
+
+/* Remove borders from any elements that might have them */
+* {
+    border-bottom: none !important;
+}
+
+/* Specifically target any elements that might have underlines */
+.page-title,
+.post-title {
+    border-bottom: none !important;
+    text-decoration: none !important;
+}
+
+/* Remove any after pseudo-elements that might create lines */
+h1:after, h2:after, h3:after, h4:after, h5:after, h6:after {
+    display: none !important;
+}
+
+.content h1:after, .content h2:after, .content h3:after,
+.content h4:after, .content h5:after, .content h6:after {
+    display: none !important;
+}
+</style>
