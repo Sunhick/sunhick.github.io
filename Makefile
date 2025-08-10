@@ -22,11 +22,11 @@ install: ## Install dependencies (bundle install)
 	@echo "✅ Dependencies installed successfully!"
 
 serve: ## Start development server with hot-reload (default port 4000)
-	@echo "🚀 Starting Jekyll development server with hot-reload..."
+	@echo "🚀 Starting Jekyll development server..."
 	@echo "📍 Site will be available at: http://localhost:4000"
-	@echo "🔄 Hot-reload enabled - changes will be reflected automatically"
+	@echo "🔄 Auto-regeneration enabled - changes will be reflected automatically"
 	@echo "⏹️  Press Ctrl+C to stop the server"
-	bundle exec jekyll serve --livereload --incremental --drafts
+	bundle exec jekyll serve --incremental --drafts
 
 serve-prod: ## Start server with production settings
 	@echo "🏭 Starting Jekyll server with production settings..."

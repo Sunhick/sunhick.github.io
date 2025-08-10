@@ -5,6 +5,7 @@ gem "jekyll-feed", "~> 0.12"
 gem "jekyll-sitemap"
 gem "jekyll-gist"
 gem "jekyll-paginate"
+gem "faraday-retry"
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.

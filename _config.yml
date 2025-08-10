@@ -52,11 +52,6 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-gist
-  - jekyll-paginate
-
-# Pagination
-paginate: 5
-paginate_path: "/page:num/"
 
 # Defaults
 defaults:
