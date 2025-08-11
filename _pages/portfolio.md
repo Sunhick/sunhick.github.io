@@ -18,10 +18,10 @@ Showcasing projects and technical skills across device management, system archit
     </div>
 
     <div class="resume-viewer">
-        <iframe src="{{ site.baseurl }}/public/resume/Sunil_Murthy_Resume.pdf" width="100%" height="100%" frameborder="0" style="width: 100% !important; height: 100% !important;">
+        <iframe src="{{ site.baseurl }}/public/resume/Sunil_Murthy_Resume_Dark.pdf" width="100%" height="100%" frameborder="0" style="width: 100% !important; height: 100% !important;">
             <div class="pdf-fallback">
                 <p>Your browser doesn't support PDF viewing or the resume file is not available.</p>
-                <p>Please <a href="{{ site.baseurl }}/public/resume/Sunil_Murthy_Resume.pdf" target="_blank">download the PDF</a> instead.</p>
+                <p>Please <a href="{{ site.baseurl }}/public/resume/Sunil_Murthy_Resume_Dark.pdf" target="_blank">download the PDF</a> instead.</p>
             </div>
         </iframe>
     </div>
