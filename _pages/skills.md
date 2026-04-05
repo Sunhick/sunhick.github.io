@@ -4,26 +4,25 @@ title: Skills & Expertise
 permalink: /skills/
 ---
 
-# Technical Skills
-
+<div class="skills-grid">
 {% for category in site.data.skills %}
-**{{ category.category }}:** {% for skill in category.skills %}{{ skill.name }}{% unless forloop.last %}, {% endunless %}{% endfor %}
-
+<div class="skill-category-card fade-in">
+    <h3><i class="{{ category.skills[0].icon }}"></i> {{ category.category }}</h3>
+    {% for skill in category.skills %}
+    <div class="skill-item">
+        <div class="skill-icon"><i class="{{ skill.icon }}"></i></div>
+        <div class="skill-info">
+            <div class="skill-name">{{ skill.name }}</div>
+            <div class="skill-bar">
+                <div class="skill-progress" data-level="{{ skill.level }}"></div>
+            </div>
+        </div>
+        <div class="skill-level">{{ skill.level }}%</div>
+    </div>
+    {% endfor %}
+</div>
 {% endfor %}
-
-## Core Expertise
-
-**Systems & Architecture** - C/C++, system design, performance optimization, distributed systems, memory management
-
-**Enterprise Development** - Java, C#/.NET, Kotlin, Spring Boot, microservices architecture, scalable applications
-
-**Modern Development** - Python, TypeScript, Node.js, Django, FastAPI, RESTful APIs, web frameworks
-
-**Security & Authentication** - Authentication systems, authorization (RBAC), cryptography, digital signatures, security best practices
-
-**Cloud & DevOps** - AWS services, Docker, Kubernetes, CI/CD pipelines, Infrastructure as Code
-
-**Specialized Technologies** - TLA+ formal verification, device management, cell-based architecture, Chromium development, system verification
+</div>
 
 ## Currently Learning
 
