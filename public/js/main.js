@@ -131,3 +131,30 @@ function initQuote() {
         title.parentNode.insertBefore(container, title.nextSibling);
     }
 }
+
+
+// --- Theme Toggle (dark/light) ---
+(function() {
+    // Apply saved theme immediately to prevent flash
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') document.body.classList.add('light-theme');
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+
+        function updateIcon() {
+            const isLight = document.body.classList.contains('light-theme');
+            btn.innerHTML = isLight ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            btn.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+        }
+
+        updateIcon();
+
+        btn.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
+            updateIcon();
+        });
+    });
+})();
