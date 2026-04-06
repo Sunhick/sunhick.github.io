@@ -137,23 +137,23 @@ function initQuote() {
 (function() {
     // Apply saved theme immediately to prevent flash
     const saved = localStorage.getItem('theme');
-    if (saved === 'light') document.body.classList.add('light-theme');
+    if (saved === 'dark') document.body.classList.add('dark-theme');
 
     document.addEventListener('DOMContentLoaded', () => {
         const btn = document.getElementById('theme-toggle');
         if (!btn) return;
 
         function updateIcon() {
-            const isLight = document.body.classList.contains('light-theme');
-            btn.innerHTML = isLight ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-            btn.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+            const isDark = document.body.classList.contains('dark-theme');
+            btn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            btn.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
         }
 
         updateIcon();
 
         btn.addEventListener('click', () => {
-            document.body.classList.toggle('light-theme');
-            localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
+            document.body.classList.toggle('dark-theme');
+            localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
             updateIcon();
         });
     });
