@@ -378,13 +378,13 @@ make stop
 ### Content Updates
 ```bash
 # Update home page content
-vim _pages/index.md
+emacs _pages/index.md
 
 # Update portfolio projects
-vim _pages/portfolio.md
+emacs _pages/portfolio.md
 
 # Update resume
-vim _pages/resume-html.md
+emacs _pages/resume-html.md
 ```
 
 ### Deployment
@@ -403,7 +403,7 @@ make push
 make resume-update
 
 # Update HTML resume to match PDF changes
-vim _pages/resume-html.md
+emacs _pages/resume-html.md
 ```
 
 ## 🚀 Live Site
