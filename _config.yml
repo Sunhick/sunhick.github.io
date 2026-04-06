@@ -1,69 +1,105 @@
-# Site settings
-title: "Sunil Murthy"
-tagline: "Software Developer & Tech Enthusiast"
-description: "Software engineer focused on system architecture and security."
+# The Site Configuration
+# Import the theme
+theme: jekyll-theme-chirpy
+
+lang: en
+timezone: America/Los_Angeles
+
+# jekyll-seo-tag settings
+title: Sunil Murthy
+tagline: Software Developer & Tech Enthusiast
+description: >-
+  Software engineer focused on system architecture, security, and distributed systems.
+
 url: "https://sunilmurthy.github.io"
 baseurl: ""
 
-# Author information
-author:
-  name: "Sunil Murthy"
-  email: "sunhick@gmail.com"
-
-# Build settings
-markdown: kramdown
-highlighter: rouge
-permalink: pretty
-
-# Hyde theme settings
-version: 2.1.0
-
-# Sidebar links
 github:
-  repo: https://github.com/sunhick
+  username: sunhick
 
-# Navigation
-nav:
-  - name: "Home"
-    url: "/"
-  - name: "About"
-    url: "/about/"
-  - name: "Portfolio"
-    url: "/portfolio/"
-  - name: "Skills"
-    url: "/skills/"
-  - name: "Contact"
-    url: "/contact/"
-
-# Social links
 social:
-  github: "sunhick"
-  linkedin: "sunhick"
-  email: "sunhick@gmail.com"
+  name: Sunil Murthy
+  email: sunhick@gmail.com
+  links:
+    - https://github.com/sunhick
+    - https://www.linkedin.com/in/sunhick
 
-# Collections
+theme_mode: # [light | dark] — empty follows system preference
+
+avatar: /assets/img/profile.jpg
+
+toc: true
+
+comments:
+  provider: # [disqus | utterances | giscus]
+
+paginate: 10
+
+kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
 collections:
-  pages:
+  tabs:
     output: true
-    permalink: /:name/
+    sort_by: order
 
-# Plugins
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-gist
-
-# Defaults
 defaults:
   - scope:
-      path: "_pages"
-      type: "pages"
+      path: ""
+      type: posts
     values:
-      layout: "page"
+      layout: post
+      comments: true
+      toc: true
+      permalink: /posts/:title/
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
 
-# Exclude files
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
 exclude:
-  - Gemfile
-  - Gemfile.lock
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
   - README.md
-  - vendor/
+  - LICENSE
+  - purgecss.js
+  - "*.config.js"
+  - "package*.json"
+  - Makefile
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
