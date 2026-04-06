@@ -20,6 +20,14 @@
     <!-- CSS -->
     <link rel="stylesheet" href="{{ site.baseurl }}/public/css/modern.css">
 
+    <!-- Prevent flash of wrong theme -->
+    <script>
+      (function(){
+        var t = localStorage.getItem('theme');
+        if (t === 'dark') document.documentElement.classList.add('dark-theme');
+      })();
+    </script>
+
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}/public/apple-touch-icon-144-precomposed.png">
     <link rel="shortcut icon" href="{{ site.baseurl }}/public/favicon.ico">

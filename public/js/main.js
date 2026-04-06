@@ -135,25 +135,28 @@ function initQuote() {
 
 // --- Theme Toggle (dark/light) ---
 (function() {
-    // Apply saved theme immediately to prevent flash
-    const saved = localStorage.getItem('theme');
-    if (saved === 'dark') document.body.classList.add('dark-theme');
+    // Apply dark theme if saved (body — html is handled by inline script in <head>)
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-theme');
+    }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const btn = document.getElementById('theme-toggle');
+    document.addEventListener('DOMContentLoaded', function() {
+        var btn = document.getElementById('theme-toggle');
         if (!btn) return;
 
         function updateIcon() {
-            const isDark = document.body.classList.contains('dark-theme');
+            var isDark = document.body.classList.contains('dark-theme');
             btn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
             btn.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
         }
 
         updateIcon();
 
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', function() {
+            document.documentElement.classList.toggle('dark-theme');
             document.body.classList.toggle('dark-theme');
-            localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+            var nowDark = document.body.classList.contains('dark-theme');
+            localStorage.setItem('theme', nowDark ? 'dark' : 'light');
             updateIcon();
         });
     });
