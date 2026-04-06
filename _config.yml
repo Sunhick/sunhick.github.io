@@ -24,7 +24,7 @@ social:
     - https://github.com/sunhick
     - https://www.linkedin.com/in/sunhick
 
-theme_mode: # [light | dark] — empty follows system preference
+theme_mode: light
 
 avatar: /assets/img/profile.jpg
 
