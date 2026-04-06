@@ -4,6 +4,7 @@ A modern, responsive Jekyll-based portfolio website built with the Hyde theme an
 
 ## 🚀 Features
 
+- **Hyde Theme**: Built on the popular Hyde Jekyll theme with sidebar navigation
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
 - **Jekyll-Powered**: Static site generation with easy content management
 - **Portfolio Showcase**: Dynamic project display with filtering capabilities
