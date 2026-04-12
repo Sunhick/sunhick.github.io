@@ -29,7 +29,7 @@ TLA+ describes systems as state machines. A specification has:
 
 ### A Simple Example: A Counter
 
-```tla
+```plaintext
 ---- MODULE Counter ----
 EXTENDS Integers
 
@@ -84,7 +84,7 @@ The TLC model checker will explore every reachable state and verify that `CountN
 
 TLA+ is built on set theory:
 
-```tla
+```plaintext
 \* Sets
 S == {1, 2, 3}
 T == {x \in S : x > 1}          \* {2, 3}
@@ -112,7 +112,7 @@ PlusCal looks like pseudocode but compiles to TLA+. It's the on-ramp for most pe
 
 ### The Same Counter in PlusCal
 
-```tla
+```plaintext
 ---- MODULE CounterPC ----
 EXTENDS Integers, TLC
 
@@ -150,7 +150,7 @@ CountNonNegative == count >= 0
 
 PlusCal has two flavors: P-syntax (Pascal-like) and C-syntax. P-syntax is more common:
 
-```
+```plaintext
 \* Variables
 variables x = 0, y = "hello", queue = <<>>;
 
@@ -199,7 +199,7 @@ print <<"x is", x>>;
 
 Labels are the most important concept in PlusCal. Each label defines an atomic step — the model checker will not interleave other processes within a single label.
 
-```
+```plaintext
 process Worker = 1
 begin
   \* This is ONE atomic step:
@@ -225,7 +225,7 @@ Getting labels right is the art of PlusCal modeling. Too few labels (everything 
 
 PlusCal processes model concurrent actors:
 
-```
+```plaintext
 \* Single process
 process Server = "server"
 begin
@@ -247,7 +247,7 @@ Each process in a set runs the same code but has its own identity (`self`). The 
 
 Let's model the Two-Phase Commit (2PC) protocol — a coordinator asks participants to commit or abort a transaction.
 
-```tla
+```plaintext
 ---- MODULE TwoPhaseCommit ----
 EXTENDS Integers, Sequences, FiniteSets, TLC
 
@@ -360,7 +360,7 @@ The biggest practical challenge with TLC is state space explosion. With 3 proces
 
 Strategies to manage this:
 
-```
+```plaintext
 \* Use small model values for constants
 CONSTANTS
   Participants = {p1, p2, p3}    \* 3, not 100
@@ -392,29 +392,29 @@ Safety properties are invariants — TLC checks them in every state. Liveness pr
 
 ### Temporal Operators
 
-```tla
+```plaintext
 \* Always: [] (box)
-[]Invariant                    \* Invariant holds in every state
+[]Invariant                      \* Invariant holds in every state
 
 \* Eventually: <> (diamond)
-<>(x = "done")                 \* x eventually equals "done"
+<>(x = "done")                   \* x eventually equals "done"
 
 \* Leads to: ~>
 (x = "requested") ~> (x = "granted")
-\* Whenever x is "requested", it eventually becomes "granted"
+                                 \* Whenever x is "requested", it eventually becomes "granted"
 
 \* Always eventually (fairness/liveness):
-[]<>(x = "ready")              \* x is "ready" infinitely often
+[]<>(x = "ready")                \* x is "ready" infinitely often
 
 \* Eventually always (stability):
-<>[](x = "stable")             \* x eventually reaches "stable" and stays there
+<>[](x = "stable")               \* x eventually reaches "stable" and stays there
 ```
 
 ### Fairness
 
 Without fairness constraints, TLC considers executions where a process never gets to run — which trivially violates liveness. Fairness says "every enabled action eventually executes."
 
-```tla
+```plaintext
 \* Weak fairness: if an action is continuously enabled, it eventually executes
 Spec == Init /\ [][Next]_vars /\ WF_vars(Next)
 
@@ -424,7 +424,7 @@ Spec == Init /\ [][Next]_vars /\ SF_vars(Next)
 
 In PlusCal, fairness is declared on processes:
 
-```
+```plaintext
 \* Weak fairness (default for most models)
 fair process Worker \in 1..3
 
@@ -436,7 +436,7 @@ fair+ process Worker \in 1..3
 
 ### Message Passing (Network Communication)
 
-```tla
+```plaintext
 (*--algorithm MessagePassing
 variables
   network = [src \in Nodes, dst \in Nodes |-> <<>>];  \* per-pair message queues
@@ -455,7 +455,7 @@ end macro;
 
 ### Modeling Failures
 
-```
+```plaintext
 \* Process crash: nondeterministically stop executing
 process Server \in Servers
 variables alive = TRUE;
@@ -475,7 +475,7 @@ end process;
 
 ### Modeling Network Partitions
 
-```
+```plaintext
 \* Messages can be lost, duplicated, or reordered
 macro UnreliableSend(src, dst, msg) begin
   either
@@ -493,7 +493,7 @@ end macro;
 
 ### Modeling Timeouts
 
-```
+```plaintext
 \* Timeout as nondeterministic choice
 either
   \* Receive response before timeout
@@ -509,7 +509,7 @@ end either;
 
 Here's a more realistic example — a distributed lock with lease expiration, modeling the kind of thing you'd build on top of a coordination service:
 
-```tla
+```plaintext
 ---- MODULE DistributedLock ----
 EXTENDS Integers, TLC
 
@@ -565,8 +565,8 @@ end algorithm; *)
 MutualExclusion ==
   \A c1, c2 \in Clients :
     c1 /= c2 =>
-      ~ (pc[c1] = "criticalSection" /\ lock.holder = c1 /\ clock < c1 \* ...
-         /\ pc[c2] = "criticalSection" /\ lock.holder = c2)
+      ~ (pc[c1] = "criticalSection" /\ lock.holder = c1 /\ clock < myLease[c1]
+         /\ pc[c2] = "criticalSection" /\ lock.holder = c2 /\ clock < myLease[c2])
 ====
 ```
 
@@ -604,7 +604,7 @@ This model lets TLC explore what happens when leases expire while a client think
 
 When TLC finds a bug, it produces a trace like:
 
-```
+```plaintext
 Error: Invariant MutualExclusion is violated.
 
 State 1: <Initial predicate>
