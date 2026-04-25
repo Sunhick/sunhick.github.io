@@ -15,6 +15,7 @@ Sets are the foundation. Every other data structure is defined in terms of them.
 
 ### Construction
 
+{% raw %}
 ```plaintext
 \* Enumeration
 S == {1, 2, 3}
@@ -38,6 +39,7 @@ SUBSET {1, 2}                        \* {{}, {1}, {2}, {1, 2}}
 \* UNION: flatten a set of sets
 UNION {{1, 2}, {2, 3}, {3, 4}}      \* {1, 2, 3, 4}
 ```
+{% endraw %}
 
 ### Operations
 
