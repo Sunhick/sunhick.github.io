@@ -5,13 +5,42 @@ categories: [Editors]
 tags: [emacs, keybindings, productivity, magit, eglot, org-mode]
 ---
 
+<style>
+.content:has(> .kb-post) {
+  columns: 2;
+  column-gap: 2rem;
+}
+@media (max-width: 849px) {
+  .content:has(> .kb-post) { columns: 1; }
+}
+.content:has(> .kb-post) h2 {
+  column-span: all;
+}
+.content:has(> .kb-post) hr {
+  column-span: all;
+}
+.content:has(> .kb-post) h3 {
+  margin-top: 0.5rem;
+}
+.content:has(> .kb-post) .table-wrapper,
+.content:has(> .kb-post) h3,
+.content:has(> .kb-post) p,
+.content:has(> .kb-post) ul {
+  break-inside: avoid;
+}
+</style>
+
+<div class="kb-post"></div>
+
 This is the keybinding reference I wish I had when I started using Emacs seriously. It covers the built-in defaults, the package bindings I actually use daily, and the muscle memory that makes Emacs feel fast once it clicks.
 
 Notation: `C-` = Ctrl, `M-` = Alt/Option, `S-` = Shift, `SPC` = Space, `RET` = Enter, `DEL` = Backspace.
 
-## Navigation
+---
 
-The basics that replace your arrow keys. Once these are in your fingers, you never leave the home row.
+## Core Bindings
+
+### Navigation
 
 | Key | Action |
 |-----|--------|
@@ -27,28 +56,26 @@ The basics that replace your arrow keys. Once these are in your fingers, you nev
 | `M->` | End of buffer |
 | `C-v` | Scroll down (page) |
 | `M-v` | Scroll up (page) |
-| `C-l` | Recenter screen (cycles top/center/bottom) |
+| `C-l` | Recenter screen |
 | `M-g g` | Go to line number |
 | `M-g c` | Go to char position |
 
 ### Structural Navigation
 
-These move by language-level constructs — parenthesized expressions, function definitions, balanced delimiters. They work across every language mode.
-
 | Key | Action |
 |-----|--------|
-| `C-M-f` | Forward sexp (balanced expression) |
+| `C-M-f` | Forward sexp |
 | `C-M-b` | Backward sexp |
 | `C-M-a` | Beginning of defun |
 | `C-M-e` | End of defun |
-| `C-M-u` | Up sexp (out of enclosing parens) |
-| `C-M-d` | Down sexp (into nested parens) |
-| `C-M-n` | Next sexp (same nesting level) |
-| `C-M-p` | Previous sexp (same nesting level) |
+| `C-M-u` | Up sexp (out of parens) |
+| `C-M-d` | Down sexp (into parens) |
+| `C-M-n` | Next sexp (same level) |
+| `C-M-p` | Previous sexp (same level) |
 
-The `C-M-` prefix is the "structural" prefix. If you remember nothing else, remember that `C-` moves by character, `M-` moves by word, and `C-M-` moves by structure.
+`C-` moves by character, `M-` moves by word, `C-M-` moves by structure.
 
-## Editing
+### Editing
 
 | Key | Action |
 |-----|--------|
@@ -70,14 +97,12 @@ The `C-M-` prefix is the "structural" prefix. If you remember nothing else, reme
 | `M-l` | Lowercase word |
 | `M-c` | Capitalize word |
 | `M-SPC` | Cycle spacing |
-| `M-q` | Fill paragraph (rewrap to fill-column) |
+| `M-q` | Fill paragraph |
 | `C-M-k` | Kill sexp |
-| `C-o` | Open line (insert newline below) |
+| `C-o` | Open line |
 | `C-j` | Newline and indent |
 
-The kill ring is Emacs's clipboard history. `C-y` pastes the most recent kill, then `M-y` cycles through older kills. It's a stack you never knew you needed until you have it.
-
-## Mark and Region
+### Mark and Region
 
 | Key | Action |
 |-----|--------|
@@ -86,11 +111,9 @@ The kill ring is Emacs's clipboard history. `C-y` pastes the most recent kill, t
 | `M-h` | Mark paragraph |
 | `C-M-h` | Mark function |
 | `C-M-SPC` | Mark sexp |
-| `C-x C-x` | Exchange point and mark (flip selection direction) |
+| `C-x C-x` | Exchange point and mark |
 
-`C-SPC` then move — that's how you select. No shift-arrow gymnastics. `C-x C-x` is underrated — it lets you adjust the other end of your selection without losing it.
-
-## Search and Replace
+### Search and Replace
 
 | Key | Action |
 |-----|--------|
@@ -100,13 +123,11 @@ The kill ring is Emacs's clipboard history. `C-y` pastes the most recent kill, t
 | `C-M-r` | Isearch backward (regexp) |
 | `M-%` | Query replace |
 | `C-M-%` | Query replace (regexp) |
-| `M-s o` | Occur (list all matches in buffer) |
+| `M-s o` | Occur (list matches) |
 | `M-s h r` | Highlight regexp |
 | `M-s h u` | Unhighlight regexp |
 
-During isearch, `C-s` again jumps to the next match. `C-r` reverses direction. `M-s o` from inside isearch sends your search term to occur — a great way to get an overview of all matches.
-
-## Files and Buffers
+### Files and Buffers
 
 | Key | Action |
 |-----|--------|
@@ -114,41 +135,27 @@ During isearch, `C-s` again jumps to the next match. `C-r` reverses direction. `
 | `C-x C-s` | Save file |
 | `C-x C-w` | Save as |
 | `C-x s` | Save all modified buffers |
-| `C-x b` | Switch buffer (with vertico completion) |
+| `C-x b` | Switch buffer |
 | `C-x C-b` | List buffers (ibuffer) |
 | `C-x k` | Kill buffer |
 | `C-x C-r` | Find file read-only |
-| `C-x C-v` | Find alternate file (replace current buffer) |
+| `C-x C-v` | Find alternate file |
 
-## Windows
-
-Emacs windows are splits within a frame. The `C-x` prefix owns window management.
+### Windows
 
 | Key | Action |
 |-----|--------|
 | `C-x 0` | Delete current window |
-| `C-x 1` | Delete other windows (maximize current) |
-| `C-x 2` | Split horizontally (top/bottom) |
-| `C-x 3` | Split vertically (left/right) |
+| `C-x 1` | Delete other windows |
+| `C-x 2` | Split horizontally |
+| `C-x 3` | Split vertically |
 | `C-x o` | Switch to other window |
-| `C-x ^` | Enlarge window vertically |
-| `C-x }` | Enlarge window horizontally |
-| `C-x {` | Shrink window horizontally |
+| `C-x ^` | Enlarge vertically |
+| `C-x }` | Enlarge horizontally |
+| `C-x {` | Shrink horizontally |
+| `S-<arrow>` | Windmove (directional) |
 
-### Windmove
-
-Directional window switching with shift-arrow. Wraps around at edges.
-
-| Key | Action |
-|-----|--------|
-| `S-<left>` | Move to left window |
-| `S-<right>` | Move to right window |
-| `S-<up>` | Move to upper window |
-| `S-<down>` | Move to lower window |
-
-## Registers and Bookmarks
-
-Registers are single-character slots that store positions, text, or window configurations. Bookmarks are named and persist across sessions.
+### Registers and Bookmarks
 
 | Key | Action |
 |-----|--------|
@@ -156,183 +163,121 @@ Registers are single-character slots that store positions, text, or window confi
 | `C-x r j` | Jump to register |
 | `C-x r s` | Copy region to register |
 | `C-x r i` | Insert register contents |
+| `C-x r w` | Save window config |
+| `C-x r f` | Save frame config |
 | `C-x r m` | Set bookmark |
 | `C-x r b` | Jump to bookmark |
 | `C-x r l` | List bookmarks |
 
-Registers are ephemeral (gone when Emacs exits). Bookmarks survive. Use registers for within-session jumping, bookmarks for places you return to across days.
-
-## Help
-
-Emacs is self-documenting. The help system is one of its genuine superpowers.
+### Help
 
 | Key | Action |
 |-----|--------|
-| `C-h k` | Describe key (what does this key do?) |
+| `C-h k` | Describe key |
 | `C-h f` | Describe function |
 | `C-h v` | Describe variable |
-| `C-h m` | Describe current modes and their bindings |
-| `C-h b` | List all active keybindings |
-| `C-h a` | Apropos (search commands by keyword) |
+| `C-h m` | Describe current modes |
+| `C-h b` | List all keybindings |
+| `C-h a` | Apropos (search commands) |
 | `C-h i` | Info manual |
 | `C-h t` | Tutorial |
 
-`C-h k` then press any key — it tells you exactly what that key does. `C-h m` shows every binding active in your current buffer. These two alone will teach you more than any cheat sheet.
-
----
-
 ## Package Keybindings
 
-Everything below comes from packages. These are the bindings that turn Emacs from a text editor into a development environment.
-
 ### Magit (Git)
-
-`C-x g` opens magit-status — the best Git interface ever built.
 
 | Key | Action |
 |-----|--------|
 | `C-x g` | Open magit-status |
-
-Inside magit-status, everything is single-key:
-
-| Key | Action |
-|-----|--------|
-| `s` | Stage file/hunk |
-| `u` | Unstage file/hunk |
+| `s` / `u` | Stage / unstage |
 | `c c` | Commit |
 | `C-c C-c` | Confirm commit message |
 | `C-c C-k` | Cancel commit |
 | `P p` | Push |
 | `F p` | Pull |
-| `b b` | Switch branch |
-| `b c` | Create branch |
-| `l l` | Log (current branch) |
-| `l a` | Log (all branches) |
+| `b b` / `b c` | Switch / create branch |
+| `l l` / `l a` | Log current / all |
 | `d d` | Diff |
-| `D` | Diff popup |
 | `f` | Fetch |
 | `r` | Rebase popup |
 | `m` | Merge popup |
 | `t` | Tag popup |
 | `z` | Stash popup |
-| `g` | Refresh |
-| `q` | Quit |
-| `TAB` | Toggle section visibility |
+| `g` / `q` | Refresh / quit |
+| `TAB` | Toggle section |
 | `$` | Show process output |
 
-Magit's staging is hunk-level by default. Move point to a specific hunk within a diff and press `s` — only that hunk gets staged. This alone replaces `git add -p` and does it better.
-
 ### FZF (Fuzzy Finder)
-
-All under the `C-c f` prefix:
 
 | Key | Action |
 |-----|--------|
 | `C-c f f` | Find git files |
 | `C-c f g` | FZF in git repo |
 | `C-c f d` | FZF in directory |
-| `C-c f s` | Git grep (search content) |
+| `C-c f s` | Git grep |
 | `C-c f p` | FZF in project |
 
 ### Ripgrep (rg)
-
-Project-wide text search. Fast enough to use interactively.
 
 | Key | Action |
 |-----|--------|
 | `M-x rg` | Ripgrep search |
 | `M-x rg-project` | Search in project |
-| `M-x rg-dwim` | Search for thing at point |
-| `C-c s` | Ripgrep menu (after first rg use) |
+| `M-x rg-dwim` | Search thing at point |
+| `C-c s` | Ripgrep menu |
 
-Inside the rg results buffer:
-
-| Key | Action |
-|-----|--------|
-| `n` | Next match |
-| `p` | Previous match |
-| `RET` | Visit match |
-| `e` | Edit results (wgrep mode) |
-| `g` | Rerun search |
-| `q` | Quit |
-
-The `e` key is the killer feature — it drops you into wgrep mode where you can edit the search results directly, then save to apply changes across all matched files. Project-wide find-and-replace in seconds.
+In results: `n`/`p` navigate, `RET` visits, `e` enters wgrep, `g` reruns, `q` quits.
 
 ### Multiple Cursors
 
 | Key | Action |
 |-----|--------|
-| `C->` | Mark next occurrence like this |
-| `C-<` | Mark previous occurrence like this |
-| `C-c C-<` | Mark all occurrences like this |
+| `C->` | Mark next like this |
+| `C-<` | Mark previous like this |
+| `C-c C-<` | Mark all like this |
 
-While active, type normally — all cursors edit simultaneously. `C-g` exits.
-
-### Corfu (Completion Popup)
-
-In-buffer completion that appears automatically.
+### Corfu (Completion)
 
 | Key | Action |
 |-----|--------|
-| (auto) | Popup appears after 2 chars, 0.2s delay |
-| `TAB` | Select/expand completion |
-| `M-n` | Next candidate |
-| `M-p` | Previous candidate |
-| `RET` | Accept completion |
-| `C-g` | Quit completion |
-
-### Vertico (Minibuffer Completion)
-
-Vertical completion for all minibuffer prompts — file finding, buffer switching, M-x, everything.
-
-| Key | Action |
-|-----|--------|
-| `C-n` / `↓` | Next candidate |
-| `C-p` / `↑` | Previous candidate |
-| `RET` | Accept candidate |
-| `TAB` | Insert candidate (partial completion) |
+| (auto) | Popup after 2 chars |
+| `TAB` | Select/expand |
+| `M-n` / `M-p` | Next / previous |
+| `RET` | Accept |
 | `C-g` | Quit |
 
-Uses orderless matching — type space-separated words in any order. "buf swi" matches "switch-to-buffer". Marginalia shows annotations (file size, docstrings, etc.) alongside candidates.
+### Vertico (Minibuffer)
+
+| Key | Action |
+|-----|--------|
+| `C-n` / `C-p` | Next / previous |
+| `RET` | Accept |
+| `TAB` | Partial insert |
+| `C-g` | Quit |
+
+Orderless matching — type words in any order.
 
 ### Eglot (LSP)
-
-Language server integration. Auto-enabled for Python and Rust via mode hooks.
 
 | Key | Action |
 |-----|--------|
 | `M-.` | Go to definition |
-| `M-,` | Go back (xref pop) |
+| `M-,` | Go back |
 | `M-?` | Find references |
 | `C-c C-r` | Rename symbol |
 | `C-c C-a` | Code actions |
 | `M-x eglot-format` | Format buffer |
-| `M-x eglot-format-buffer` | Format entire buffer |
-| `C-h .` | Show documentation at point (eldoc) |
-| `M-x eglot-code-action-organize-imports` | Organize imports |
-
-`M-.` and `M-,` are the bread and butter — jump to definition, then pop back. They work across files, across packages, into library source code. `M-?` finds every reference to the symbol at point.
+| `C-h .` | Show docs (eldoc) |
 
 ### Smartparens
 
-Auto-pairs `()`, `[]`, `{}`, `""`, `''` globally. The structural navigation keys from the Navigation section above (`C-M-f`, `C-M-b`, etc.) are enhanced by smartparens to work correctly with all delimiter types.
-
 | Key | Action |
 |-----|--------|
-| `C-M-f` | Forward sexp |
-| `C-M-b` | Backward sexp |
+| `C-M-f` / `C-M-b` | Forward / backward sexp |
 | `C-M-k` | Kill sexp |
 | `C-M-SPC` | Mark sexp |
-| `C-M-u` | Up sexp (out of parens) |
-| `C-M-d` | Down sexp (into parens) |
-| `C-M-n` | Next sexp (same level) |
-| `C-M-p` | Previous sexp (same level) |
-
-### Which-Key
-
-Not a keybinding itself — it shows you available keybindings. After pressing any prefix key (like `C-x` or `C-c`), wait 0.5 seconds and a popup appears showing all continuations. Press `C-h` during any prefix to trigger it immediately.
-
-This is how you discover bindings you forgot or never knew existed.
+| `C-M-u` / `C-M-d` | Up / down sexp |
+| `C-M-n` / `C-M-p` | Next / previous sexp |
 
 ### Go Mode
 
@@ -342,62 +287,263 @@ This is how you discover bindings you forgot or never knew existed.
 | `C-c C-g` | Go to imports |
 | `C-c C-f` | Run gofmt |
 
-Auto-formats on save via `gofmt-before-save` hook.
-
 ### Org Mode
-
-Org is Emacs's outliner, planner, and literate programming environment. It has more keybindings than most standalone applications.
 
 | Key | Action |
 |-----|--------|
-| `TAB` | Cycle visibility (fold/unfold heading) |
-| `S-TAB` | Cycle global visibility (all headings) |
-| `M-RET` | New heading at same level |
+| `TAB` | Cycle visibility |
+| `S-TAB` | Cycle global visibility |
+| `M-RET` | New heading |
 | `M-S-RET` | New TODO heading |
 | `C-c C-t` | Toggle TODO state |
 | `C-c C-s` | Schedule |
 | `C-c C-d` | Deadline |
-| `C-c C-c` | Toggle checkbox / execute block |
-| `C-c '` | Edit source block in native mode |
-| `C-c C-e` | Export dispatcher (HTML, PDF, etc.) |
+| `C-c C-c` | Toggle checkbox / execute |
+| `C-c '` | Edit source block |
+| `C-c C-e` | Export dispatcher |
 | `C-c C-l` | Insert/edit link |
 | `C-c C-o` | Open link at point |
 | `C-c a` | Agenda |
-| `C-c c` | Capture (quick note/task entry) |
-| `M-<up>` | Move subtree up |
-| `M-<down>` | Move subtree down |
-| `M-<left>` | Promote heading (decrease level) |
-| `M-<right>` | Demote heading (increase level) |
-
-`C-c '` is worth highlighting — inside a source block, it opens a dedicated buffer in the language's major mode with full syntax highlighting, completion, and LSP support. Edit there, `C-c '` again to return.
+| `C-c c` | Capture |
+| `M-<up/down>` | Move subtree |
+| `M-<left/right>` | Promote / demote |
 
 ### Ediff (Diff/Merge)
 
-Side-by-side diff and merge tool. All keys work in the ediff control panel — use `C-x o` to focus it if needed.
+| Key | Action |
+|-----|--------|
+| `n` / `p` | Next / previous diff |
+| `j` | Jump to diff |
+| `a` | Copy A to B / choose A |
+| `b` | Copy B to A / choose B |
+| `r a` / `r b` | Restore region A / B |
+| `v` / `V` | Scroll down / up |
+| `w a` / `w b` | Save buffer A / B |
+| `!` | Recompute diffs |
+| `q` | Quit |
+
+### Dired (File Manager)
 
 | Key | Action |
 |-----|--------|
-| `n` | Next difference |
-| `p` | Previous difference |
-| `j` | Jump to specific difference |
-| `a` | Copy A → B (diff) / Choose A (merge) |
-| `b` | Copy B → A (diff) / Choose B (merge) |
-| `r a` | Restore region in buffer A |
-| `r b` | Restore region in buffer B |
-| `\|` | Toggle vertical/horizontal split |
-| `v` | Scroll down both buffers |
-| `V` | Scroll up both buffers |
-| `w a` | Save buffer A |
-| `w b` | Save buffer B |
-| `!` | Recompute differences |
-| `q` | Quit (saves merge result) |
-| `?` | Show all keybindings |
+| `C-x d` | Open dired |
+| `RET` | Open file |
+| `^` | Parent directory |
+| `m` / `u` / `U` | Mark / unmark / unmark all |
+| `t` | Toggle marks |
+| `% m` | Mark by regexp |
+| `d` / `x` | Flag / execute deletion |
+| `D` | Delete immediately |
+| `C` / `R` | Copy / rename |
+| `Z` | Compress/decompress |
+| `!` | Shell command on marked |
+| `C-x C-q` | wdired (edit filenames) |
+| `C-c C-c` | Commit wdired |
 
----
+## Advanced Built-in Commands
+
+### Keyboard Macros
+
+| Key | Action |
+|-----|--------|
+| `C-x (` | Start recording |
+| `C-x )` | Stop recording |
+| `C-x e` | Execute (then `e` to repeat) |
+| `C-u 0 C-x e` | Execute until error |
+| `C-u 50 C-x e` | Execute 50 times |
+| `C-x C-k n` | Name last macro |
+| `C-x C-k b` | Bind macro to key |
+| `C-x C-k e` | Edit last macro |
+| `C-x C-k r` | Apply to each line in region |
+| `C-x C-k C-c` | Set counter |
+| `C-x C-k C-i` | Insert counter |
+| `C-x C-k C-a` | Set increment |
+
+### Rectangle Operations
+
+| Key | Action |
+|-----|--------|
+| `C-x SPC` | Rectangle mark mode |
+| `C-x r k` | Kill rectangle |
+| `C-x r y` | Yank rectangle |
+| `C-x r d` | Delete rectangle |
+| `C-x r o` | Open (insert space) |
+| `C-x r c` | Clear (replace with spaces) |
+| `C-x r t` | Replace with string |
+| `C-x r N` | Number lines |
+
+### Narrowing
+
+| Key | Action |
+|-----|--------|
+| `C-x n n` | Narrow to region |
+| `C-x n d` | Narrow to defun |
+| `C-x n p` | Narrow to page |
+| `C-x n w` | Widen (restore) |
+
+### Shell and Process Interaction
+
+| Key | Action |
+|-----|--------|
+| `M-!` | Shell command |
+| `M-&` | Async shell command |
+| `M-x shell` | Interactive shell |
+| `M-x eshell` | Emacs shell |
+| `M-x term` | Terminal emulator |
+| `M-x compile` | Run compile |
+| `M-x recompile` | Rerun compile |
+
+### Advanced Isearch
+
+While isearch is active:
+
+| Key | Action |
+|-----|--------|
+| `M-e` | Edit search string |
+| `C-w` | Yank word at point |
+| `C-M-y` | Yank char at point |
+| `M-s .` | Symbol at point |
+| `M-s w` | Toggle word mode |
+| `M-s r` | Toggle regexp mode |
+| `M-s c` | Toggle case sensitivity |
+| `M-s o` | Occur with search |
+| `M-n` / `M-p` | Search history |
+
+### Numeric / Universal Arguments
+
+| Key | Action |
+|-----|--------|
+| `C-u` | Universal arg (4) |
+| `C-u C-u` | 16 |
+| `C-u 8` / `M-8` | Numeric arg 8 |
+| `C-u -` / `M--` | Negative arg |
+
+How `C-u` modifies commands:
+
+| Key | Effect |
+|-----|--------|
+| `C-u 10 C-n` | Move down 10 lines |
+| `C-u C-k` | Kill entire line |
+| `C-u C-SPC` | Pop mark ring |
+| `C-u C-l` | Recenter at top |
+
+### Dynamic Abbreviation
+
+| Key | Action |
+|-----|--------|
+| `M-/` | Dabbrev expand |
+| `C-M-/` | Dabbrev completion |
+| `M-x hippie-expand` | Multi-method expand |
+
+### Repeat
+
+| Key | Action |
+|-----|--------|
+| `C-x z` | Repeat last command |
+| `z` | Keep repeating |
+
+### Indirect Buffers
+
+| Key | Action |
+|-----|--------|
+| `M-x clone-indirect-buffer` | Clone buffer |
+| `C-x 4 c` | Clone in other window |
+
+### Align
+
+| Key | Action |
+|-----|--------|
+| `M-x align` | Auto-align region |
+| `M-x align-regexp` | Align on regexp |
+| `M-x align-current` | Align current section |
+
+### Sort and Reverse
+
+| Key | Action |
+|-----|--------|
+| `M-x sort-lines` | Sort alphabetically |
+| `M-x sort-fields` | Sort by Nth field |
+| `M-x sort-numeric-fields` | Sort numerically |
+| `M-x reverse-region` | Reverse lines |
+| `M-x delete-duplicate-lines` | Remove duplicates |
+
+### Calc
+
+| Key | Action |
+|-----|--------|
+| `C-x * c` | Open calc |
+| `C-x * q` | Quick calc (minibuffer) |
+| `C-x * e` | Embedded mode |
+| `C-x * g` | Grab region to stack |
+| `C-x * y` | Yank result to buffer |
+
+### Whitespace
+
+| Key | Action |
+|-----|--------|
+| `M-\` | Delete surrounding whitespace |
+| `M-SPC` | Collapse to single space |
+| `C-x C-o` | Delete blank lines |
+| `M-^` | Join with previous line |
+| `M-x whitespace-mode` | Visualize whitespace |
+| `M-x untabify` | Tabs to spaces |
+
+### Tramp (Remote Editing)
+
+| Key | Action |
+|-----|--------|
+| `C-x C-f /ssh:host:/path` | Open remote file |
+| `C-x C-f /sudo::/etc/hosts` | Open as root |
+| `C-x d /ssh:host:/dir/` | Remote dired |
+
+### Hideshow (Code Folding)
+
+| Key | Action |
+|-----|--------|
+| `C-c @ C-h` | Hide block |
+| `C-c @ C-s` | Show block |
+| `C-c @ C-c` | Toggle block |
+| `C-c @ C-M-h` | Hide all |
+| `C-c @ C-M-s` | Show all |
+
+### Imenu (Buffer Index)
+
+| Key | Action |
+|-----|--------|
+| `M-x imenu` | Jump to definition |
+| `M-g i` | Imenu (alternate) |
+
+### Recursive Editing
+
+| Key | Action |
+|-----|--------|
+| `C-r` (in query-replace) | Enter recursive edit |
+| `C-M-c` | Exit recursive edit |
+| `C-]` | Abort recursive edit |
+
+### Macro Query
+
+| Key | Action |
+|-----|--------|
+| `C-x q` (recording) | Insert query point |
+| `SPC` / `y` (playback) | Continue |
+| `DEL` / `n` (playback) | Skip iteration |
+| `RET` / `q` (playback) | Stop |
+| `C-r` (playback) | Recursive edit |
+
+### Miscellaneous
+
+| Key | Action |
+|-----|--------|
+| `C-x C-e` | Eval last sexp |
+| `M-:` | Eval expression |
+| `C-x =` | Char info at point |
+| `C-x 8 RET` | Insert Unicode by name |
+| `M-x revert-buffer` | Reload from disk |
+| `C-x C-+` / `C-x C--` | Zoom in / out |
+| `M-x ffap` | Find file at point |
 
 ## Patterns Worth Internalizing
-
-A few meta-patterns that make the keybinding system predictable:
 
 - `C-x` prefix = global operations (files, buffers, windows, registers)
 - `C-c` prefix = mode-specific and user bindings
