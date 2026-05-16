@@ -5,6 +5,8 @@ theme: jekyll-theme-chirpy
 lang: en
 timezone: America/Los_Angeles
 
+future: true
+
 # jekyll-seo-tag settings
 title: Sunil Murthy
 tagline: Software Developer & Tech Enthusiast
