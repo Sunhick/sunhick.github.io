@@ -543,6 +543,65 @@ How `C-u` modifies commands:
 | `C-x C-+` / `C-x C--` | Zoom in / out |
 | `M-x ffap` | Find file at point |
 
+### EWW (Emacs Web Wowser)
+
+Built-in web browser. Open with `M-x eww`.
+
+| Key | Action |
+|-----|--------|
+| `g` | Reload current page |
+| `G` | Prompt for new URL |
+| `l` | Go back in history |
+| `r` | Go forward in history |
+| `TAB` | Next link |
+| `S-TAB` | Previous link |
+| `RET` | Follow link at point |
+| `v` | View page source |
+| `SPC` | Scroll down |
+| `DEL` / `S-SPC` | Scroll up |
+| `b` | Add bookmark |
+| `B` | List bookmarks |
+| `H` | List browsing history |
+| `w` | Copy current URL to kill ring |
+| `d` | Download URL |
+| `R` | Toggle readable mode (strips clutter) |
+| `q` | Quit eww buffer |
+| `S` | List all open eww buffers |
+| `+` / `-` | Increase / decrease text size |
+| `C-c C-c` | Submit form at point |
+
+### Elfeed (RSS Reader)
+
+Open with `M-x elfeed`.
+
+In the search buffer (feed list):
+
+| Key | Action |
+|-----|--------|
+| `g` / `G` | Refresh feed / refresh all feeds |
+| `RET` | Open entry |
+| `b` | Open entry in browser |
+| `s` | Update search filter |
+| `r` | Mark as read |
+| `u` | Mark as unread |
+| `+` | Add tag |
+| `-` | Remove tag |
+| `n` / `p` | Next / previous entry |
+| `q` | Quit elfeed |
+
+In the entry buffer (reading an article):
+
+| Key | Action |
+|-----|--------|
+| `n` / `p` | Next / previous entry |
+| `b` | Open in browser |
+| `g` | Refresh entry |
+| `SPC` / `S-SPC` | Scroll down / up |
+| `+` / `-` | Add / remove tag |
+| `q` | Back to search buffer |
+
+Filter syntax: `@6-months-ago +unread +blog` shows unread blog entries from the last 6 months. Tags are prefixed with `+` (include) or `-` (exclude).
+
 ## Patterns Worth Internalizing
 
 - `C-x` prefix = global operations (files, buffers, windows, registers)
