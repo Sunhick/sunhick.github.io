@@ -155,6 +155,34 @@ Notation: `C-` = Ctrl, `M-` = Alt/Option, `S-` = Shift, `SPC` = Space, `RET` = E
 | `C-x {` | Shrink horizontally |
 | `S-<arrow>` | Windmove (directional) |
 
+### Tab-Bar Mode (Workspaces)
+
+Invisible workspaces — tab bar is hidden, but tabs are active. Switch by number.
+
+| Key | Action |
+|-----|--------|
+| `C-x t 2` | New tab |
+| `C-x t 0` | Close current tab |
+| `C-x t 1` | Close all other tabs |
+| `C-x t o` | Next tab |
+| `C-x t O` | Previous tab |
+| `C-x t r` | Rename tab |
+| `C-x t m` | Move tab |
+| `M-1` through `M-5` | Switch to tab by number |
+
+Each tab has its own window configuration. Use them like virtual desktops — one tab for code, one for shell, one for notes.
+
+### Winner Mode (Window Undo)
+
+Undo/redo window configuration changes. Accidentally closed a split? Undo it.
+
+| Key | Action |
+|-----|--------|
+| `C-c <left>` | Undo window config change |
+| `C-c <right>` | Redo window config change |
+
+Works across any window operation — splits, deletes, resizes. The entire window layout history is tracked.
+
 ### Registers and Bookmarks
 
 | Key | Action |
@@ -305,8 +333,47 @@ Orderless matching — type words in any order.
 | `C-c C-o` | Open link at point |
 | `C-c a` | Agenda |
 | `C-c c` | Capture |
+| `C-c C-w` | Refile heading |
+| `C-c C-x C-a` | Archive subtree |
+| `C-c /` | Sparse tree (filter by regexp/TODO/etc.) |
+| `C-c .` | Insert timestamp |
+| `C-c C-x p` | Set property |
 | `M-<up/down>` | Move subtree |
 | `M-<left/right>` | Promote / demote |
+| `C-c C-x C-i` | Clock in |
+| `C-c C-x C-o` | Clock out |
+
+### Org Capture
+
+`C-c c` opens the capture dispatcher. Templates define what gets captured and where it goes.
+
+| Key | Action |
+|-----|--------|
+| `C-c c` | Open capture templates |
+| `C-c C-c` | Finalize capture (save and close) |
+| `C-c C-w` | Refile capture to different location |
+| `C-c C-k` | Abort capture (discard) |
+
+During capture:
+- Type your note/task in the capture buffer
+- `C-c C-c` saves it to the configured target file and heading
+- `C-c C-w` lets you choose a different refile target before saving
+- `C-c C-k` discards without saving
+
+In the agenda (`C-c a`):
+
+| Key | Action |
+|-----|--------|
+| `a` | Agenda view (week) |
+| `t` | TODO list |
+| `s` | Search |
+| `m` | Match tags |
+| `n` / `p` | Next / previous item |
+| `RET` | Go to entry |
+| `t` | Toggle TODO state |
+| `I` / `O` | Clock in / out |
+| `r` | Refresh |
+| `q` | Quit agenda |
 
 ### Ediff (Diff/Merge)
 
@@ -339,6 +406,30 @@ Orderless matching — type words in any order.
 | `!` | Shell command on marked |
 | `C-x C-q` | wdired (edit filenames) |
 | `C-c C-c` | Commit wdired |
+
+### Proced (Process Manager)
+
+Built-in process manager. Open with `M-x proced`.
+
+| Key | Action |
+|-----|--------|
+| `M-x proced` | Open process list |
+| `g` | Refresh process list |
+| `m` | Mark process |
+| `u` | Unmark process |
+| `M` | Mark all |
+| `U` | Unmark all |
+| `d` | Mark for deletion (SIGTERM) |
+| `x` | Execute marks (send signals) |
+| `k` | Send signal to process at point |
+| `s` | Sort by column (toggle) |
+| `f` | Filter processes |
+| `t` | Toggle tree view |
+| `RET` | Refine (show children of process) |
+| `n` / `p` | Next / previous process |
+| `q` | Quit proced |
+
+Like `top`/`htop` but inside Emacs. Mark multiple processes and send signals in bulk.
 
 ## Advanced Built-in Commands
 
@@ -549,8 +640,8 @@ Built-in web browser. Open with `M-x eww`.
 
 | Key | Action |
 |-----|--------|
-| `g` | Reload current page |
 | `G` | Prompt for new URL |
+| `g` | Reload current page |
 | `l` | Go back in history |
 | `r` | Go forward in history |
 | `TAB` | Next link |
@@ -559,20 +650,28 @@ Built-in web browser. Open with `M-x eww`.
 | `v` | View page source |
 | `SPC` | Scroll down |
 | `DEL` / `S-SPC` | Scroll up |
+| `n` / `p` | Scroll by line |
 | `b` | Add bookmark |
 | `B` | List bookmarks |
 | `H` | List browsing history |
 | `w` | Copy current URL to kill ring |
 | `d` | Download URL |
 | `R` | Toggle readable mode (strips clutter) |
+| `F` | Toggle fonts (use document fonts or not) |
+| `M-C` | Toggle colors |
+| `D` | Toggle display of images |
 | `q` | Quit eww buffer |
 | `S` | List all open eww buffers |
 | `+` / `-` | Increase / decrease text size |
 | `C-c C-c` | Submit form at point |
+| `&` | Open current URL in external browser |
+| `C-u M-x eww` | Open URL in new eww buffer |
+
+`R` (readable mode) is the killer feature — it strips navigation, ads, and sidebars, leaving just the article content. Works surprisingly well on most sites.
 
 ### Elfeed (RSS Reader)
 
-Open with `M-x elfeed`.
+Open with `M-x elfeed`. Update feeds with `M-x elfeed-update`.
 
 In the search buffer (feed list):
 
@@ -582,11 +681,14 @@ In the search buffer (feed list):
 | `RET` | Open entry |
 | `b` | Open entry in browser |
 | `s` | Update search filter |
+| `S` | Set new search filter |
 | `r` | Mark as read |
 | `u` | Mark as unread |
 | `+` | Add tag |
 | `-` | Remove tag |
 | `n` / `p` | Next / previous entry |
+| `y` | Yank (copy) entry URL |
+| `*` | Star/unstar entry (toggle `starred` tag) |
 | `q` | Quit elfeed |
 
 In the entry buffer (reading an article):
@@ -598,9 +700,18 @@ In the entry buffer (reading an article):
 | `g` | Refresh entry |
 | `SPC` / `S-SPC` | Scroll down / up |
 | `+` / `-` | Add / remove tag |
+| `u` | Toggle unread |
+| `y` | Yank entry URL |
 | `q` | Back to search buffer |
 
-Filter syntax: `@6-months-ago +unread +blog` shows unread blog entries from the last 6 months. Tags are prefixed with `+` (include) or `-` (exclude).
+Filter syntax examples:
+- `@6-months-ago +unread` — unread entries from last 6 months
+- `+unread +blog` — unread entries tagged "blog"
+- `@1-week-ago +unread -junk` — last week, unread, exclude "junk" tag
+- `#10 +unread` — first 10 unread entries
+- `=Title regex` — entries matching title regex
+
+Tags are prefixed with `+` (include) or `-` (exclude). Time filters use `@`. Count limits use `#`. Title search uses `=`.
 
 ## Patterns Worth Internalizing
 
