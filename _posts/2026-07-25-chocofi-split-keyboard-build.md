@@ -52,9 +52,6 @@ I eventually moved to **Miryoku**, and it changed everything. Miryoku is an opin
 - **Function** — F-keys, media controls
 - **Mouse** — yes, mouse keys on a keyboard
 
-![Miryoku keymap layout](/assets/img/miryoku_keymap.svg)
-_Miryoku layout — each layer has a dedicated purpose, activated by thumb keys._
-
 The home row mods take the longest to internalize. Your home row keys double as Ctrl, Alt, Shift, and Super when held. The timing windows matter — too short and you get accidental mods, too long and typing feels sluggish. But once your muscle memory adapts, it's remarkably efficient. No more reaching for modifier keys in awkward finger stretches.
 
 ## Was It Worth It
