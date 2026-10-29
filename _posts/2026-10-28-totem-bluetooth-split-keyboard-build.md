@@ -19,7 +19,7 @@ I ordered parts from four places:
 - **PCBs** from JLCPCB.
 - **Case** from JLC's 3D printing service, in black resin.
 - **Microcontrollers** (XIAO BLE) from Seeed's official store, so I knew I was getting genuine boards.
-- **Everything else** from AliExpress: diodes, switches, hotswap sockets, batteries, power switches, reset buttons, and standoffs.
+- **Everything else** from AliExpress: diodes, switches, hotswap sockets, batteries, power switches, reset buttons, standoffs, and the KLP Lame keycaps.
 
 AliExpress is cheap, but shipping is slow, and the waiting is a real buzz kill. You're ready to build, and one small part is still somewhere in transit. So do your research up front: confirm every part against the build guide (footprint, size, and quantity), then order everything early and all at once. Ordering early also means the slow parts arrive while you're still waiting on the PCBs and the case.
 
@@ -78,6 +78,12 @@ I used an LLM to help along the way, and it was useful for explaining concepts a
 
 Use the AI to understand things, then verify against the actual sources: the TOTEM build guide, the XIAO BLE pinout and datasheet, and the ZMK documentation. Then confirm on the board itself with the multimeter. The Chocofi taught me to read the datasheet before touching the MCU. The TOTEM taught me the same rule applies to AI answers.
 
+## Sculpted Keycaps: KLP Lame
+
+On the Chocofi I used flat keycaps. This time I went with sculpted **KLP Lame** keycaps, also from AliExpress. You can see them in the photo above: each cap has a scooped top instead of a flat surface.
+
+After a few hours on them, I can't go back to flat keycaps. The scoop gives each fingertip a spot to rest in, so I can feel where I am on the board without looking. Flat caps feel featureless by comparison. I'll probably swap the Chocofi's flat keycaps for the same KLP Lame caps at some point.
+
 ## Firmware: ZMK With Miryoku
 
 Since the XIAO BLE is an nRF52840, the firmware is ZMK, built from the [Miryoku ZMK](https://github.com/manna-harbour/miryoku_zmk) repo with the QWERTY alphas option. Each half gets its own `.uf2`. Double-tap reset, the half mounts as a USB drive, and you drag the file onto it. Once Miryoku is flashed, there's also a bootloader key on the Nav and Num layers, so you don't need to reach for the reset button for later updates.
@@ -116,4 +122,5 @@ If you're building one, my short list:
 - Buy the M2 standoffs your case is designed for.
 - Test the battery, power switch, and reset button with a multimeter before any power goes in, and know which pins should buzz.
 - Check AI answers against the datasheet and the board itself.
+- Try sculpted keycaps like KLP Lame before settling on flat ones.
 - Enable peripheral battery reporting and install ZMK Battery Center, or you'll only ever see the left half's battery.
