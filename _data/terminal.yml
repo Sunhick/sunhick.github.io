@@ -1,0 +1,31 @@
+# Content for the /terminal/ page. The terminal reads this at build time,
+# so edit freely and rebuild. Posts, tabs, and projects are picked up
+# automatically from the site.
+
+user: sunil
+host: sunhick
+
+# Printed by `whoami`.
+bio:
+  - "Sunil Murthy, software engineer with 8+ years of experience."
+  - "Formal methods (TLA+, PlusCal), security and authentication, systems programming."
+  - "Contributed to Chromium. Also work on and study the Linux kernel and Skia."
+  - "Builds split keyboards: a Chocofi (QMK) and a wireless TOTEM (ZMK), both on Miryoku."
+  - "Lives in Emacs. Signs commits with a YubiKey."
+
+# Printed by `neofetch`, as label/value pairs.
+fetch:
+  - ["OS", "Jekyll + Chirpy on GitHub Pages"]
+  - ["Shell", "this page (try help)"]
+  - ["Editor", "Emacs"]
+  - ["Keyboards", "TOTEM (38 keys, ZMK, Bluetooth), Chocofi (36 keys, QMK)"]
+  - ["Layout", "Miryoku, QWERTY"]
+  - ["Keycaps", "KLP Lame (sculpted)"]
+  - ["Security", "YubiKey 5C, GPG subkeys"]
+  - ["Interests", "TLA+, Chromium, Linux kernel, Skia"]
+
+# Printed by `gpg`. Same fingerprint as the Contact page.
+gpg: "FE0F 6B71 2C06 7595 E7ED 20E7 F0B7 BA42 9658 890D"
+
+# Clickable shortcuts under the prompt.
+chips: [help, ls, recent, whoami, neofetch]

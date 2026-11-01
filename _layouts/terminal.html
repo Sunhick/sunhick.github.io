@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <meta name="description" content="Browse {{ site.title | escape }}'s blog from a terminal.">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  {% include favicons.html %}
+  <link rel="stylesheet" href="{{ '/assets/css/terminal.css' | relative_url }}">
+
+  {%- assign t = site.data.terminal -%}
+  {%- assign tabs = site.tabs | where_exp: "tab", "tab.url != page.url" | sort: "order" -%}
+  {%- capture term_json -%}
+  {
+  "user": {{ t.user | default: "guest" | jsonify }},
+  "host": {{ t.host | default: "site" | jsonify }},
+  "home": {{ "/" | relative_url | jsonify }},
+  "bio": {{ t.bio | jsonify }},
+  "fetch": {{ t.fetch | jsonify }},
+  "gpg": {{ t.gpg | jsonify }},
+  "chips": {{ t.chips | jsonify }},
+  "email": {{ site.social.email | jsonify }},
+  "links": {{ site.social.links | jsonify }},
+  "posts": [
+  {%- for p in site.posts -%}
+  {"title": {{ p.title | jsonify }}, "url": {{ p.url | relative_url | jsonify }}, "date": {{ p.date | date: "%Y-%m-%d" |
+  jsonify }}, "category": {{ p.categories | first | jsonify }}, "tags": {{ p.tags | jsonify }}}{% unless forloop.last
+  %},{% endunless %}
+  {%- endfor -%}
+  ],
+  "pages": [
+  {%- for tab in tabs -%}
+  {"name": {{ tab.url | remove: "/" | jsonify }}, "title": {{ tab.title | default: tab.url | jsonify }}, "url": {{
+  tab.url | relative_url | jsonify }}}{% unless forloop.last %},{% endunless %}
+  {%- endfor -%}
+  ],
+  "projects": [
+  {%- for pr in site.data.projects -%}
+  {"title": {{ pr.title | jsonify }}, "description": {{ pr.description | jsonify }}, "url": {{ pr.url | jsonify }},
+  "tags": {{ pr.technologies | jsonify }}}{% unless forloop.last %},{% endunless %}
+  {%- endfor -%}
+  ]
+  }
+  {%- endcapture -%}
+  {%- comment -%} Escape "</" so content can't close the script tag early. {%- endcomment -%} <script id="term-data"
+    type="application/json">{{ term_json | replace: "</", "<\/" }}</script>
+  <script defer src="{{ '/assets/js/terminal.js' | relative_url }}"></script>
+</head>
+
+<body>
+  <!-- Terminal UI. Hidden until the script runs; without JavaScript the plain view below shows instead. -->
+  <div class="term" id="term" hidden>
+    <header class="titlebar">
+      <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="title" id="window-title">{{ t.user }}@{{ t.host }}: ~</span>
+      <a class="plain-link" href="{{ '/' | relative_url }}">plain view</a>
+    </header>
+    <!-- The prompt sits right after the output, like a real terminal, and scrolls with it. -->
+    <main class="screen" id="screen">
+      <div id="scrollback" role="log" aria-live="polite" aria-label="Terminal output"></div>
+      <form id="command-form" autocomplete="off">
+        <label for="command" class="prompt" id="prompt"></label>
+        <div class="input-wrap">
+          <span class="ghost" id="ghost" aria-hidden="true"><span class="ghost-pre"></span><span
+              class="ghost-rest"></span></span>
+          <input id="command" name="command" type="text" aria-label="Terminal command" autocomplete="off"
+            autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="send">
+          <kbd class="tab-hint" id="tab-hint" hidden>tab</kbd>
+        </div>
+        <button class="run" type="submit" aria-label="Run command">↵</button>
+      </form>
+    </main>
+  </div>
+
+  <!-- Plain view: shown when JavaScript is off, and readable by search engines and screen readers. -->
+  <main class="plain" id="plain">
+    <h1>{{ site.title }}</h1>
+    <p>This page is an interactive terminal and needs JavaScript. Here are the posts instead, or go to the <a
+        href="{{ '/' | relative_url }}">home page</a>.</p>
+    {%- assign groups = site.posts | group_by_exp: "p", "p.categories | first" | sort: "name" -%}
+    {%- for g in groups %}
+    <h2>{{ g.name | default: "Uncategorized" }}</h2>
+    <ul>
+      {%- for p in g.items %}
+      <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a> <time datetime="{{ p.date | date_to_xmlschema }}">{{
+          p.date | date: "%Y-%m-%d" }}</time></li>
+      {%- endfor %}
+    </ul>
+    {%- endfor %}
+  </main>
+</body>
+
+</html>
