@@ -6,28 +6,32 @@ order: 1
 
 # Hello, I'm Sunil Murthy
 
-Software Engineer with **8+ years of experience** building enterprise-grade systems, device management solutions, and contributing to open-source technologies. My expertise spans from low-level systems programming to modern cloud-native applications, with focus on **authentication systems**, **distributed architecture**, and **formal verification**.
+I'm a software engineer with **8+ years of experience** building reliable systems, from low-level C/C++ to large-scale services. I care about **correctness**, **security**, and understanding how things actually work, all the way down.
 
-## Background
-
-I've evolved from writing system-level code in C/C++ to architecting enterprise solutions that serve thousands of users. My journey includes building large-scale applications with Java and C#/.NET, embracing cloud-native development with AWS, and currently diving deep into TLA+ for formal system verification. I'm also an active contributor to major projects like **Chromium**.
+This blog is where I write about what I'm learning and building. I tend to go deep: the posts are long-form references I'd want to have myself.
 
 ## Core Expertise
 
-- **Security & Authentication** — Enterprise authentication systems, OAuth2/OpenID Connect, cryptographic solutions
-- **Distributed Systems** — Cell-based architectures, fault-tolerant systems, formal verification with TLA+
-- **Cloud & Open Source** — AWS cloud-native applications, Chromium contributions, developer tools
+- **Distributed Systems and Formal Methods**: designing fault-tolerant systems and verifying them with TLA+ and PlusCal before writing code. I've written a [series on TLA+]({% post_url 2026-04-11-tla-plus-and-pluscal %}), from the basics to refinement and TLC performance tuning.
+- **Security and Authentication**: authentication systems, OAuth2 and OpenID Connect, and applied cryptography. I use GPG and YubiKeys daily, and I've written about subkeys, offline primary keys, and YubiKey PINs and lockout behavior.
+- **Systems Programming**: C/C++ from the kernel up to the browser, and digging into internals like Git's object model and wire protocol.
+- **Testing**: property-based testing with Hypothesis and fast-check, to find the bugs example-based tests miss.
 
-## Philosophy
+## Open Source
 
-I believe great software is **reliable**, **secure**, and **maintainable**. My approach focuses on:
+Large open-source codebases have taught me more than almost anything else. I've contributed to **Chromium**, and I also work on and study the **Linux kernel** and **Skia**, the 2D graphics library behind Chrome and Android. Reading and changing code at that scale shows how real systems handle performance, portability, and long-term maintenance. It's also why I built a [Linux desktop from source]({% post_url 2026-04-11-linux-kernel-xorg-gnome-from-scratch %}): to see how the kernel, Xorg, and GNOME fit together.
 
-- **Correctness** — Using formal methods like TLA+ to verify system properties
-- **Security by Design** — Building security into every layer from the start
-- **Scalability** — Designing systems that grow gracefully
-- **Collaboration** — Code reviews, knowledge sharing, and open-source contributions
-- **Continuous Learning** — Staying current with emerging technologies
+## Building Keyboards
+
+My latest personal projects are keyboards. Good split ergonomic keyboards are expensive to buy, so I build my own. I started with a wired [Chocofi]({% post_url 2026-07-25-chocofi-split-keyboard-build %}) on QMK and moved to a wireless [TOTEM]({% post_url 2026-10-28-totem-bluetooth-split-keyboard-build %}) running ZMK. Both use the Miryoku layout on 36 and 38 keys. That means ordering PCBs and parts, soldering, flashing firmware, and a lot of learning from mistakes like misreading a pinout.
 
 ## Beyond Code
 
-I'm actively involved in the developer community through open-source contributions, technical writing, and mentoring. I enjoy sharing knowledge about formal verification, distributed systems, and security best practices while helping junior developers grow in their careers.
+I also spend too much time tuning my tools. I live in **Emacs**, sign my commits with a YubiKey, and like a setup where every key does something on purpose.
+
+## How I Approach Software
+
+- **Correctness first**: model the tricky parts formally, and test with properties, not just examples.
+- **Security by design**: build it into every layer from the start, not bolted on later.
+- **Understand the layer below**: knowing how Git, Linux, or the firmware works makes debugging much faster.
+- **Write it down**: if I had to learn it the hard way, it's worth a post.
