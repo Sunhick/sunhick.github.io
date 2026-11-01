@@ -38,7 +38,14 @@ The rule: one thumb holds the layer, and the **other** hand types. The hand hold
 - A/' = Cmd, S/L = Opt, D/K = Ctrl, F/J = Shift.
 - Type normally and roll quickly. Hold a key on purpose when you want the mod.
 - For shortcuts, use the mod on the opposite hand: Cmd+C = hold `'` and tap C.
-- If letters come out as mods while you type fast, it's the timing. The tapping term can be raised in `custom_config.h`.
+- If letters come out as mods while you type fast, it's the timing. Miryoku hard-codes the 200 ms tapping term in `miryoku.h`, so a `#define` in `custom_config.h` gets overwritten. Override the hold-tap behaviors at the end of `config/totem.keymap` instead, after the `miryoku.dtsi` include:
+
+```c
+&u_mt {                              // home-row mods
+    tapping-term-ms = <220>;
+    require-prior-idle-ms = <150>;   // fast typing always gives letters
+};
+```
 
 ### Editing Combos
 
@@ -59,8 +66,8 @@ The rule: one thumb holds the layer, and the **other** hand types. The hand hold
 ### Layer Lock (No Holding)
 
 - Double-tap the blue key with the layer's name to stay on that layer. For example, on Nav, double-tap the Nav key (V position).
-- To get back, double-tap **Base** (R position on left-hand layers, U on right-hand layers).
-- Double-tap **Tap** to switch to a layer with no hold-taps. That's useful for games. Double-tap Base to return.
+- To get back, double-tap **Base**. It's at R when the layer's keys are on the right hand (Nav, Mouse, Media), and at U when they're on the left hand (Num, Sym, Fun).
+- Double-tap **Tap** to switch to a layer with no hold-taps. That's useful for games. ⚠ The Tap layer has no layer keys, so there's no key to get back. Press reset or power-cycle the left half to return to Base. Its letters are also Colemak-DH unless you add `#define MIRYOKU_TAP_QWERTY` to `custom_config.h`.
 
 ### Bluetooth (Hold Esc → Media Layer)
 
