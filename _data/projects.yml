@@ -1,131 +1,59 @@
-# Projects from GitHub profile: https://github.com/Sunhick?tab=repositories
+# Projects shown on the Portfolio tab and in the terminal's `ls projects`.
+# Keep this to a handful of significant projects. Every `url` must be a real
+# public repo at https://github.com/Sunhick.
+#
+# Fields:
+#   category      small label on the card
+#   title         project name
+#   description   one or two sentences
+#   url           source repo (optional if there's a writeup)
+#   writeup       site path to a related blog post (optional)
+#   technologies  short tags
 
-# Featured Projects (Pinned Repositories)
-- title: "sunhick.github.io"
-  description: "Personal portfolio website built with Jekyll and Hyde theme"
-  url: "https://github.com/Sunhick/sunhick.github.io"
-  demo_url: "https://sunhick.github.io"
-  technologies: ["Jekyll", "SCSS", "JavaScript", "GitHub Pages"]
-  featured: true
-  category: "Web Development"
+- category: "Hardware"
+  title: "TOTEM wireless split keyboard"
+  description: "A 38-key Bluetooth split keyboard I built and flashed with ZMK and the Miryoku layout, including battery reporting for both halves."
+  writeup: "/posts/totem-bluetooth-split-keyboard-build/"
+  technologies: ["ZMK", "nRF52840", "Bluetooth"]
 
-- title: "resume"
-  description: "Professional resume built with LaTeX for clean, professional formatting"
-  url: "https://github.com/Sunhick/resume"
-  demo_url: ""
-  technologies: ["LaTeX", "PDF Generation"]
-  featured: true
-  category: "Documentation"
+- category: "Security"
+  title: "ToyWebAuthN"
+  description: "A minimal WebAuthn server for learning how passkey registration and sign-in work. HTTPS with generated certificates, MongoDB credential storage, and pytest tests."
+  url: "https://github.com/Sunhick/ToyWebAuthN"
+  technologies: ["Python", "Flask", "WebAuthn"]
 
-- title: "gpg-public-keyc"
-  description: "GPG public key infrastructure and cryptographic utilities"
-  url: "https://github.com/Sunhick/gpg-public-keyc"
-  demo_url: ""
-  technologies: ["C", "OpenPGP", "Cryptography"]
-  featured: true
-  category: "Security & Cryptography"
+- category: "Developer Tools"
+  title: "restclient-sigv4"
+  description: "Signs restclient.el requests with AWS Signature Version 4 and 4A, so you can call AWS APIs straight from Emacs. Covers single-region HMAC and multi-region ECDSA signing, with unit and property-based tests."
+  url: "https://github.com/Sunhick/restclient-sigv4"
+  technologies: ["Emacs Lisp", "SigV4", "ECDSA"]
 
-- title: "dotfiles"
-  description: "Personal development environment configuration and setup scripts"
-  url: "https://github.com/Sunhick/dotfiles"
-  demo_url: ""
-  technologies: ["Shell", "Configuration"]
-  featured: true
-  category: "Developer Tools"
+- category: "Hardware"
+  title: "Inkflow"
+  description: "An Inkplate 10 e-paper display that shows a photo with the weather, time, and battery level. A small Flask server on a Raspberry Pi 5 supplies the photos."
+  url: "https://github.com/Sunhick/Inkflow"
+  technologies: ["C++", "E-paper", "Raspberry Pi 5"]
 
-- title: "algorithms"
-  description: "Implementation of algorithms and data structures"
-  url: "https://github.com/Sunhick/algorithms"
-  demo_url: ""
-  technologies: ["C++", "Java", "Python"]
-  featured: true
-  category: "Computer Science"
+- category: "Developer Tools"
+  title: "git-stats"
+  description: "Git statistics in the terminal: contribution graphs, commit patterns, repository health, and a full-screen interactive view. Exports to JSON and CSV."
+  url: "https://github.com/Sunhick/git-stats"
+  technologies: ["Go", "Git", "Terminal UI"]
 
-- title: "system-programming"
-  description: "Low-level system programming examples and utilities"
-  url: "https://github.com/Sunhick/system-programming"
-  demo_url: ""
-  technologies: ["C", "C++", "System Programming"]
-  featured: true
-  category: "System Programming"
+- category: "Graphics"
+  title: "Sked"
+  description: "Experiments with Skia, the 2D graphics library behind Chrome and Android."
+  url: "https://github.com/Sunhick/Sked"
+  technologies: ["Python", "Skia"]
 
-# Additional Repositories
-- title: "competitive-programming"
-  description: "Solutions to competitive programming problems from various platforms"
-  url: "https://github.com/Sunhick/competitive-programming"
-  demo_url: ""
-  technologies: ["C++", "Java", "Python", "Algorithms"]
-  featured: false
-  category: "Computer Science"
+- category: "Systems"
+  title: "simple-os"
+  description: "A small hobby x86 kernel written to learn how operating systems work: boot code in assembly, a GDT, interrupt handlers, and screen and timer code in C, booted from an ISO image."
+  url: "https://github.com/Sunhick/simple-os"
+  technologies: ["C", "x86 Assembly", "Kernel"]
 
-- title: "data-structures"
-  description: "Implementation of fundamental data structures in multiple languages"
-  url: "https://github.com/Sunhick/data-structures"
-  demo_url: ""
-  technologies: ["C++", "Java", "Data Structures"]
-  featured: false
-  category: "Computer Science"
-
-- title: "machine-learning"
-  description: "Machine learning projects and experiments"
-  url: "https://github.com/Sunhick/machine-learning"
-  demo_url: ""
-  technologies: ["Python", "TensorFlow", "Scikit-learn"]
-  featured: false
-  category: "Machine Learning"
-
-- title: "web-development"
-  description: "Web development projects using modern frameworks"
-  url: "https://github.com/Sunhick/web-development"
-  demo_url: ""
-  technologies: ["JavaScript", "React", "Node.js"]
-  featured: false
-  category: "Web Development"
-
-- title: "mobile-apps"
-  description: "Mobile application development projects"
-  url: "https://github.com/Sunhick/mobile-apps"
-  demo_url: ""
-  technologies: ["Java", "Kotlin", "Android"]
-  featured: false
-  category: "Mobile Development"
-
-- title: "database-projects"
-  description: "Database design and management projects"
-  url: "https://github.com/Sunhick/database-projects"
-  demo_url: ""
-  technologies: ["SQL", "PostgreSQL", "MongoDB"]
-  featured: false
-  category: "Database"
-
-- title: "devops-tools"
-  description: "DevOps automation and deployment tools"
-  url: "https://github.com/Sunhick/devops-tools"
-  demo_url: ""
-  technologies: ["Docker", "Kubernetes", "CI/CD"]
-  featured: false
-  category: "DevOps"
-
-- title: "security-tools"
-  description: "Security utilities and penetration testing tools"
-  url: "https://github.com/Sunhick/security-tools"
-  demo_url: ""
-  technologies: ["Python", "Security", "Penetration Testing"]
-  featured: false
-  category: "Security & Cryptography"
-
-- title: "api-development"
-  description: "RESTful API development and microservices"
-  url: "https://github.com/Sunhick/api-development"
-  demo_url: ""
-  technologies: ["Java", "Spring Boot", "REST API"]
-  featured: false
-  category: "Backend Development"
-
-- title: "cloud-projects"
-  description: "Cloud computing and AWS projects"
-  url: "https://github.com/Sunhick/cloud-projects"
-  demo_url: ""
-  technologies: ["AWS", "Cloud Computing", "Serverless"]
-  featured: false
-  category: "Cloud Computing"
+- category: "Desktop"
+  title: "ScreenRecorder"
+  description: "Screen capture for Windows in C#. My most-starred repo."
+  url: "https://github.com/Sunhick/ScreenRecorder"
+  technologies: ["C#", ".NET"]

@@ -38,7 +38,7 @@
   ],
   "projects": [
   {%- for pr in site.data.projects -%}
-  {"title": {{ pr.title | jsonify }}, "description": {{ pr.description | jsonify }}, "url": {{ pr.url | jsonify }},
+  {"title": {{ pr.title | jsonify }}, "description": {{ pr.description | jsonify }}, "url": {{ pr.url | default: pr.writeup | jsonify }},
   "tags": {{ pr.technologies | jsonify }}}{% unless forloop.last %},{% endunless %}
   {%- endfor -%}
   ]
