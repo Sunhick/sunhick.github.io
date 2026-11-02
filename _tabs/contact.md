@@ -5,30 +5,27 @@ order: 4
 title: Contact
 ---
 
-Whether you're looking to collaborate on a project, discuss system architecture, or explore new opportunities — I'd love to hear from you.
+Questions about a post, a correction, or something you're building with TLA+, YubiKeys, or keyboards? I'd like to hear from you.
 
-| Channel | Link |
-|---------|------|
-| **Email** | [sunhick@gmail.com](mailto:sunhick@gmail.com) |
-| **LinkedIn** | [linkedin.com/in/sunhick](https://linkedin.com/in/sunhick) |
-| **GitHub** | [github.com/sunhick](https://github.com/sunhick) |
+| Channel      | Link                                                           |
+| ------------ | -------------------------------------------------------------- |
+| **Email**    | [sunhick@gmail.com](mailto:sunhick@gmail.com)                  |
+| **GitHub**   | [github.com/sunhick](https://github.com/sunhick)               |
+| **LinkedIn** | [linkedin.com/in/sunhick](https://www.linkedin.com/in/sunhick) |
 
-## What I'm Working On
+Found a mistake in a post? Email me, or open an issue on the [site's repo](https://github.com/Sunhick/sunhick.github.io/issues).
 
-Currently focused on system architecture, security engineering, and distributed systems. Particularly passionate about device management, formal verification, cloud-native architectures, and open source contributions.
+## Encrypted Email
 
-## Availability
+To send something sensitive, encrypt it to my GPG key:
 
-> Open to new opportunities — interested in full-time roles, consulting projects, and collaborative ventures in system architecture and security engineering.
-{: .prompt-info }
-
-## Security
-
-For sensitive communications, I use GPG encryption:
-
-```
-Fingerprint: FE0F 6B71 2C06 7595 E7ED 20E7 F0B7 BA42 9658 890D
-Public Key:  https://github.com/Sunhick/gpg-public-keyc
+```text
+FE0F 6B71 2C06 7595 E7ED 20E7 F0B7 BA42 9658 890D
 ```
 
-*I typically respond within 24 hours.*
+Fetch the key from GitHub and check that the fingerprint matches before you use it:
+
+```bash
+curl -s https://github.com/sunhick.gpg | gpg --import
+gpg --fingerprint FE0F6B712C067595E7ED20E7F0B7BA429658890D
+```
