@@ -21,3 +21,4 @@ Lessons I've picked up over the years, mostly the hard way. I come back to this 
 12. **Own the outcome, not the task.** Closing the ticket isn't the goal; solving the customer's problem is.
 13. **Fix the system, not the symptom.** When something breaks twice, find out why it was possible at all.
 14. **Feedback is a gift.** Ask for it often, and act on it so people keep giving it.
+15. **Rewrite the solution, not just the stack.** A port carries the old bugs along with the code. Technology doesn't solve customer problems; solutions do.
