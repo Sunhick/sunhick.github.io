@@ -14,15 +14,17 @@
   --vignette-opacity: 0;
 }
 
-/* Dark mode: lighten instead. Matches Chirpy's data-mode handling. */
-html[data-mode="dark"] {
+/* Dark mode: lighten instead. Covers Chirpy 7.5's data-mode and newer
+   releases' data-bs-theme (see dark-palette.css). */
+:root[data-mode="dark"],
+:root[data-bs-theme="dark"] {
   --grain-opacity: 0.5;
   --grain-blend: screen;
   --vignette-opacity: 0.55;
 }
 
 @media (prefers-color-scheme: dark) {
-  html:not([data-mode]) {
+  :root:not([data-mode]):not([data-bs-theme]) {
     --grain-opacity: 0.5;
     --grain-blend: screen;
     --vignette-opacity: 0.55;

@@ -1,7 +1,12 @@
 /*
  * Warm dark-mode palette, applied over Chirpy's dark theme.
  * Loaded after the theme stylesheet (via _includes/metadata-hook.html), so
- * these selectors win over Chirpy's identical ones.
+ * these selectors win over Chirpy's equally specific ones.
+ *
+ * Chirpy 7.5 marks the mode with html[data-mode]; newer releases (what the
+ * GitHub Action installs, since Gemfile.lock isn't committed) use
+ * :root[data-bs-theme]. The selectors cover both, and the :root forms keep
+ * them at least as specific as Chirpy's.
  *
  * Palette:
  *   void #0a0708 (page)   ink #161012 (cards)   bone #f2efe9 (headings)
@@ -9,7 +14,8 @@
  *   rule #2a2426 (lines)  rule-lit #4a4441      red #ef3340 (accent)
  */
 
-html[data-mode="dark"] {
+:root[data-mode="dark"],
+:root[data-bs-theme="dark"] {
   /* Framework */
   --main-bg: #0a0708;
   --mask-bg: #2a2426;
@@ -74,7 +80,7 @@ html[data-mode="dark"] {
 }
 
 @media (prefers-color-scheme: dark) {
-  html:not([data-mode]) {
+  :root:not([data-mode]):not([data-bs-theme]) {
     --main-bg: #0a0708;
     --mask-bg: #2a2426;
     --main-border-color: #2a2426;
@@ -133,12 +139,13 @@ html[data-mode="dark"] {
 }
 
 /* Chirpy hard-codes grey stripes on the archive list; use the palette instead. */
-html[data-mode="dark"] #archives li:nth-child(odd) {
+:root[data-mode="dark"] #archives li:nth-child(odd),
+:root[data-bs-theme="dark"] #archives li:nth-child(odd) {
   background-image: linear-gradient(to left, #0a0708, #161012, #161012, #161012, #0a0708);
 }
 
 @media (prefers-color-scheme: dark) {
-  html:not([data-mode]) #archives li:nth-child(odd) {
+  :root:not([data-mode]):not([data-bs-theme]) #archives li:nth-child(odd) {
     background-image: linear-gradient(to left, #0a0708, #161012, #161012, #161012, #0a0708);
   }
 }
