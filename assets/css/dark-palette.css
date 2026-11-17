@@ -6,7 +6,9 @@
  * Palette:
  *   void #0a0708 (page)   ink #161012 (cards)   bone #f2efe9 (headings)
  *   ash #a39b98 (text)    ash-dim #8c8481 (muted)
- *   rule #2a2426 (lines)  rule-lit #4a4441      red #ef3340 (accent)
+ *   rule #2a2426 (lines)  rule-lit #4a4441
+ *
+ * Links, the TOC highlight and checkboxes keep Chirpy's blue.
  */
 
 html[data-mode="dark"] {
@@ -23,13 +25,10 @@ html[data-mode="dark"] {
   --label-color: #a39b98;
   --blockquote-border-color: #4a4441;
   --blockquote-text-color: #8c8481;
-  --link-color: #f2efe9;
-  --link-underline-color: #ef3340;
   --button-bg: #161012;
   --btn-border-color: #2a2426;
   --btn-backtotop-border-color: #2a2426;
   --card-header-bg: #161012;
-  --checkbox-checked-color: #ef3340;
 
   /* Sidebar */
   --site-title-color: #f2efe9;
@@ -53,7 +52,6 @@ html[data-mode="dark"] {
   --btn-paginator-hover-color: #161012;
 
   /* Posts */
-  --toc-highlight: #ef3340;
   --tag-hover: #2a2426;
   --tb-odd-bg: #161012;
   --tb-even-bg: #0a0708;
@@ -86,13 +84,10 @@ html[data-mode="dark"] {
     --label-color: #a39b98;
     --blockquote-border-color: #4a4441;
     --blockquote-text-color: #8c8481;
-    --link-color: #f2efe9;
-    --link-underline-color: #ef3340;
     --button-bg: #161012;
     --btn-border-color: #2a2426;
     --btn-backtotop-border-color: #2a2426;
     --card-header-bg: #161012;
-    --checkbox-checked-color: #ef3340;
 
     --site-title-color: #f2efe9;
     --site-subtitle-color: #8c8481;
@@ -112,7 +107,6 @@ html[data-mode="dark"] {
     --post-list-text-color: #a39b98;
     --btn-paginator-hover-color: #161012;
 
-    --toc-highlight: #ef3340;
     --tag-hover: #2a2426;
     --tb-odd-bg: #161012;
     --tb-even-bg: #0a0708;
