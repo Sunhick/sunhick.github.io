@@ -1,0 +1,144 @@
+/*
+ * Warm dark-mode palette, applied over Chirpy's dark theme.
+ * Loaded after the theme stylesheet (via _includes/metadata-hook.html), so
+ * these selectors win over Chirpy's identical ones.
+ *
+ * Palette:
+ *   void #0a0708 (page)   ink #161012 (cards)   bone #f2efe9 (headings)
+ *   ash #a39b98 (text)    ash-dim #8c8481 (muted)
+ *   rule #2a2426 (lines)  rule-lit #4a4441      red #ef3340 (accent)
+ */
+
+html[data-mode="dark"] {
+  /* Framework */
+  --main-bg: #0a0708;
+  --mask-bg: #2a2426;
+  --main-border-color: #2a2426;
+
+  /* Common */
+  --text-color: #a39b98;
+  --text-muted-color: #8c8481;
+  --text-muted-highlight-color: #a39b98;
+  --heading-color: #f2efe9;
+  --label-color: #a39b98;
+  --blockquote-border-color: #4a4441;
+  --blockquote-text-color: #8c8481;
+  --link-color: #f2efe9;
+  --link-underline-color: #ef3340;
+  --button-bg: #161012;
+  --btn-border-color: #2a2426;
+  --btn-backtotop-border-color: #2a2426;
+  --card-header-bg: #161012;
+  --checkbox-checked-color: #ef3340;
+
+  /* Sidebar */
+  --site-title-color: #f2efe9;
+  --site-subtitle-color: #8c8481;
+  --sidebar-bg: #0a0708;
+  --sidebar-border-color: #2a2426;
+  --sidebar-muted-color: #8c8481;
+  --sidebar-active-color: #f2efe9;
+  --sidebar-hover-bg: #161012;
+  --sidebar-btn-bg: #161012;
+  --sidebar-btn-color: #8c8481;
+
+  /* Topbar */
+  --topbar-bg: rgb(10 7 8 / 64%);
+  --search-border-color: #2a2426;
+  --search-icon-color: #8c8481;
+  --input-focus-border-color: #4a4441;
+
+  /* Home page */
+  --post-list-text-color: #a39b98;
+  --btn-paginator-hover-color: #161012;
+
+  /* Posts */
+  --toc-highlight: #ef3340;
+  --tag-hover: #2a2426;
+  --tb-odd-bg: #161012;
+  --tb-even-bg: #0a0708;
+  --tb-border-color: #2a2426;
+  --card-bg: #161012;
+  --card-hover-bg: #2a2426;
+  --card-shadow: rgb(0 0 0 / 50%) 0 6px 18px 0, #2a2426 0 0 0 1px;
+
+  /* Tags, categories, archive */
+  --tag-border: #4a4441;
+  --tag-shadow: #0a0708;
+  --dash-color: #2a2426;
+  --search-tag-bg: #161012;
+  --categories-border: #2a2426;
+  --categories-hover-bg: #2a2426;
+  --timeline-node-bg: #8c8481;
+  --timeline-color: #2a2426;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode]) {
+    --main-bg: #0a0708;
+    --mask-bg: #2a2426;
+    --main-border-color: #2a2426;
+
+    --text-color: #a39b98;
+    --text-muted-color: #8c8481;
+    --text-muted-highlight-color: #a39b98;
+    --heading-color: #f2efe9;
+    --label-color: #a39b98;
+    --blockquote-border-color: #4a4441;
+    --blockquote-text-color: #8c8481;
+    --link-color: #f2efe9;
+    --link-underline-color: #ef3340;
+    --button-bg: #161012;
+    --btn-border-color: #2a2426;
+    --btn-backtotop-border-color: #2a2426;
+    --card-header-bg: #161012;
+    --checkbox-checked-color: #ef3340;
+
+    --site-title-color: #f2efe9;
+    --site-subtitle-color: #8c8481;
+    --sidebar-bg: #0a0708;
+    --sidebar-border-color: #2a2426;
+    --sidebar-muted-color: #8c8481;
+    --sidebar-active-color: #f2efe9;
+    --sidebar-hover-bg: #161012;
+    --sidebar-btn-bg: #161012;
+    --sidebar-btn-color: #8c8481;
+
+    --topbar-bg: rgb(10 7 8 / 64%);
+    --search-border-color: #2a2426;
+    --search-icon-color: #8c8481;
+    --input-focus-border-color: #4a4441;
+
+    --post-list-text-color: #a39b98;
+    --btn-paginator-hover-color: #161012;
+
+    --toc-highlight: #ef3340;
+    --tag-hover: #2a2426;
+    --tb-odd-bg: #161012;
+    --tb-even-bg: #0a0708;
+    --tb-border-color: #2a2426;
+    --card-bg: #161012;
+    --card-hover-bg: #2a2426;
+    --card-shadow: rgb(0 0 0 / 50%) 0 6px 18px 0, #2a2426 0 0 0 1px;
+
+    --tag-border: #4a4441;
+    --tag-shadow: #0a0708;
+    --dash-color: #2a2426;
+    --search-tag-bg: #161012;
+    --categories-border: #2a2426;
+    --categories-hover-bg: #2a2426;
+    --timeline-node-bg: #8c8481;
+    --timeline-color: #2a2426;
+  }
+}
+
+/* Chirpy hard-codes grey stripes on the archive list; use the palette instead. */
+html[data-mode="dark"] #archives li:nth-child(odd) {
+  background-image: linear-gradient(to left, #0a0708, #161012, #161012, #161012, #0a0708);
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode]) #archives li:nth-child(odd) {
+    background-image: linear-gradient(to left, #0a0708, #161012, #161012, #161012, #0a0708);
+  }
+}

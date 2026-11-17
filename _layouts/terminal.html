@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ site.lang | default: 'en' }}">
+<html lang="{{ site.lang | default: 'en' }}" data-mode="dark">
 
 <head>
   <meta charset="utf-8">
@@ -9,6 +9,7 @@
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   {% include favicons.html %}
   <link rel="stylesheet" href="{{ '/assets/css/terminal.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/grain.css' | relative_url }}">
 
   {%- assign t = site.data.terminal -%}
   {%- assign tabs = site.tabs | where_exp: "tab", "tab.url != page.url" | sort: "order" -%}
