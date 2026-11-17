@@ -9,7 +9,7 @@
   --grain-size: 160px;
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
   /* Light mode: darken the page slightly. */
-  --grain-opacity: 0.35;
+  --grain-opacity: 0.2;
   --grain-blend: multiply;
   --vignette-opacity: 0;
 }
@@ -18,14 +18,14 @@
    releases' data-bs-theme (see dark-palette.css). */
 :root[data-mode="dark"],
 :root[data-bs-theme="dark"] {
-  --grain-opacity: 0.5;
+  --grain-opacity: 0.3;
   --grain-blend: screen;
   --vignette-opacity: 0.55;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-mode]):not([data-bs-theme]) {
-    --grain-opacity: 0.5;
+    --grain-opacity: 0.3;
     --grain-blend: screen;
     --vignette-opacity: 0.55;
   }
